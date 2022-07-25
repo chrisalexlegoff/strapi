@@ -11,6 +11,10 @@ module.exports = {
           "linear-gradient(to right, #FC5050 50%, #FFFFFF 50%);",
         "split-bottom-orange-white":
           "linear-gradient(to bottom, #FC5050 50%, #FFFFFF 50%);",
+        "split-right-green-white":
+          "linear-gradient(to right, #41EAD4 50%, #FFFFFF 50%);",
+        "split-bottom-green-white":
+          "linear-gradient(to bottom, #41EAD4 70%, #FFFFFF 30%);",
       },
     },
     fontFamily: {

@@ -3,6 +3,8 @@ import React from "react"
 import { useState } from "react"
 import LazyImage from "./../lib/lazy-images"
 import { useRouter } from "next/router"
+import client from "./../lib/apollo-client"
+import { gql } from "@apollo/client"
 
 export const Navbar = ({ logo, hamburger }) => {
   const [active, setActive] = useState(false)
@@ -10,13 +12,10 @@ export const Navbar = ({ logo, hamburger }) => {
 
   const router = useRouter()
 
-  console.log(router.asPath)
-
   function getLogo(path) {
     let regex = new RegExp("(/#)")
     if (regex.test(path)) {
       path = path.split("#")[0]
-      console.log(path)
     }
     if (path == "/") {
       let numberDesktop = 3
@@ -69,7 +68,7 @@ export const Navbar = ({ logo, hamburger }) => {
     <nav className="bg-[#FAFAFB]/95 p-3 fixed w-full z-10">
       <div className="max-w-7xl mx-auto flex items-center flex-wrap">
         <Link href="/" className="hidden lg:block">
-          <a className="hidden p-2 mr-4 lg:block">{newLogoDesktop}</a>
+          <a className="hidden p-2 mr-4 lg:block w-[150px]">{newLogoDesktop}</a>
         </Link>
         <Link href="/" className="block lg:hidden ">
           <a className="block p-2 mr-4 lg:hidden">{newLogoMobile}</a>
@@ -116,3 +115,51 @@ export const Navbar = ({ logo, hamburger }) => {
 }
 
 export default Navbar
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      query Home {
+        logo {
+          data {
+            id
+            attributes {
+              logo {
+                data {
+                  attributes {
+                    url
+                    width
+                    height
+                  }
+                }
+              }
+            }
+          }
+        }
+        hamburger {
+          data {
+            id
+            attributes {
+              hamburger {
+                data {
+                  attributes {
+                    name
+                    url
+                    width
+                    height
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+  })
+  return {
+    props: {
+      logo: data.logo.data.attributes.logo,
+      hamburger: data.hamburger.data.attributes.hamburger,
+    },
+  }
+}
