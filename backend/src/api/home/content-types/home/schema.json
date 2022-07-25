@@ -22,6 +22,39 @@
       "type": "component",
       "repeatable": false,
       "component": "section.section"
+    },
+    "projet": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.section"
+    },
+    "pourquoi": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.section"
+    },
+    "valeurs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.section"
+    },
+    "realisations": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.section"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.section"
+    },
+    "mission": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.section"
+    },
+    "titrePage": {
+      "type": "string"
     }
   }
 }

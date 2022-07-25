@@ -43,6 +43,24 @@
     },
     "titre4bis": {
       "type": "richtext"
+    },
+    "button2": {
+      "type": "string"
+    },
+    "flipCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utils.flip-card"
+    },
+    "carousel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "utils.carousel"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utils.services"
     }
   }
 }
