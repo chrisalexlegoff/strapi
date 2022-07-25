@@ -13,7 +13,7 @@ export const Navbar = ({ logo, hamburger }) => {
   const router = useRouter()
 
   function getLogo(path) {
-    let regex = new RegExp("(/#)")
+    let regex = new RegExp("(#)")
     if (regex.test(path)) {
       path = path.split("#")[0]
     }
@@ -22,7 +22,7 @@ export const Navbar = ({ logo, hamburger }) => {
       let numberMobile = 5
       let numberHamburger = 2
       return { numberDesktop, numberMobile, numberHamburger }
-    } else if (path == "/demander-un-devis") {
+    } else if (path == "/about") {
       let numberDesktop = 0
       let numberMobile = 4
       let numberHamburger = 3
@@ -87,24 +87,29 @@ export const Navbar = ({ logo, hamburger }) => {
           }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
         >
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
-            <Link href="/">
+            <Link href="/about">
               <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#3F3F3F] font-light items-center justify-center hover:bg-[#FC5050] hover:text-white ">
-                Home
+                A propos
+              </a>
+            </Link>
+            <Link href="/nos-prestations">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#3F3F3F] font-light items-center justify-center hover:bg-[#FC5050] hover:text-[white]">
+                Nos prestations
+              </a>
+            </Link>
+            <Link href="/nos-realisations">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#3F3F3F] font-light items-center justify-center hover:bg-[#FC5050] hover:text-white">
+                nos réalisations
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#3F3F3F] font-light items-center justify-center hover:bg-[#FC5050] hover:text-white">
+                Nous contacter
               </a>
             </Link>
             <Link href="/demander-un-devis">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#3F3F3F] font-light items-center justify-center hover:bg-[#FC5050] hover:text-[white]">
-                Services
-              </a>
-            </Link>
-            <Link href="/">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#3F3F3F] font-light items-center justify-center hover:bg-[#FC5050] hover:text-white">
-                About us
-              </a>
-            </Link>
-            <Link href="/">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#3F3F3F] font-light items-center justify-center hover:bg-[#FC5050] hover:text-white">
-                Contact us
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#FC5050] font-light items-center justify-center hover:bg-[#FC5050] hover:text-white">
+                Demander un devis
               </a>
             </Link>
           </div>

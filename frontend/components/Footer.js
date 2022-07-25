@@ -26,10 +26,10 @@ const Footer = ({ footer }) => {
           <div className="mx-auto w-full">
             <Link href="/demander-un-devis">
               <a>
-                <button className="group bg-transparent border-white hover:bg-[#FC5050] hover:border-[#FC5050] w-2/3 h-12 mx-auto block rounded-lg border-2">
+                <button className="group bg-transparent border-white  hover:border-[#41EAD4] w-2/3 h-12 mx-auto block rounded-lg border-2">
                   <span
                     dangerouslySetInnerHTML={{ __html: footer.button }}
-                    className="font-bold text-white"
+                    className="font-bold text-white group-hover:text-[#41EAD4]"
                   />
                 </button>
               </a>
@@ -46,10 +46,10 @@ const Footer = ({ footer }) => {
             className="uppercase font-bold text-center lg:text-left mb-4"
             dangerouslySetInnerHTML={{ __html: footer.titre4bis }}
           ></div>
-          <div className="flex flex-col ml-2 text-xs lg:h-full h-[250px] justify-between text-center lg:text-left">
+          <div className="group flex flex-col ml-2 text-xs lg:h-full h-[250px] justify-between text-center lg:text-left">
             {footer.nav.map((item) => (
               <Link key={item.id} href={item.lien}>
-                {item.slug}
+                <a className="hover:text-[#41EAD4]">{item.slug}</a>
               </Link>
             ))}
           </div>
@@ -68,14 +68,23 @@ const Footer = ({ footer }) => {
                   rel="noreferrer"
                   href={item.lien}
                   target="_blank"
+                  className="group"
                 >
                   {LazyImage(
                     item.icon.data.attributes,
-                    `"lien "${item.slug}`,
+                    `lien ${item.slug}`,
                     "lazy",
                     "40px",
                     undefined,
-                    "lg:mr-4 lg:mx-0 mx-10 cursor-pointer"
+                    "lg:mr-4 lg:mx-0 mx-10 cursor-pointer block group-hover:hidden"
+                  )}
+                  {LazyImage(
+                    item.iconHover.data.attributes,
+                    `lien ${item.slug}`,
+                    "lazy",
+                    "40px",
+                    undefined,
+                    "lg:mr-4 lg:mx-0 mx-10 cursor-pointer hidden group-hover:block"
                   )}
                 </a>
               ))}
@@ -87,12 +96,17 @@ const Footer = ({ footer }) => {
               dangerouslySetInnerHTML={{ __html: footer.titre4quarto }}
             ></div>
             <p className="text-center lg:text-left">
-              <a href={`mailto:${footer.contact.mail}`}>
+              <a
+                className="hover:text-[#41EAD4]"
+                href={`mailto:${footer.contact.mail}`}
+              >
                 {footer.contact.mail}
               </a>{" "}
               ou{" "}
               <Link href={footer.contact.lien}>
-                <a className="underline">{footer.contact.lien}</a>
+                <a className="underline hover:text-[#41EAD4]">
+                  {footer.contact.lien}
+                </a>
               </Link>
             </p>
             <p className="text-center lg:text-left">

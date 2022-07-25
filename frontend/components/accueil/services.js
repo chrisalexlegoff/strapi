@@ -38,16 +38,16 @@ const Services = ({ services }) => {
           {services.services.map((service, index) => (
             <div
               key={service.id}
-              className="m-8 rounded-xl bg-white w-[180px] h-[220px] flex flex-col justify-center items-center"
+              className="m-6 rounded-xl bg-white w-[150px] h-[150px] flex flex-col justify-center items-center"
             >
               {LazyImage(
                 service.icons.data.attributes,
                 `"icon-${index}`,
                 "lazy",
-                "80px"
+                "60px"
               )}
               <div
-                className=" text-[#505050] uppercase text-sm min-h-[60px] w-3/5"
+                className=" text-[#505050] uppercase text-sm min-h-[40px] mx-6 font-bold"
                 dangerouslySetInnerHTML={{ __html: service.legend }}
               ></div>
             </div>

@@ -295,6 +295,15 @@ export async function getStaticProps() {
                     }
                   }
                 }
+                iconHover {
+                  data {
+                    attributes {
+                      width
+                      height
+                      url
+                    }
+                  }
+                }
                 lien
                 slug
               }
