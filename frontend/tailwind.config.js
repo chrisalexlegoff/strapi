@@ -21,6 +21,8 @@ module.exports = {
           "linear-gradient(to right, rgba(65, 234, 212, 0.8) 50%, rgba(255,255,255,0) 50%);",
         "blue-transparent":
           "linear-gradient(0deg, rgba(46, 67, 125, 0.8), rgba(46, 67, 125, 0.8));",
+        "white-transparent":
+          "linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));",
         "green-transparent":
           "linear-gradient(0deg, rgba(65, 234, 212, 0.95), rgba(65, 234, 212, 0.95));",
         "blue-binome":

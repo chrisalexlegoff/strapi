@@ -2,8 +2,6 @@ import React from "react"
 import LazyImage from "../../lib/lazy-images"
 
 const Expertise = ({ expertise }) => {
-  console.log(expertise)
-
   return (
     <div id="expertise">
       <div className="max-w-7xl mx-auto grid items-center text-center py-20">
@@ -20,22 +18,31 @@ const Expertise = ({ expertise }) => {
             dangerouslySetInnerHTML={{ __html: expertise.paragraphe }}
           ></div>
         </div>
-        <div className="row-start-3 flex flex-wrap justify-center items-center mx-auto my-8 w-full">
+        <div className="row-start-3 flex flex-wrap justify-center items-center mx-auto w-full">
           {expertise.board.map((item, index) => (
             <div
               key={item.id}
-              className="w-[400px] h-[300px] flex flex-col justify-center items-center rounded-xl bg-[#FAFAFB] pt-16 m-4"
+              style={{
+                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(${
+                  process.env.NEXT_PUBLIC_API_URL + item.bg.data.attributes.url
+                })`,
+                backgroundPosition: "bottom",
+                backgroundSize: "cover ",
+              }}
+              className="w-[400px] h-[300px] rounded-xl bg-[#FAFAFB] m-4"
             >
-              <div
-                className="m-6 text-[#505050] uppercase min-h-[40px] w-3/5 font-bold"
-                dangerouslySetInnerHTML={{ __html: item.titre }}
-              ></div>
-              {LazyImage(
-                item.icon.data.attributes,
-                `"icon-${index}`,
-                "lazy",
-                "50px"
-              )}
+              <div className="flex flex-col h-full justify-center items-center bg-white-transparent pt-10">
+                <div
+                  className="m-6 text-[#2E437D] min-h-[40px] w-3/5 text-lg font-bold"
+                  dangerouslySetInnerHTML={{ __html: item.titre }}
+                ></div>
+                {LazyImage(
+                  item.icon.data.attributes,
+                  `"icon-${index}`,
+                  "lazy",
+                  "30px"
+                )}
+              </div>
             </div>
           ))}
         </div>
