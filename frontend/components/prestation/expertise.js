@@ -24,7 +24,7 @@ const Expertise = ({ expertise }) => {
           {expertise.board.map((item, index) => (
             <div
               key={item.id}
-              className="w-[280px] flex flex-col justify-center items-center rounded-xl bg-[#FAFAFB] pt-16 m-4"
+              className="w-[400px] h-[300px] flex flex-col justify-center items-center rounded-xl bg-[#FAFAFB] pt-16 m-4"
             >
               <div
                 className="m-6 text-[#505050] uppercase min-h-[40px] w-3/5 font-bold"
