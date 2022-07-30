@@ -61,6 +61,24 @@
       "type": "component",
       "repeatable": true,
       "component": "utils.services"
+    },
+    "titre5": {
+      "type": "richtext"
+    },
+    "competencesChris": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utils.competences"
+    },
+    "competencesSab": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utils.competences"
+    },
+    "board": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utils.board"
     }
   }
 }

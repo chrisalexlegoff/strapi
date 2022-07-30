@@ -4,6 +4,9 @@ import { gql } from "@apollo/client"
 import React from "react"
 import AccueilAbout from "./../components/a-propos/accueil-a-propos"
 import Binome from "../components/a-propos/binome"
+import IntroPresentation from "./../components/a-propos/introPresentation"
+import Presentation from "../components/a-propos/presentation"
+import Mission from "../components/a-propos/mission"
 
 export default function About({
   titrePage,
@@ -12,6 +15,9 @@ export default function About({
   footer,
   header,
   binome,
+  introPresentation,
+  presentation,
+  mission,
 }) {
   return (
     <Layout
@@ -22,6 +28,9 @@ export default function About({
     >
       <AccueilAbout header={header} />
       <Binome binome={binome} />
+      <IntroPresentation introPresentation={introPresentation} />
+      <Presentation presentation={presentation} />
+      <Mission mission={mission} />
     </Layout>
   )
 }
@@ -34,6 +43,39 @@ export async function getStaticProps() {
           data {
             attributes {
               titrePage
+              presentation {
+                titre3
+                titre3bis
+                paragraphe
+                images {
+                  data {
+                    attributes {
+                      width
+                      height
+                      url
+                    }
+                  }
+                }
+                button
+                paragrapheBis
+                titre4
+                titre4bis
+                competencesChris {
+                  id
+                  competence
+                }
+                competencesSab {
+                  id
+                  competence
+                }
+              }
+              introPresentation {
+                titre3
+                paragraphe
+                titre4
+                titre4bis
+                titre5
+              }
               binome {
                 titre3
                 paragraphe
@@ -175,13 +217,82 @@ export async function getStaticProps() {
             }
           }
         }
+        home {
+          data {
+            attributes {
+              mission {
+                button
+                titre2
+                titre3
+                titre3bis
+                paragraphe
+                images {
+                  data {
+                    attributes {
+                      width
+                      height
+                      url
+                    }
+                  }
+                }
+                titre2bis
+                services {
+                  id
+                  icons {
+                    data {
+                      attributes {
+                        width
+                        height
+                        url
+                      }
+                    }
+                  }
+                  legend
+                  paragraphe
+                }
+              }
+              services {
+                titre2
+                titre3
+                paragraphe
+                images {
+                  data {
+                    attributes {
+                      width
+                      height
+                      url
+                    }
+                  }
+                }
+                button
+                services {
+                  id
+                  icons {
+                    data {
+                      attributes {
+                        width
+                        height
+                        url
+                      }
+                    }
+                  }
+                  legend
+                }
+              }
+            }
+          }
+        }
       }
     `,
   })
+
   return {
     props: {
       header: data.about.data.attributes.header,
       binome: data.about.data.attributes.binome,
+      introPresentation: data.about.data.attributes.introPresentation,
+      presentation: data.about.data.attributes.presentation,
+      mission: data.home.data.attributes.mission,
       titrePage: data.about.data.attributes.titrePage,
       logo: data.logo.data.attributes.logo,
       hamburger: data.hamburger.data.attributes.hamburger,

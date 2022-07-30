@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_utils_boards",
+  "info": {
+    "displayName": "board",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "bg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "titre": {
+      "type": "richtext"
+    }
+  }
+}

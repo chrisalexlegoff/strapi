@@ -16,7 +16,7 @@ export default demanderUnDevis
 export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
-      query Home {
+      query prestation {
         logo {
           data {
             id

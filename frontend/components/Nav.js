@@ -27,6 +27,11 @@ export const Navbar = ({ logo, hamburger }) => {
       let numberMobile = 4
       let numberHamburger = 3
       return { numberDesktop, numberMobile, numberHamburger }
+    } else if (path == "/nos-prestations") {
+      let numberDesktop = 2
+      let numberMobile = 1
+      let numberHamburger = 1
+      return { numberDesktop, numberMobile, numberHamburger }
     } else {
       let numberDesktop = 1
       let numberMobile = 0
