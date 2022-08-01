@@ -64,4 +64,8 @@
   p {
     font-family: Humanist521BT;
   }
+
+  ul {
+    list-style-type: disc;
+  }
 }

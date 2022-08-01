@@ -17,9 +17,9 @@
         "audios"
       ]
     },
-    "icon": {
+    "icons": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "allowedTypes": [
         "images",
@@ -29,6 +29,12 @@
       ]
     },
     "titre": {
+      "type": "richtext"
+    },
+    "titreVerso": {
+      "type": "richtext"
+    },
+    "paragraphe": {
       "type": "richtext"
     }
   }

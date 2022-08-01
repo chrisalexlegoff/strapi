@@ -4,6 +4,7 @@ import { gql } from "@apollo/client"
 import React from "react"
 import EntetePrestations from "./../components/prestation/entete-prestation"
 import Expertise from "../components/prestation/expertise"
+import Methodologie from "./../components/prestation/methodologie"
 
 export default function Prestations({
   titrePage,
@@ -12,6 +13,8 @@ export default function Prestations({
   footer,
   header,
   expertise,
+  methodologie,
+  mission,
 }) {
   return (
     <Layout
@@ -22,6 +25,7 @@ export default function Prestations({
     >
       <EntetePrestations header={header} />
       <Expertise expertise={expertise} />
+      <Methodologie methodologie={methodologie} mission={mission} />
     </Layout>
   )
 }
@@ -34,32 +38,6 @@ export async function getStaticProps() {
           data {
             attributes {
               titrePage
-              expertise {
-                titre2
-                paragraphe
-                board {
-                  id
-                  bg {
-                    data {
-                      attributes {
-                        width
-                        height
-                        url
-                      }
-                    }
-                  }
-                  icon {
-                    data {
-                      attributes {
-                        width
-                        height
-                        url
-                      }
-                    }
-                  }
-                  titre
-                }
-              }
               header {
                 titrePage
                 imageDeco {
@@ -84,6 +62,85 @@ export async function getStaticProps() {
                 enSavoirPlus {
                   text
                   image {
+                    data {
+                      attributes {
+                        width
+                        height
+                        url
+                      }
+                    }
+                  }
+                }
+              }
+              expertise {
+                button
+                titre3bis
+                titre2
+                paragraphe
+                board {
+                  id
+                  bg {
+                    data {
+                      attributes {
+                        width
+                        height
+                        url
+                      }
+                    }
+                  }
+                  icons {
+                    data {
+                      attributes {
+                        width
+                        height
+                        url
+                      }
+                    }
+                  }
+                  titre
+                  titreVerso
+                  paragraphe
+                }
+                titre2bis
+                titre3
+                images {
+                  data {
+                    attributes {
+                      width
+                      height
+                      url
+                    }
+                  }
+                }
+              }
+              methodologie {
+                titre2
+                paragraphe
+                paragrapheBis
+                button
+                images {
+                  data {
+                    attributes {
+                      width
+                      height
+                      url
+                    }
+                  }
+                }
+                board {
+                  id
+                  bg {
+                    data {
+                      attributes {
+                        width
+                        height
+                        url
+                      }
+                    }
+                  }
+                  titre
+                  paragraphe
+                  icons {
                     data {
                       attributes {
                         width
@@ -186,6 +243,26 @@ export async function getStaticProps() {
             }
           }
         }
+        home {
+          data {
+            attributes {
+              mission {
+                paragraphe
+                titre2bis
+                button
+                images {
+                  data {
+                    attributes {
+                      width
+                      height
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     `,
   })
@@ -194,6 +271,8 @@ export async function getStaticProps() {
     props: {
       header: data.prestation.data.attributes.header,
       expertise: data.prestation.data.attributes.expertise,
+      methodologie: data.prestation.data.attributes.methodologie,
+      mission: data.home.data.attributes.mission,
       titrePage: data.prestation.data.attributes.titrePage,
       logo: data.logo.data.attributes.logo,
       hamburger: data.hamburger.data.attributes.hamburger,

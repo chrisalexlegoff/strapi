@@ -23,6 +23,10 @@ module.exports = {
           "linear-gradient(0deg, rgba(46, 67, 125, 0.8), rgba(46, 67, 125, 0.8));",
         "white-transparent":
           "linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));",
+        "white-transparent-board":
+          "linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));",
+        "white-transparent-methodologie":
+          "linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));",
         "green-transparent":
           "linear-gradient(0deg, rgba(65, 234, 212, 0.95), rgba(65, 234, 212, 0.95));",
         "blue-binome":

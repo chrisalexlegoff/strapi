@@ -18,12 +18,12 @@ const EntetePrestations = ({ header }) => {
         backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(${
           process.env.NEXT_PUBLIC_API_URL + header.bg.data.attributes.url
         })`,
-        backgroundPosition: "bottom",
+        backgroundPosition: "center",
         backgroundSize: "cover ",
       }}
     >
       <div className="lg:bg-split-right-green-transparent bg-green-transparent">
-        <div className="max-w-7xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left pt-28 font-normal">
+        <div className="max-w-7xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left lg:pt-28 font-normal">
           <div className="flex flex-col lg:flex-row lg:row-start-1 mx-auto w-3/4 mt-32 justify-between">
             <div
               className="uppercase leading-9 text-2xl lg:w-2/3"
