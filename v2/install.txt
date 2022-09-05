@@ -1,0 +1,331 @@
+1. 
+
+Si probleme install npx global :
+
+- npm uninstall -g create-react-app
+- yarn global remove create-react-app
+- npx clear-npx-cache
+
+puis :
+
+- npx create-react-app frontend --template typescript
+
+2.
+
+cd frontend
+
+3.
+
+yarn add @apollo/client graphql
+
+4.
+
+yarn add -D @graphql-codegen/cli
+
+5.
+
+npx graphql-codegen init
+
+ . Application built with React.
+ . The schema is located at http://localhost:1337/graphql.
+ . Set your operations and fragments location to ./src/components/**/*.{ts,tsx} so that it will search all our TypeScript files for query declarations.
+ . Use the default plugins “TypeScript”, “TypeScript Operations”, “TypeScript React Apollo.”
+ . Use the destination src/generated/graphql.tsx (.tsx is required by the react-apollo plugin).
+ . Do not generate an introspection file.
+ . Use the default codegen.yml file.
+ . Make your run script codegen.
+
+puis :
+
+yarn install
+
+6.
+
+Update du fichier "codegen.yml" :
+
+overwrite: true
+schema: 'https://spacexdata.herokuapp.com/graphql'
+documents: './src/components/**/*.ts'
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+    config:
+      withHooks: true <= A RAJOUTER!!
+
+7.
+
+Créer un ficichier .env à la racine avec le contenu suivant :
+
+REACT_APP_PUBLIC_STRAPI_GRAPHQL_API=http://localhost:1337/graphql
+REACT_APP_PUBLIC_API_URL=http://localhost:1337
+REACT_APP_PUBLIC_IMAGES_DOMAIN=localhost
+
+Puis redmarrer le server local !!!!
+
+Puis ajout dans .gitignore :
+
+...
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env <= ICI!!!
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+8. 
+
+creer un dossier "src/lib/apollo-client.js" :
+
+import { ApolloClient, InMemoryCache } from "@apollo/client"
+const client = new ApolloClient({
+  uri: `${process.env.REACT_APP_PUBLIC_STRAPI_GRAPHQL_API}`,
+  cache: new InMemoryCache(),
+})
+
+export default client
+
+9.
+
+Créer "src/components/devis/devis.tsx"
+
+import * as React from "react"
+import { DevisBesoinEntrepriseCheckboxQuery } from "../../../generated/graphql"
+interface Props {
+  data: DevisBesoinEntrepriseCheckboxQuery
+}
+const className = "Devis"
+const Devis: React.FC<Props> = ({ data }) => {
+  const besoinEntrepriseCheckbox =
+    data?.devi?.data?.attributes?.devis?.besoinEntrepriseCheckbox
+  return (
+    <div className={className}>
+      <h3>Devis</h3>
+       <ol className={`${className}__list`}>
+        {!!besoinEntrepriseCheckbox &&
+          besoinEntrepriseCheckbox.map(
+            (item, index) => !!item && <li key={item.id}>{item.text}</li>
+          )}
+      </ol>
+    </div>
+  )
+}
+export default Devis
+
+
+	 "src/components/devis/index.tsx"
+
+import { useDevisBesoinEntrepriseCheckboxQuery } from "../../../generated/graphql"
+import Devis from "./devis"
+
+const LaunchDevisContainer = () => {
+  const { data, error, loading } = useDevisBesoinEntrepriseCheckboxQuery()
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (error || !data) {
+    return <div>ERROR</div>
+  }
+
+  return <Devis data={data} />
+}
+
+export default LaunchDevisContainer
+
+
+	 "src/components/devis/query.ts" // exemples!
+
+import { gql } from "@apollo/client"
+
+export const QUERY_LAUNCH_DEVIS = gql`
+  query DevisBesoinEntrepriseCheckbox {
+    devi {
+      data {
+        attributes {
+          devis {
+            besoinEntrepriseCheckbox(pagination: { start: 0, limit: 30 }) {
+              id
+              checked
+              placeholder
+              icon {
+                data {
+                  attributes {
+                    width
+                    height
+                    url
+                  }
+                }
+              }
+              input
+              text
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+
+10.
+
+Update "index.tsx" :
+
+import React from "react"
+import ReactDOM from "react-dom/client"
+import "./styles/global.css"
+import App from "./App"
+import reportWebVitals from "./reportWebVitals"
+import { ApolloProvider } from "@apollo/client"
+import client from "./lib/apollo-client"
+
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
+root.render(
+  <React.StrictMode>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </React.StrictMode>
+)
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals()
+
+11.
+
+yarn codegen
+
+12. 
+
+Update "App.tsx"
+
+import Devis from "./components/devis/besoinEntrepriseCheckbox"
+
+const App = () => {
+  return (
+    <div>
+      <Devis />
+    </div>
+  )
+}
+
+export default App
+
+13. 
+
+Test :
+
+yarn start
+
+14.
+
+Install tailwind :
+
+ - yarn add -D tailwindcss postcss autoprefixer
+
+ - yarn tailwindcss init -p
+
+ - Update du fichier "tailwind.config.js" :
+
+	/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+ - Ajout dans "src/styles/global.css" :
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Humanist521BT";
+    src: url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.eot");
+    src: url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.eot?#iefix")
+        format("embedded-opentype"),
+      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.woff2")
+        format("woff2"),
+      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.woff")
+        format("woff"),
+      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.ttf")
+        format("truetype"),
+      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.svg#Humanst521 BT")
+        format("svg");
+  }
+  @font-face {
+    font-family: "Rowdies";
+    src: url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.eot");
+    src: url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.eot?#iefix")
+        format("embedded-opentype"),
+      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.woff2")
+        format("woff2"),
+      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.woff")
+        format("woff"),
+      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.ttf")
+        format("truetype"),
+      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.svg#Rowdies")
+        format("svg");
+  }
+
+  @layer utilities {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply no-scrollbar;
+  }
+
+  nav {
+    font-family: Rowdies;
+  }
+
+  button,
+  h1,
+  h3,
+  h4,
+  p {
+    font-family: Humanist521BT;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+}
+
+15.
+
+Seo:
+
+ - yarn add react-helmet
+
+
+

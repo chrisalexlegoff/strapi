@@ -13,7 +13,7 @@ const Footer = ({ footer }) => {
   return (
     <div className="bg-[#2E437D]">
       <div className="max-w-7xl mx-auto flex flex-wrap text-white justify-center items-center lg:py-16">
-        <div className="lg:w-[400px] w-3/4 flex h-[250px] flex-col text-center justify-between lg:m-4 m-12">
+        <div className="xl:w-[400px] w-3/4 flex h-[250px] flex-col text-center justify-between lg:m-4 m-12">
           <div className="mx-auto w-1/2">{logo}</div>
           <div
             className="mx-auto text-base"
@@ -40,7 +40,7 @@ const Footer = ({ footer }) => {
             dangerouslySetInnerHTML={{ __html: footer.copyright }}
           ></div>
         </div>
-        <div className="lg:w-[250px] flex flex-col h-[250px] lg:m-4 m-12">
+        <div className="xl:w-[250px] flex flex-col h-[250px] lg:m-4 m-12">
           {" "}
           <div
             className="uppercase font-bold text-center lg:text-left mb-4"
@@ -54,7 +54,7 @@ const Footer = ({ footer }) => {
             ))}
           </div>
         </div>
-        <div className="lg:w-[400px] flex flex-col h-[250px] justify-between lg:m-4 m-12">
+        <div className="xl:w-[400px] flex flex-col h-[250px] justify-between lg:m-4 m-12">
           {" "}
           <div>
             <div

@@ -7,8 +7,9 @@ const Methodologie = ({ methodologie, mission }) => {
     mission.images.data[0].attributes,
     "Image de décoration mission prestation",
     "lazy",
-    "200px",
-    ""
+    "250px",
+    "",
+    "lg:ml-10"
   )
   return (
     <>
@@ -181,31 +182,31 @@ const Methodologie = ({ methodologie, mission }) => {
           </div>
         ))}
       </div>
-      <div className="mx-auto max-w-7xl">
-        <div className="flex divide-x-2 divide-[#41EAD4]">
-          <div className="flex flex-col w-1/2">
-            <div
-              className=""
-              dangerouslySetInnerHTML={{ __html: mission.titre2bis }}
-            ></div>
-            <div
-              className=""
-              dangerouslySetInnerHTML={{ __html: mission.paragraphe }}
-            ></div>
-            <div className="lg:ml-10 w-full lg:w-1/2 mt-10 lg:mt-0">
-              <Link href="/demander-un-devis">
-                <a>
-                  <button className="group bg-[#FC5050] hover:bg-white h-16 w-3/4 lg:w-1/2 block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050] mx-auto lg:mx-0">
-                    <span
-                      dangerouslySetInnerHTML={{ __html: mission.button }}
-                      className="font-bold text-[#FFFFFF] lg:text-sm group-hover:text-[#FC5050]"
-                    />
-                  </button>
-                </a>
-              </Link>
-            </div>
+      <div className="mx-auto max-w-7xl grid lg:grid-cols-2 lg:divide-x-2 lg:divide-[#41EAD4] lg:h-[300px] justify-items-center lg:justify-items-stretch pt-10 lg:pt-0">
+        <div className="flex lg:items-end flex-col lg:h-full items-center lg:justify-evenly pb-10 w-3/4 lg:w-full">
+          <div
+            className="uppercase text-center lg:text-right w-1/2 lg:pr-10 text-xl"
+            dangerouslySetInnerHTML={{ __html: mission.titre2bis }}
+          ></div>
+          <div
+            className="text-center lg:text-right w-3/4 lg:pr-10 mt-10 lg:mt-0"
+            dangerouslySetInnerHTML={{ __html: mission.paragraphe }}
+          ></div>
+          <div className="lg:w-2/3 mt-10 lg:mt-0 w-full">
+            <Link href="/demander-un-devis">
+              <a>
+                <button className="group bg-[#FC5050] hover:bg-white h-16 w-3/4 block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050] mx-auto lg:mr-10">
+                  <span
+                    dangerouslySetInnerHTML={{ __html: mission.button }}
+                    className="font-bold text-[#FFFFFF] lg:text-sm group-hover:text-[#FC5050]"
+                  />
+                </button>
+              </a>
+            </Link>
           </div>
-          <div className="w-1/2">{imageDeco}</div>
+        </div>
+        <div className="pb-10 flex lg:items-center lg:justify-start">
+          {imageDeco}
         </div>
       </div>
     </>

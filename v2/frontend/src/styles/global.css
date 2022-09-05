@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Humanist521BT";
+    src: url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.eot");
+    src: url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.eot?#iefix")
+        format("embedded-opentype"),
+      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.woff2")
+        format("woff2"),
+      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.woff")
+        format("woff"),
+      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.ttf")
+        format("truetype"),
+      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.svg#Humanst521 BT")
+        format("svg");
+  }
+  @font-face {
+    font-family: "Rowdies";
+    src: url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.eot");
+    src: url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.eot?#iefix")
+        format("embedded-opentype"),
+      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.woff2")
+        format("woff2"),
+      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.woff")
+        format("woff"),
+      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.ttf")
+        format("truetype"),
+      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.svg#Rowdies")
+        format("svg");
+  }
+
+  @layer utilities {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply no-scrollbar;
+  }
+
+  nav {
+    font-family: Rowdies;
+  }
+
+  button,
+  h1,
+  h3,
+  h4,
+  p {
+    font-family: Humanist521BT;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+}

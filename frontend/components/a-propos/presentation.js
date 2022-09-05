@@ -30,10 +30,13 @@ const Presentation = ({ presentation }) => {
             </div>
             <div className="w-3/5">{imgChris}</div>
           </div>
-          <div className="flex flex-wrap text-sm text-white">
+          <div className="flex flex-wrap text-xs text-white">
             {presentation.competencesChris.map((item) => {
               return (
-                <div className="rounded-lg bg-[#41EAD4] p-2 m-2" key={item.id}>
+                <div
+                  className="rounded-lg bg-[#41EAD4] py-2 px-4  m-2"
+                  key={item.id}
+                >
                   {item.competence}
                 </div>
               )
@@ -70,10 +73,13 @@ const Presentation = ({ presentation }) => {
               ></div>
             </div>
           </div>
-          <div className="flex flex-wrap text-sm text-white justify-end">
+          <div className="flex flex-wrap text-white justify-end text-xs">
             {presentation.competencesSab.map((item) => {
               return (
-                <div className="rounded-lg bg-[#41EAD4] p-2 m-2" key={item.id}>
+                <div
+                  className="rounded-lg bg-[#41EAD4] py-2 px-4 m-2"
+                  key={item.id}
+                >
                   {item.competence}
                 </div>
               )

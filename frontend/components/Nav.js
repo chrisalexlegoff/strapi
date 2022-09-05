@@ -14,15 +14,18 @@ export const Navbar = ({ logo, hamburger }) => {
 
   function getLogo(path) {
     let regex = new RegExp("(#)")
+    let regexQuery = new RegExp("(\\?)")
     if (regex.test(path)) {
       path = path.split("#")[0]
+    } else if (regexQuery.test(path)) {
+      path = path.split("?")[0]
     }
     if (path == "/") {
       let numberDesktop = 3
       let numberMobile = 5
       let numberHamburger = 2
       return { numberDesktop, numberMobile, numberHamburger }
-    } else if (path == "/about") {
+    } else if (path == "/about" || path == "/demander-un-devis") {
       let numberDesktop = 0
       let numberMobile = 4
       let numberHamburger = 3

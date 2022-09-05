@@ -4,10 +4,11 @@ import Footer from "./Footer"
 import Nav from "./Nav"
 
 const Layout = ({ children, titrePage, logo, hamburger, footer }) => {
+  const titrePageEncours = `DualDclic | ${titrePage}`
   return (
     <>
       <Head>
-        <title>Dualdclic | {titrePage}</title>
+        <title>{titrePageEncours}</title>
       </Head>
 
       <Nav logo={logo} hamburger={hamburger} />

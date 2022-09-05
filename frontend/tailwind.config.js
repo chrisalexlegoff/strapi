@@ -32,6 +32,9 @@ module.exports = {
         "blue-binome":
           "linear-gradient(0deg, rgba(248, 250, 255, 0.8), rgba(248, 250, 255, 0.8));",
       },
+      boxShadow: {
+        inner: "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
+      },
     },
     fontFamily: {
       Humanst521BT: "Humanst521BT",
