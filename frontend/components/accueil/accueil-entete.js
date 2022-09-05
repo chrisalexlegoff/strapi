@@ -38,10 +38,13 @@ const AccueilEntete = ({ header }) => {
             </a>
           </Link>
         </div>
-        <div className="row-start-3 lg:row-span-3 lg:w-2/3 lg:h-2/3 justify-items-center mx-auto w-1/3">
+        <div
+          id="image-deco-accueil"
+          className="row-start-3 lg:row-span-3 lg:w-2/3 lg:h-2/3 justify-items-center mx-auto w-1/3"
+        >
           {imageDeco}
         </div>
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 animate-pulse">
           <Link href="/#nous">
             <a className="flex flex-col items-center">
               <span className="mb-2 text-[#41EAD4]">

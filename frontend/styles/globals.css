@@ -1,3 +1,4 @@
+@import "../components/css/components.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,17 +34,19 @@
   }
 
   @layer utilities {
-    @variants responsive {
-      /* Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-
-      .no-scrollbar {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-      }
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
     }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
@@ -57,7 +60,12 @@
   button,
   h1,
   h3,
+  h4,
   p {
     font-family: Humanist521BT;
+  }
+
+  ul {
+    list-style-type: disc;
   }
 }

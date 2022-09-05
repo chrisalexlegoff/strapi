@@ -43,6 +43,42 @@
     },
     "titre4bis": {
       "type": "richtext"
+    },
+    "button2": {
+      "type": "string"
+    },
+    "flipCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utils.flip-card"
+    },
+    "carousel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "utils.carousel"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utils.services"
+    },
+    "titre5": {
+      "type": "richtext"
+    },
+    "competencesChris": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utils.competences"
+    },
+    "competencesSab": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utils.competences"
+    },
+    "board": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utils.board"
     }
   }
 }
