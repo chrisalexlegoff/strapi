@@ -17,12 +17,16 @@ module.exports = {
           "linear-gradient(to bottom, #41EAD4 70%, #FFFFFF 30%);",
         "split-right-blue-transparent":
           "linear-gradient(to right, rgba(46, 67, 125, 0.8) 50%, rgba(255,255,255,0) 50%);",
+        "split-right-pink-transparent":
+          "linear-gradient(to right, rgba(252, 80, 80, 0.95) 50%, rgba(255,255,255,0) 50%);",
         "split-right-green-transparent":
           "linear-gradient(to right, rgba(65, 234, 212, 0.8) 50%, rgba(255,255,255,0) 50%);",
         "blue-transparent":
           "linear-gradient(0deg, rgba(46, 67, 125, 0.8), rgba(46, 67, 125, 0.8));",
         "white-transparent":
           "linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));",
+        "pink-transparent":
+          "linear-gradient(0deg, rgba(252, 80, 80, 0.95), rgba(255, 255, 255, 0.4));",
         "white-transparent-board":
           "linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));",
         "white-transparent-methodologie":

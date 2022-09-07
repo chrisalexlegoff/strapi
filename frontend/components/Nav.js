@@ -20,7 +20,7 @@ export const Navbar = ({ logo, hamburger }) => {
     } else if (regexQuery.test(path)) {
       path = path.split("?")[0]
     }
-    if (path == "/") {
+    if (path == "/" || path == "/contact") {
       let numberDesktop = 3
       let numberMobile = 5
       let numberHamburger = 2
@@ -36,9 +36,9 @@ export const Navbar = ({ logo, hamburger }) => {
       let numberHamburger = 1
       return { numberDesktop, numberMobile, numberHamburger }
     } else {
-      let numberDesktop = 1
-      let numberMobile = 0
-      let numberHamburger = 1
+      let numberDesktop = 3
+      let numberMobile = 5
+      let numberHamburger = 2
       return { numberDesktop, numberMobile, numberHamburger }
     }
   }
