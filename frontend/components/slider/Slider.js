@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import LazyImage from "./../../lib/lazy-images"
 
-const Slider = ({ items }) => {
+const Slider = ({ items, classname }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const slideRef = useRef()
   const removeAnimation = () => {
@@ -58,11 +58,11 @@ const Slider = ({ items }) => {
   }
 
   return (
-    <div className="max-w-screen-xl m-auto">
+    <div className={classname}>
       <div
         // @ts-ignore
         ref={slideRef}
-        className="w-full relative"
+        className="w-full"
       >
         {image}
 

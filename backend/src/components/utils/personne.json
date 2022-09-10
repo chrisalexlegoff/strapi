@@ -63,6 +63,15 @@
     },
     "errorMessageInputMailRegex": {
       "type": "string"
+    },
+    "inputMessage": {
+      "type": "text"
+    },
+    "errorMessageInputMessage": {
+      "type": "string"
+    },
+    "placeholderMessage": {
+      "type": "string"
     }
   }
 }
