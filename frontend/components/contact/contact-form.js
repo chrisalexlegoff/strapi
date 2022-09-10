@@ -2,7 +2,6 @@
 import React, { useState } from "react"
 import { gql, useMutation } from "@apollo/client"
 import client from "../../lib/apollo-client"
-import Link from "next/link"
 import LazyImage from "../../lib/lazy-images"
 import { useRouter } from "next/router"
 import Loader from "../loader/loader"

@@ -1,19 +1,19 @@
-import React from "react"
 import Layout from "../components/Layout"
 import client from "../lib/apollo-client"
 import { gql } from "@apollo/client"
-import EnteteContact from "./../components/contact/entete-contact"
-import ContactForm from "./../components/contact/contact-form"
-import Informations from "../components/contact/informations"
+import React from "react"
+import EnteteRealisations from "./../components/realisations/entete-realisations"
+import RealisationsTab from "../components/realisations/realisations"
+import Mission from "./../components/realisations/mission"
 
-export default function Contact({
+export default function Realisations({
   titrePage,
   logo,
   hamburger,
   footer,
   header,
-  contact,
-  informations,
+  realisations,
+  mission,
 }) {
   return (
     <Layout
@@ -22,9 +22,9 @@ export default function Contact({
       footer={footer}
       titrePage={titrePage}
     >
-      <EnteteContact header={header} />
-      <ContactForm contact={contact} />
-      <Informations informations={informations} />
+      <EnteteRealisations header={header} />
+      <RealisationsTab realisations={realisations} />
+      <Mission mission={mission} />
     </Layout>
   )
 }
@@ -32,63 +32,22 @@ export default function Contact({
 export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
-      query Contact {
-        contact {
+      query Realisations {
+        realisation {
           data {
             attributes {
-              informations {
+              realisations {
+                id
                 titre
-                iconAdresse {
-                  data {
-                    attributes {
-                      width
-                      height
-                      url
-                    }
-                  }
-                }
-                iconTelephone {
-                  data {
-                    attributes {
-                      width
-                      height
-                      url
-                    }
-                  }
-                }
-                iconMail {
-                  data {
-                    attributes {
-                      width
-                      height
-                      url
-                    }
-                  }
-                }
-                adresse
-                telephone
-                mail
-              }
-              contact {
-                titre
+                annee
+                paragraphe
                 button
-                personne {
-                  inputNom
-                  inputMail
-                  inputMessage
-                  errorMessageInputNom
-                  errorMessageInputMail
-                  errorMessageInputMailRegex
-                  errorMessageInputMessage
-                  placeholderNom
-                  placeholderMail
-                  placeholderMessage
+                outils {
+                  id
+                  competence
                 }
-                checkTerms {
-                  text
-                  checked
-                  errorMessage
-                  icons {
+                carousel {
+                  item {
                     data {
                       attributes {
                         width
@@ -98,7 +57,10 @@ export async function getStaticProps() {
                     }
                   }
                 }
-                successMessage
+              }
+              titrePage
+              header {
+                titrePage
                 imageDeco {
                   data {
                     attributes {
@@ -108,9 +70,6 @@ export async function getStaticProps() {
                     }
                   }
                 }
-              }
-              titrePage
-              header {
                 bg {
                   data {
                     attributes {
@@ -120,6 +79,7 @@ export async function getStaticProps() {
                     }
                   }
                 }
+                paragraphe
                 enSavoirPlus {
                   text
                   image {
@@ -132,19 +92,6 @@ export async function getStaticProps() {
                     }
                   }
                 }
-                imageDeco {
-                  data {
-                    attributes {
-                      width
-                      height
-                      url
-                    }
-                  }
-                }
-                titre
-                titrePage
-                paragraphe
-                button
               }
             }
           }
@@ -238,19 +185,83 @@ export async function getStaticProps() {
             }
           }
         }
+        home {
+          data {
+            attributes {
+              mission {
+                button
+                titre2
+                titre3
+                titre3bis
+                paragraphe
+                images {
+                  data {
+                    attributes {
+                      width
+                      height
+                      url
+                    }
+                  }
+                }
+                titre2bis
+                services {
+                  id
+                  icons {
+                    data {
+                      attributes {
+                        width
+                        height
+                        url
+                      }
+                    }
+                  }
+                  legend
+                  paragraphe
+                }
+              }
+              services {
+                titre2
+                titre3
+                paragraphe
+                images {
+                  data {
+                    attributes {
+                      width
+                      height
+                      url
+                    }
+                  }
+                }
+                button
+                services {
+                  id
+                  icons {
+                    data {
+                      attributes {
+                        width
+                        height
+                        url
+                      }
+                    }
+                  }
+                  legend
+                }
+              }
+            }
+          }
+        }
       }
     `,
   })
-
   return {
     props: {
-      header: data.contact.data.attributes.header,
-      titrePage: data.contact.data.attributes.titrePage,
-      contact: data.contact.data.attributes.contact,
-      informations: data.contact.data.attributes.informations,
+      header: data.realisation.data.attributes.header,
+      realisations: data.realisation.data.attributes.realisations,
+      titrePage: data.realisation.data.attributes.titrePage,
       logo: data.logo.data.attributes.logo,
       hamburger: data.hamburger.data.attributes.hamburger,
       footer: data.footer.data.attributes,
+      mission: data.home.data.attributes.mission,
     },
   }
 }

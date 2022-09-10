@@ -14,7 +14,7 @@ const Realisations = ({ realisations }) => {
           <div className="h-[2px] bg-[#FC5050] w-1/4 mx-auto mt-6"></div>
         </div>
         <div className="row-start-5 lg:row-span-5 mx-auto w-3/4">
-          <Slider items={realisations.carousel} />
+          <Slider items={realisations.carousel} classname="w-full" />
         </div>
         <div className="row-start-2 mx-auto w-3/4">
           <div

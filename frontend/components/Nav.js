@@ -72,6 +72,11 @@ export const Navbar = ({ logo, hamburger }) => {
     setOpen(!open)
   }
 
+  const activeClass =
+    "lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#4087FF] font-light items-center justify-center"
+  const classNormal =
+    "lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#3F3F3F] font-light items-center justify-center hover:text-[#4087FF]"
+
   return (
     <nav className="bg-[#FAFAFB]/95 p-3 fixed w-full z-10">
       <div className="max-w-7xl mx-auto flex items-center flex-wrap">
@@ -96,28 +101,62 @@ export const Navbar = ({ logo, hamburger }) => {
         >
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
             <Link href="/about">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#3F3F3F] font-light items-center justify-center hover:bg-[#FC5050] hover:text-white ">
-                A propos
+              <a
+                className={
+                  router.pathname == "/about" ? activeClass : classNormal
+                }
+              >
+                {router.pathname == "/about" ? "{ A propos }" : "A propos"}
               </a>
             </Link>
             <Link href="/nos-prestations">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#3F3F3F] font-light items-center justify-center hover:bg-[#FC5050] hover:text-[white]">
-                Nos prestations
+              <a
+                className={
+                  router.pathname == "/nos-prestations"
+                    ? activeClass
+                    : classNormal
+                }
+              >
+                {router.pathname == "/nos-prestations"
+                  ? "{ Nos prestations }"
+                  : "Nos prestations"}
               </a>
             </Link>
             <Link href="/nos-realisations">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#3F3F3F] font-light items-center justify-center hover:bg-[#FC5050] hover:text-white">
-                nos réalisations
+              <a
+                className={
+                  router.pathname == "/nos-realisations"
+                    ? activeClass
+                    : classNormal
+                }
+              >
+                {router.pathname == "/nos-realisations"
+                  ? "{ Nos réalisations }"
+                  : "Nos réalisations"}
               </a>
             </Link>
             <Link href="/contact">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#3F3F3F] font-light items-center justify-center hover:bg-[#FC5050] hover:text-white">
-                Nous contacter
+              <a
+                className={
+                  router.pathname == "/contact" ? activeClass : classNormal
+                }
+              >
+                {router.pathname == "/contact"
+                  ? "{ Nous contacter }"
+                  : "Nous contacter"}
               </a>
             </Link>
             <Link href="/demander-un-devis">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#FC5050] font-light items-center justify-center hover:bg-[#FC5050] hover:text-white">
-                Demander un devis
+              <a
+                className={
+                  router.pathname == "/demander-un-devis"
+                    ? activeClass
+                    : "lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#FC5050] font-light items-center justify-center hover:text-[#4087FF]"
+                }
+              >
+                {router.pathname == "/demander-un-devis"
+                  ? "{ Demander un devis }"
+                  : "Demander un devis"}
               </a>
             </Link>
           </div>
