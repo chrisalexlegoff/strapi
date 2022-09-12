@@ -4,12 +4,12 @@ import LazyImage from "./../../lib/lazy-images"
 
 const Methodologie = ({ methodologie, mission }) => {
   const imageDeco = LazyImage(
-    mission.images.data[0].attributes,
+    methodologie.images.data[1].attributes,
     "Image de décoration mission prestation",
     "lazy",
-    "250px",
     "",
-    "lg:ml-10"
+    "",
+    "lg:ml-10 w-3/4 mx-auto lg:w-auto lg:mx-0"
   )
   return (
     <>
@@ -24,28 +24,30 @@ const Methodologie = ({ methodologie, mission }) => {
         }}
         className="pt-20"
       >
-        <div className="grid max-w-7xl mx-auto text-center">
+        <div className="grid max-w-9xl mx-auto text-center">
           <div
-            className="text-white mx-auto row-start-1 uppercase text-2xl"
+            className="text-white mx-auto row-start-1 uppercase xl:text-[34px] lg:text-[30px]  text-[26px]"
             dangerouslySetInnerHTML={{ __html: methodologie.titre2 }}
           ></div>
-          <div className="row-start-2 mx-auto py-16">
+          <div className="h-[2px] bg-white mx-auto mt-6 w-1/12 row-start-2"></div>
+
+          <div className="row-start-3 mx-auto py-16">
             <div
-              className="text-white mx-auto text-2xl"
+              className="text-white mx-auto xl:text-[34px] lg:text-[30px]  text-[26px]"
               dangerouslySetInnerHTML={{ __html: methodologie.paragraphe }}
             ></div>
             <div
-              className="text-white mx-auto"
+              className="text-white mx-auto xl:text-[22px] lg:text-[18px]  text-[14px]"
               dangerouslySetInnerHTML={{ __html: methodologie.paragrapheBis }}
             ></div>
           </div>
-          <div className="row-start-3 w-full lg:w-3/4 mx-auto">
+          <div className="row-start-4 w-full lg:w-3/4 mx-auto">
             <Link href="/demander-un-devis">
               <a>
                 <button className="group  hover:bg-[#FC5050] h-16 w-3/4 lg:w-1/2 block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050] mx-auto">
                   <span
                     dangerouslySetInnerHTML={{ __html: methodologie.button }}
-                    className="font-bold text-[#FFFFFF] lg:text-sm group-hover:text-white"
+                    className="font-bold text-[#FFFFFF] xl:text-[20px] lg:text-[17px]  text-[15px] group-hover:text-white"
                   />
                 </button>
               </a>
@@ -57,7 +59,7 @@ const Methodologie = ({ methodologie, mission }) => {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl hidden lg:block">
+      <div className="mx-auto max-w-9xl hidden lg:block">
         <div className="h-20 grid grid-cols-2 divide-x-2 divide-[#41EAD4]">
           <div></div>
           <div></div>
@@ -70,20 +72,20 @@ const Methodologie = ({ methodologie, mission }) => {
                   item.icons.data[0].attributes,
                   `"icon-${index}`,
                   "lazy",
-                  "30px",
+                  "40px",
                   undefined,
                   "-translate-x-1/2 h-[30px]"
                 )}
 
                 <div
-                  className="uppercase text-[#41EAD4]"
+                  className="uppercase font-bold text-[#41EAD4] xl:text-[17px] lg:text-[15px]  text-[13px]"
                   dangerouslySetInnerHTML={{ __html: item.titre }}
                 ></div>
               </div>
-              <div className="flex divide-x-2 divide-[#41EAD4] col-span-2 h-[350px]">
+              <div className="flex divide-x-2 divide-[#41EAD4] col-span-2 h-[450px]">
                 <div className="w-1/2">
                   <div
-                    className="h-[250px] w-[250px] rounded-xl ml-auto mr-10 mt-6"
+                    className="h-[300px] w-[300px] rounded-xl ml-auto mr-10 mt-6"
                     style={{
                       backgroundImage: `url(${
                         process.env.NEXT_PUBLIC_API_URL +
@@ -96,7 +98,7 @@ const Methodologie = ({ methodologie, mission }) => {
                   ></div>
                 </div>
                 <div
-                  className="w-1/2 pl-10 pt-10 pr-20"
+                  className="w-1/2 pl-10 pt-10 pr-48 xl:text-[21px] lg:text-[18px]  text-[15px]"
                   dangerouslySetInnerHTML={{ __html: item.paragraphe }}
                 ></div>
               </div>
@@ -105,26 +107,26 @@ const Methodologie = ({ methodologie, mission }) => {
             <div key={item.id} className="mx-auto grid grid-cols-2">
               <div className="flex items-center justify-end">
                 <div
-                  className="uppercase text-[#41EAD4]"
+                  className="uppercase font-bold text-[#41EAD4] xl:text-[17px] lg:text-[15px]  text-[13px]"
                   dangerouslySetInnerHTML={{ __html: item.titre }}
                 ></div>
                 {LazyImage(
                   item.icons.data[0].attributes,
                   `"icon-${index}`,
                   "lazy",
-                  "30px",
+                  "42px",
                   undefined,
                   "translate-x-1/2 h-[30px]"
                 )}
               </div>
-              <div className="flex divide-x-2 divide-[#41EAD4] col-span-2 h-[350px]">
+              <div className="flex divide-x-2 divide-[#41EAD4] col-span-2 h-[450px]">
                 <div
-                  className="w-1/2 pl-20 pt-10 pr-10 text-right"
+                  className="w-1/2 xl:text-[21px] lg:text-[18px]  text-[15px] pt-10 pr-10 text-right pl-48"
                   dangerouslySetInnerHTML={{ __html: item.paragraphe }}
                 ></div>
                 <div className="w-1/2">
                   <div
-                    className="h-[250px] w-[250px] rounded-xl mr-auto ml-10 mt-6"
+                    className="h-[300px] w-[300px] rounded-xl mr-auto ml-10 mt-6"
                     style={{
                       backgroundImage: `url(${
                         process.env.NEXT_PUBLIC_API_URL +
@@ -141,7 +143,7 @@ const Methodologie = ({ methodologie, mission }) => {
           )
         )}
       </div>
-      <div className="mx-auto max-w-7xl block lg:hidden pt-20">
+      <div className="mx-auto max-w-9xl block lg:hidden pt-20">
         {methodologie.board.map((item, index) => (
           <div key={item.id} className="mx-auto">
             <div className="flex items-center justify-center mx-auto w-2/3">
@@ -182,14 +184,14 @@ const Methodologie = ({ methodologie, mission }) => {
           </div>
         ))}
       </div>
-      <div className="mx-auto max-w-7xl grid lg:grid-cols-2 lg:divide-x-2 lg:divide-[#41EAD4] lg:h-[300px] justify-items-center lg:justify-items-stretch pt-10 lg:pt-0">
-        <div className="flex lg:items-end flex-col lg:h-full items-center lg:justify-evenly pb-10 w-3/4 lg:w-full">
+      <div className="mx-auto max-w-9xl grid lg:grid-cols-2 lg:divide-x-2 lg:divide-[#41EAD4] justify-items-center lg:justify-items-stretch pt-10 lg:pt-0">
+        <div className="flex lg:items-end flex-col lg:h-full items-center lg:justify-center pb-10 w-3/4 lg:w-full">
           <div
-            className="uppercase text-center lg:text-right w-1/2 lg:pr-10 text-xl"
+            className="uppercase text-center lg:text-right lg:w-2/3 w-3/4 lg:pr-10 xl:text-[34px] lg:text-[30px]  text-[26px]"
             dangerouslySetInnerHTML={{ __html: mission.titre2bis }}
           ></div>
           <div
-            className="text-center lg:text-right w-3/4 lg:pr-10 mt-10 lg:mt-0"
+            className="xl:text-[21px] lg:text-[18px]  text-[15px] text-center lg:text-right w-3/4 lg:pr-10 my-10"
             dangerouslySetInnerHTML={{ __html: mission.paragraphe }}
           ></div>
           <div className="lg:w-2/3 mt-10 lg:mt-0 w-full">

@@ -13,10 +13,12 @@ export default function Realisations({
   footer,
   header,
   realisations,
+  scrollTop,
   mission,
 }) {
   return (
     <Layout
+      scrollTop={scrollTop}
       logo={logo}
       hamburger={hamburger}
       footer={footer}
@@ -33,6 +35,21 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query Realisations {
+        scrollTop {
+          data {
+            attributes {
+              bg {
+                data {
+                  attributes {
+                    width
+                    height
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
         realisation {
           data {
             attributes {
@@ -261,6 +278,7 @@ export async function getStaticProps() {
       logo: data.logo.data.attributes.logo,
       hamburger: data.hamburger.data.attributes.hamburger,
       footer: data.footer.data.attributes,
+      scrollTop: data.scrollTop.data.attributes,
       mission: data.home.data.attributes.mission,
     },
   }

@@ -24,9 +24,11 @@ export default function Home({
   logo,
   hamburger,
   footer,
+  scrollTop,
 }) {
   return (
     <Layout
+      scrollTop={scrollTop}
       logo={logo}
       hamburger={hamburger}
       footer={footer}
@@ -48,6 +50,21 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query Home {
+        scrollTop {
+          data {
+            attributes {
+              bg {
+                data {
+                  attributes {
+                    width
+                    height
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
         home {
           data {
             id
@@ -184,6 +201,7 @@ export async function getStaticProps() {
                 paragraphe
               }
               nous {
+                titre2
                 titre3
                 paragraphe
                 images {
@@ -200,6 +218,17 @@ export async function getStaticProps() {
                 titre4
               }
               header {
+                titre
+                titre2
+                bg {
+                  data {
+                    attributes {
+                      width
+                      height
+                      url
+                    }
+                  }
+                }
                 paragraphe
                 id
                 titrePage
@@ -334,6 +363,7 @@ export async function getStaticProps() {
       mission: data.home.data.attributes.mission,
       logo: data.logo.data.attributes.logo,
       hamburger: data.hamburger.data.attributes.hamburger,
+      scrollTop: data.scrollTop.data.attributes,
       footer: data.footer.data.attributes,
     },
   }

@@ -1,14 +1,15 @@
 .flip-card-outer {
-  width: 300px;
+  width: 30%;
   height: 300px;
   margin: 25px 0;
+  min-width: 300px;
 }
 
 .flip-card-inner {
   transform-style: preserve-3d;
   transition: 0.5s linear 0.1s;
   position: relative;
-  width: inherit;
+  width: 100%;
   height: inherit;
 }
 

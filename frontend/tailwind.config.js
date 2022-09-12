@@ -11,6 +11,8 @@ module.exports = {
           "linear-gradient(to right, #FC5050 50%, #FFFFFF 50%);",
         "split-bottom-orange-white":
           "linear-gradient(to bottom, #FC5050 50%, #FFFFFF 50%);",
+        "split-bottom-blue-white":
+          "linear-gradient(to bottom, #2E437D 50%, #FFFFFF 50%);",
         "split-right-green-white":
           "linear-gradient(to right, #41EAD4 50%, #FFFFFF 50%);",
         "split-bottom-green-white":
@@ -23,6 +25,10 @@ module.exports = {
           "linear-gradient(to right, rgba(65, 234, 212, 0.8) 50%, rgba(255,255,255,0) 50%);",
         "blue-transparent":
           "linear-gradient(0deg, rgba(46, 67, 125, 0.8), rgba(46, 67, 125, 0.8));",
+        "blue-2-transparent":
+          "linear-gradient(0deg, rgba(46, 67, 125, 1), rgba(46, 67, 125, 0.8));",
+        "orange-transparent":
+          "linear-gradient(0deg, rgba(252, 80, 80, 0.8), rgba(252, 80, 80, 0.8));",
         "white-transparent":
           "linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));",
         "pink-transparent":

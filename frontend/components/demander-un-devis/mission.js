@@ -10,15 +10,11 @@ const Mission = ({ mission }) => {
           <div className="row-start-1 lg:col-span-2 mx-auto lg:w-3/4 w-full">
             <div
               className="uppercase leading-9 xl:text-[34px] lg:text-[30px]  text-[26px] text-white"
-              dangerouslySetInnerHTML={{ __html: mission.paragrapheBis }}
+              dangerouslySetInnerHTML={{ __html: mission.titre4 }}
             ></div>
+            <div className="h-[2px] bg-[#41EAD4] w-1/6 mx-auto mt-6"></div>
           </div>
-          <div className="row-start-2 lg:col-span-2 mx-auto w-3/4 mb-8">
-            <div
-              className="leading-9 xl:text-[34px] lg:text-[30px]  text-[26px] mt-8 text-white"
-              dangerouslySetInnerHTML={{ __html: mission.titre3 }}
-            ></div>
-          </div>
+
           <div className="row-start-3 lg:col-span-2 flex flex-wrap justify-center items-center mx-auto my-8 w-full">
             {mission.services.map((miss, index) => (
               <div
@@ -41,26 +37,6 @@ const Mission = ({ mission }) => {
                 ></div>
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-      <div className="bg-[#FC5050] ">
-        <div className="max-w-9xl grid items-center mx-auto py-10">
-          <div
-            className="row-start-1 mx-auto lg:ml-auto text-center text-white tracking-wider xl:text-[34px] lg:text-[30px]  text-[26px] font-semibold"
-            dangerouslySetInnerHTML={{ __html: mission.titre3bis }}
-          ></div>
-          <div className="row-start-2 lg:row-start-1 lg:col-start-2 w-full mt-10 lg:mt-0">
-            <Link href="/demander-un-devis">
-              <a>
-                <button className="group bg-[#FC5050] hover:bg-white h-16 w-3/4 lg:w-1/2 block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050] mx-auto lg:mx-0">
-                  <span
-                    dangerouslySetInnerHTML={{ __html: mission.button }}
-                    className="xl:text-[20px] lg:text-[17px]  text-[15px] font-bold text-[#FFFFFF] lg:text-sm group-hover:text-[#FC5050]"
-                  />
-                </button>
-              </a>
-            </Link>
           </div>
         </div>
       </div>

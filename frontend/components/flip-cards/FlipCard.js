@@ -9,7 +9,7 @@ const FlipCard = ({ card }) => {
       <div className="flip-card-inner">
         <div className="card front">
           <div className="card-body">
-            <div className="group flex flex-col items-center justify-center card-body  bg-white rounded-lg min-h-[300px] hover:bg-[#41EAD4] cursor-pointer hover:text-white text-[#FC5050]">
+            <div className="group flex flex-col items-center justify-center card-body  bg-white rounded-lg lg:min-w-[300px] min-h-[300px] hover:bg-[#41EAD4] cursor-pointer hover:text-white text-[#FC5050]">
               <div
                 className="card-body uppercase leading-2 text-xl"
                 dangerouslySetInnerHTML={{ __html: card.front }}
@@ -23,7 +23,7 @@ const FlipCard = ({ card }) => {
         <div className="card back">
           <div className="card-body">
             <div
-              className="flex items-center justify-center leading-2 text-lg bg-white text-[#2E437D] rounded-lg min-h-[300px] p-10"
+              className="flex items-center justify-center leading-2 text-lg bg-white text-[#2E437D] rounded-lg min-h-[300px] lg:min-w-[300px] p-10"
               dangerouslySetInnerHTML={{ __html: card.back }}
             ></div>
           </div>

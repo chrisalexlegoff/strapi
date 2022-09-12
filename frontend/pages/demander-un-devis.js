@@ -5,6 +5,7 @@ import { gql } from "@apollo/client"
 import EnteteDevis from "./../components/demander-un-devis/entete-devis"
 import Preambule from "../components/demander-un-devis/preambule"
 import Questionnaire from "./../components/demander-un-devis/questionnaire"
+import Mission from "../components/demander-un-devis/mission"
 
 const demanderUnDevis = ({
   logo,
@@ -14,9 +15,12 @@ const demanderUnDevis = ({
   header,
   preambule,
   devis,
+  mission,
+  scrollTop,
 }) => {
   return (
     <Layout
+      scrollTop={scrollTop}
       logo={logo}
       hamburger={hamburger}
       footer={footer}
@@ -25,6 +29,7 @@ const demanderUnDevis = ({
       <EnteteDevis header={header} />
       <Preambule preambule={preambule} />
       <Questionnaire devis={devis} />
+      <Mission mission={mission} />
     </Layout>
   )
 }
@@ -35,6 +40,21 @@ export async function getServerSideProps() {
   const { data } = await client.query({
     query: gql`
       query Devis {
+        scrollTop {
+          data {
+            attributes {
+              bg {
+                data {
+                  attributes {
+                    width
+                    height
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
         devi {
           data {
             attributes {
@@ -592,6 +612,40 @@ export async function getServerSideProps() {
             }
           }
         }
+        home {
+          data {
+            attributes {
+              mission {
+                button
+                titre4
+                paragraphe
+                images {
+                  data {
+                    attributes {
+                      width
+                      height
+                      url
+                    }
+                  }
+                }
+                services {
+                  id
+                  icons {
+                    data {
+                      attributes {
+                        width
+                        height
+                        url
+                      }
+                    }
+                  }
+                  legend
+                  paragraphe
+                }
+              }
+            }
+          }
+        }
         logo {
           data {
             id
@@ -694,6 +748,8 @@ export async function getServerSideProps() {
       header: data.devi.data.attributes.header,
       preambule: data.devi.data.attributes.preambule,
       devis: data.devi.data.attributes.devis,
+      scrollTop: data.scrollTop.data.attributes,
+      mission: data.home.data.attributes.mission,
     },
   }
 }

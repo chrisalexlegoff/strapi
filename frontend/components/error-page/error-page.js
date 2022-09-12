@@ -13,7 +13,7 @@ const ErrorPage = ({ errorPage }) => {
         backgroundSize: "cover ",
       }}
     >
-      <div className="max-w-7xl mx-auto h-screen grid gap-4 items-center text-center pt-20">
+      <div className="max-w-9xl mx-auto h-screen grid gap-4 items-center text-center pt-20">
         <div className="row-start-1">
           <div
             className="uppercase text-4xl w-[250px] mx-auto"
