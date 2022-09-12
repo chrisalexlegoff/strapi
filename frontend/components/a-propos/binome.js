@@ -1,38 +1,50 @@
+import Link from "next/link"
 import React from "react"
 import LazyImage from "./../../lib/lazy-images"
 
 const Binome = ({ binome }) => {
-  const imageDeco = LazyImage(
-    binome.images.data[1].attributes,
-    "Image de décoration section binome",
-    "lazy",
-    undefined,
-    ""
-  )
   const imageCarre = LazyImage(
-    binome.images.data[0].attributes,
+    binome.images.data[1].attributes,
     "Image carre section binome",
     "lazy",
     undefined,
     "",
     "flex lg:justify-end justify-center"
   )
+  const imageFleche = LazyImage(
+    binome.images.data[0].attributes,
+    "Image fleche section binome",
+    "lazy",
+    undefined,
+    "",
+    "lg:mr-6 md:mb-6 lg:mb-0 mx-auto rotate-90 md:rotate-0 flex h-[250px] mb-0 md:block md:h-auto"
+  )
   return (
-    <div id="binome" className="max-w-7xl pb-24 pt-40 mx-auto">
-      <div className="mx-auto hidden lg:grid grid-cols-2 gap-4 items-center justify-start  text-left">
-        <div className="translate-x-10">{imageDeco}</div>
+    <div id="binome" className="max-w-9xl pb-24 pt-40 mx-auto">
+      <div className="mx-auto hidden lg:grid grid-cols-2 gap-4 items-center justify-start text-left">
+        <div
+          style={{
+            backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(${
+              process.env.NEXT_PUBLIC_API_URL +
+              binome.images.data[2].attributes.url
+            })`,
+            backgroundPosition: "bottom",
+            backgroundSize: "cover ",
+          }}
+          className="h-full rounded-t-lg w-4/5 ml-auto mr-10"
+        ></div>
         <div className="">
-          <div className="flex flex-col h-full justify-between rounded-2xl bg-blue-binome px-20 py-16 -translate-x-10 -translate-y-10">
+          <div className="flex flex-col h-full justify-between rounded-2xl bg-blue-binome px-32 py-16 -translate-x-32 -translate-y-10">
             <div
-              className="text-[#2E437D] font-bold text-lg"
+              className="uppercase text-[#2E437D] font-bold xl:text-[34px] lg:text-[30px]  text-[26px]"
               dangerouslySetInnerHTML={{ __html: binome.titre3 }}
             ></div>
             <div
-              className="text-[#3F3F3F] uppercase text-sm font-semibold lg:my-12"
+              className="text-[#3F3F3F] xl:text-[34px] lg:text-[30px]  text-[26px]  font-semibold lg:my-12"
               dangerouslySetInnerHTML={{ __html: binome.titre4 }}
             ></div>
             <div
-              className="text-[#3F3F3F]"
+              className="text-[#3F3F3F] xl:text-[24px] lg:text-[22px]  text-[18px]"
               dangerouslySetInnerHTML={{ __html: binome.paragraphe }}
             ></div>{" "}
           </div>
@@ -43,34 +55,49 @@ const Binome = ({ binome }) => {
         style={{
           backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(${
             process.env.NEXT_PUBLIC_API_URL +
-            binome.images.data[1].attributes.url
+            binome.images.data[2].attributes.url
           })`,
           backgroundPosition: "bottom",
           backgroundSize: "cover ",
         }}
-        className="h-[500px] rounded-2xl mx-auto block lg:hidden text-center w-5/6 mb-16"
+        className="h-auto lg:h-[500px] rounded-t-lg mx-auto block lg:hidden text-center w-5/6 mb-16"
       >
         {" "}
-        <div className="flex flex-col h-full justify-evenly rounded-2xl bg-bg-blue-binome px-12 py-8 mx-auto">
+        <div className="flex flex-col h-full justify-evenly rounded-t-lg bg-bg-blue-binome px-12 py-8 mx-auto">
           <div
-            className="text-[#2E437D] font-bold text-lg"
+            className="text-[#2E437D] font-bold xl:text-[34px] lg:text-[30px]  text-[26px]"
             dangerouslySetInnerHTML={{ __html: binome.titre3 }}
           ></div>
           <div
-            className="text-[#3F3F3F] uppercase text-sm font-semibold lg:my-12"
+            className="text-[#3F3F3F] uppercase xl:text-[34px] lg:text-[30px]  text-[26px] font-semibold lg:my-12"
             dangerouslySetInnerHTML={{ __html: binome.titre4 }}
           ></div>
           <div
-            className="text-[#3F3F3F]"
+            className="text-[#3F3F3F] xl:text-[24px] lg:text-[22px]  text-[18px]"
             dangerouslySetInnerHTML={{ __html: binome.paragraphe }}
           ></div>{" "}
         </div>
       </div>
       <div className="block lg:hidden my-12">{imageCarre}</div>
-      <div
-        className="lg:col-span-2 text-center text-xl lg:pt-10 w-5/6 lg:w-full mx-auto"
-        dangerouslySetInnerHTML={{ __html: binome.paragrapheBis }}
-      ></div>{" "}
+      <div className="flex flex-wrap items-center lg:w-full w-3/4 mx-auto mt-20">
+        <div
+          className="text-center xl:text-[34px] lg:text-[30px] text-[26px] mx-auto lg:mr-6 lg:w-1/3 lg:mb-0 mb-10"
+          dangerouslySetInnerHTML={{ __html: binome.paragrapheBis }}
+        ></div>
+        {imageFleche}
+        <div className="mx-auto lg:w-1/4 md:w-1/3 w-full mt-6 md:mt-0">
+          <Link href="/demander-un-devis">
+            <a>
+              <button className="group bg-transparent hover:bg-[#FC5050] w-full h-16 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]">
+                <span
+                  dangerouslySetInnerHTML={{ __html: binome.button }}
+                  className="font-bold xl:text-[20px] lg:text-[17px]  text-[15px] text-[#FC5050] group-hover:text-white"
+                />
+              </button>
+            </a>
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }

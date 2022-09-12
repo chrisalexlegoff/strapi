@@ -10,9 +10,11 @@ export default function Error404({
   hamburger,
   footer,
   errorPage,
+  scrollTop,
 }) {
   return (
     <Layout
+      scrollTop={scrollTop}
       logo={logo}
       hamburger={hamburger}
       footer={footer}
@@ -27,6 +29,21 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query ErrorPage {
+        scrollTop {
+          data {
+            attributes {
+              bg {
+                data {
+                  attributes {
+                    width
+                    height
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
         errorPage {
           data {
             attributes {
@@ -143,6 +160,7 @@ export async function getStaticProps() {
     props: {
       titrePage: data.errorPage.data.attributes.titrePage,
       errorPage: data.errorPage.data.attributes,
+      scrollTop: data.scrollTop.data.attributes,
       logo: data.logo.data.attributes.logo,
       hamburger: data.hamburger.data.attributes.hamburger,
       footer: data.footer.data.attributes,

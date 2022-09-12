@@ -13,7 +13,7 @@ const Mission = ({ mission }) => {
   )
   return (
     <div>
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 items-center text-center py-20">
+      <div className="max-w-9xl mx-auto grid lg:grid-cols-2 items-center text-center py-20">
         <div className="row-start-1 mx-auto uppercase w-3/4 lg:text-end mb-8 lg:mb-0">
           <div
             className="leading-9 text-lg w-1/2 lg:w-2/3 lg:ml-auto lg:mr-0 mx-auto"

@@ -46,6 +46,9 @@
       "type": "richtext",
       "default": "titre de la page",
       "required": true
+    },
+    "titre2": {
+      "type": "richtext"
     }
   }
 }

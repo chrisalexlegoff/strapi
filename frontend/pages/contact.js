@@ -14,9 +14,11 @@ export default function Contact({
   header,
   contact,
   informations,
+  scrollTop,
 }) {
   return (
     <Layout
+      scrollTop={scrollTop}
       logo={logo}
       hamburger={hamburger}
       footer={footer}
@@ -33,6 +35,21 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query Contact {
+        scrollTop {
+          data {
+            attributes {
+              bg {
+                data {
+                  attributes {
+                    width
+                    height
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
         contact {
           data {
             attributes {
@@ -251,6 +268,7 @@ export async function getStaticProps() {
       logo: data.logo.data.attributes.logo,
       hamburger: data.hamburger.data.attributes.hamburger,
       footer: data.footer.data.attributes,
+      scrollTop: data.scrollTop.data.attributes,
     },
   }
 }

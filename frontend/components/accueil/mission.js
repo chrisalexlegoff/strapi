@@ -13,16 +13,16 @@ const Mission = ({ mission }) => {
   )
   return (
     <div>
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 items-center text-center py-20">
+      <div className="max-w-9xl mx-auto grid lg:grid-cols-2 items-center text-center py-20">
         <div className="row-start-1 lg:col-span-2 mx-auto lg:w-3/4 w-full">
           <div
-            className="uppercase leading-9 text-2xl"
+            className="uppercase leading-9 xl:text-[34px] lg:text-[30px]  text-[26px]"
             dangerouslySetInnerHTML={{ __html: mission.titre2 }}
           ></div>
         </div>
         <div className="row-start-2 lg:col-span-2 mx-auto w-3/4 mb-8">
           <div
-            className="leading-9 text-xl mt-8"
+            className="leading-9 xl:text-[34px] lg:text-[30px] text-[26px] mt-8"
             dangerouslySetInnerHTML={{ __html: mission.titre3 }}
           ></div>
         </div>
@@ -30,51 +30,51 @@ const Mission = ({ mission }) => {
           {mission.services.map((miss, index) => (
             <div
               key={miss.id}
-              className="w-[280px] flex flex-col justify-center items-center rounded-xl bg-[#FAFAFB] pt-16 m-4"
+              className="w-[360px] flex flex-col justify-center items-center rounded-xl bg-[#FAFAFB] pt-16 m-4"
             >
               {LazyImage(
                 miss.icons.data.attributes,
                 `"icon-${index}`,
                 "lazy",
-                "80px"
+                "100px"
               )}
               <div
-                className="m-6 text-[#505050] uppercase min-h-[40px] w-3/5 font-bold"
+                className="m-6 text-[#505050] text-[1.4rem] uppercase min-h-[40px] w-3/5 font-bold"
                 dangerouslySetInnerHTML={{ __html: miss.legend }}
               ></div>
               <div
-                className=" text-[#505050] min-h-[200px] w-3/5 text-sm"
+                className=" text-[#505050] text-[1.2rem] min-h-[200px] w-3/4"
                 dangerouslySetInnerHTML={{ __html: miss.paragraphe }}
               ></div>
             </div>
           ))}
         </div>
-        <div className="row-start-4 mx-auto uppercase w-3/4 lg:text-end mb-8 lg:mb-0">
+        <div className="row-start-4 mx-auto lg:ml-auto uppercase w-3/4 lg:text-end mb-8 lg:mb-0 lg:mr-6">
           <div
-            className="leading-9 text-lg w-1/2 lg:w-2/3 lg:ml-auto lg:mr-0 mx-auto"
+            className="leading-9 xl:text-[34px] lg:text-[30px] text-[26px] w-3/4 lg:ml-auto lg:mr-0 mx-auto"
             dangerouslySetInnerHTML={{ __html: mission.titre2bis }}
           ></div>
         </div>
-        <div className="row-start-5 mx-auto w-3/4 lg:text-end">
+        <div className="row-start-5 mx-auto lg:ml-auto w-3/4 lg:w-2/3 lg:mr-6 lg:text-end">
           <div
-            className="leading-9 text-lg"
+            className="leading-9 xl:text-[24px] lg:text-[20px]  text-[16px]"
             dangerouslySetInnerHTML={{ __html: mission.paragraphe }}
           ></div>
         </div>
 
-        <div className="mx-auto w-3/4 row-start-7 lg:row-start-6">
+        <div className="mx-auto lg:ml-auto lg:mr-6 w-3/4 row-start-7 lg:row-start-6 mt-10">
           <Link href="/a-propos">
             <a>
               <button className="group bg-[#FC5050] w-full hover:bg-white h-16 mx-auto lg:w-1/2 lg:ml-auto lg:mr-0 block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050]">
                 <span
                   dangerouslySetInnerHTML={{ __html: mission.button }}
-                  className="font-bold text-[#FFFFFF] lg:text-sm group-hover:text-[#FC5050]"
+                  className="font-bold text-[#FFFFFF] group-hover:text-[#FC5050] xl:text-[20px] lg:text-[17px]  text-[15px]"
                 />
               </button>
             </a>
           </Link>
         </div>
-        <div className="lg:row-span-3 justify-items-center mx-auto row-start-6  my-8 lg:my-0">
+        <div className="lg:row-span-3 justify-items-center mx-auto lg:mr-auto lg:ml-6 row-start-6  my-8 lg:my-0">
           {imageDeco}
         </div>
       </div>

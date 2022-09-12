@@ -12,15 +12,15 @@ const Footer = ({ footer }) => {
   )
   return (
     <div className="bg-[#2E437D]">
-      <div className="max-w-7xl mx-auto flex flex-wrap text-white justify-center items-center lg:py-16">
-        <div className="xl:w-[400px] w-3/4 flex h-[250px] flex-col text-center justify-between lg:m-4 m-12">
+      <div className="max-w-9xl mx-auto grid xl:grid-col-3 lg:grid-col-2 auto-cols-fr auto-rows-fr justify-items-center text-white lg:py-16">
+        <div className="xl:col-start-1 xl:row-start-1 xl:col-span-1 lg:row-start-2 lg:col-span-2  w-3/4 flex h-[300px] flex-col text-center justify-between lg:m-10 xl:m-4 m-12">
           <div className="mx-auto w-1/2">{logo}</div>
           <div
-            className="mx-auto text-base"
+            className="mx-auto text-[1.1rem]"
             dangerouslySetInnerHTML={{ __html: footer.paragraphe }}
           ></div>
           <div
-            className="mx-auto uppercase text-base"
+            className="mx-auto text-[1.2rem] font-semibold"
             dangerouslySetInnerHTML={{ __html: footer.titre4 }}
           ></div>
           <div className="mx-auto w-full">
@@ -40,13 +40,13 @@ const Footer = ({ footer }) => {
             dangerouslySetInnerHTML={{ __html: footer.copyright }}
           ></div>
         </div>
-        <div className="xl:w-[250px] flex flex-col h-[250px] lg:m-4 m-12">
+        <div className="xl:col-start-2 flex flex-col h-[300px] lg:m-4 m-12">
           {" "}
           <div
-            className="uppercase font-bold text-center lg:text-left mb-4"
+            className="font-bold text-center text-[1.3rem] lg:text-left mb-4"
             dangerouslySetInnerHTML={{ __html: footer.titre4bis }}
           ></div>
-          <div className="group flex flex-col ml-2 text-xs lg:h-full h-[250px] justify-between text-center lg:text-left">
+          <div className="group flex flex-col ml-2 text-[1rem] lg:h-full h-[250px] justify-between text-center lg:text-left">
             {footer.nav.map((item) => (
               <Link key={item.id} href={item.lien}>
                 <a className="hover:text-[#41EAD4]">{item.slug}</a>
@@ -54,11 +54,11 @@ const Footer = ({ footer }) => {
             ))}
           </div>
         </div>
-        <div className="xl:w-[400px] flex flex-col h-[250px] justify-between lg:m-4 m-12">
+        <div className="xl:col-start-3 flex flex-col h-[300px] justify-between lg:m-4 m-12">
           {" "}
           <div>
             <div
-              className="uppercase font-bold text-center lg:text-left mb-4"
+              className="font-bold text-center text-[1.3rem] lg:text-left mb-4"
               dangerouslySetInnerHTML={{ __html: footer.titre4tierce }}
             ></div>
             <div className="flex justify-center lg:justify-start">
@@ -74,25 +74,25 @@ const Footer = ({ footer }) => {
                     item.icon.data.attributes,
                     `lien ${item.slug}`,
                     "lazy",
-                    "40px",
+                    "50px",
                     undefined,
-                    "lg:mr-4 lg:mx-0 mx-10 cursor-pointer block group-hover:hidden"
+                    "lg:mr-4 lg:mx-0 mx-2 cursor-pointer block group-hover:hidden"
                   )}
                   {LazyImage(
                     item.iconHover.data.attributes,
                     `lien ${item.slug}`,
                     "lazy",
-                    "40px",
+                    "50px",
                     undefined,
-                    "lg:mr-4 lg:mx-0 mx-10 cursor-pointer hidden group-hover:block"
+                    "lg:mr-4 lg:mx-0 mx-2 cursor-pointer hidden group-hover:block"
                   )}
                 </a>
               ))}
             </div>
           </div>
-          <div>
+          <div className="text-[1.1rem]">
             <div
-              className="uppercase font-bold text-center lg:text-left mb-4"
+              className="font-bold text-center text-[1.3rem] lg:text-left mb-4"
               dangerouslySetInnerHTML={{ __html: footer.titre4quarto }}
             ></div>
             <p className="text-center lg:text-left">

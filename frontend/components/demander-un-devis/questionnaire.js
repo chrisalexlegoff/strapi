@@ -367,25 +367,25 @@ const Questionnaire = ({ devis }) => {
     devis.besoinsUn.icon.data[1].attributes,
     "icon unchecked",
     "lazy",
-    "20px"
+    "30px"
   )
   const checkedIcon = LazyImage(
     devis.besoinsUn.icon.data[0].attributes,
     "icon checked",
     "lazy",
-    "20px"
+    "30px"
   )
   const checkedIconCircle = LazyImage(
     devis.personneEntreprise.icon.data[1].attributes,
     "icon checked cercle",
     "lazy",
-    "20px"
+    "30px"
   )
   const uncheckedIconCircle = LazyImage(
     devis.personneEntreprise.icon.data[0].attributes,
     "icon unchecked cercle",
     "lazy",
-    "20px"
+    "30px"
   )
   const [minValueRange, setMinValueRange] = useState(
     devis.budgetEntreprise.minValue
@@ -1174,991 +1174,1036 @@ const Questionnaire = ({ devis }) => {
     })
   }
   return (
-    <div className="max-w-7xl pb-24 pt-20 mx-auto">
+    <div className="pb-0 lg:pb-24 pt-0 lg:pt-20 mx-auto">
       <div
-        className="uppercase mb-12 text-2xl text-center"
+        className="uppercase mb-12 xl:text-[34px] lg:text-[30px]  text-[26px] text-center"
         dangerouslySetInnerHTML={{ __html: devis.titre }}
       ></div>
       <div className="mb-12 h-[2px] bg-[#41EAD4] mx-auto mt-6 w-1/12"></div>
       <div>
         {!message ? (
-          <form
-            onSubmit={handleSubmit}
-            noValidate
-            className="mx-auto w-4/5 lg:w-3/4"
-          >
+          <form onSubmit={handleSubmit} noValidate className="mx-auto">
             {!part ? (
               <div className="mx-auto grid gap-4 items-center">
                 {/* NOM ENTREPRISE */}
-                <div className="text-[#505050] text-sm font-medium pb-10">
-                  <div
-                    className="text-[#FC5050] text-2xl font-medium tracking-wider"
-                    dangerouslySetInnerHTML={{
-                      __html: devis.nomEntreprise.question,
-                    }}
-                  ></div>
-                  <div
-                    className=""
-                    dangerouslySetInnerHTML={{
-                      __html: devis.nomEntreprise.legend,
-                    }}
-                  ></div>
-                  <input
-                    onChange={(event) => {
-                      setErrorNomEntrepriseInput(false)
-                      setDevisEnCours({
-                        ...devisEnCours,
-                        nomEntreprise: {
-                          input: event.target.value,
-                          errorMessage: devis.nomEntreprise.errorMessage,
-                        },
-                      })
-                    }}
-                    type="text"
-                    id={devis.nomEntreprise.titre}
-                    name={devis.nomEntreprise.titre}
-                    placeholder={devis.nomEntreprise.placeholder}
-                    className=" mt-4 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:text-sm"
-                    value={devisEnCours.nomEntreprise.input}
-                    required
-                  />
-
-                  {errorNomEntrepriseInput && (
+                <div className="bg-[#FAFAFB]">
+                  <div className="max-w-5xl text-[#505050] font-medium py-16  w-3/4 mx-auto">
                     <div
-                      className="text-[#4087FF] mt-2 animate-pulse"
+                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-"
                       dangerouslySetInnerHTML={{
-                        __html: devisEnCours.nomEntreprise.errorMessage,
+                        __html: devis.nomEntreprise.question,
                       }}
                     ></div>
-                  )}
-                </div>
-                <div className="text-[#505050] text-sm font-medium pb-10">
-                  <div
-                    className="text-[#FC5050] text-2xl font-medium tracking-wider"
-                    dangerouslySetInnerHTML={{
-                      __html: devis.activiteEntreprise.question,
-                    }}
-                  ></div>
-                  <div
-                    className=""
-                    dangerouslySetInnerHTML={{
-                      __html: devis.activiteEntreprise.legend,
-                    }}
-                  ></div>
-                  <input
-                    onChange={(event) => {
-                      setErrorActiviteEntrepriseInput(false)
-                      setDevisEnCours({
-                        ...devisEnCours,
-                        activiteEntreprise: {
-                          input: event.target.value,
-                          errorMessage: devis.activiteEntreprise.errorMessage,
-                        },
-                      })
-                    }}
-                    type="text"
-                    id={devis.activiteEntreprise.titre}
-                    name={devis.activiteEntreprise.titre}
-                    placeholder={devis.activiteEntreprise.placeholder}
-                    className="mt-4 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:text-sm"
-                    value={devisEnCours.activiteEntreprise.input}
-                    required
-                  />
-                  {errorActiviteEntrepriseInput && (
                     <div
-                      className="text-[#4087FF] mt-2 animate-pulse"
+                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
                       dangerouslySetInnerHTML={{
-                        __html: devisEnCours.activiteEntreprise.errorMessage,
+                        __html: devis.nomEntreprise.legend,
                       }}
                     ></div>
-                  )}
-                </div>
-                <div className="text-[#505050] text-sm font-medium pb-10">
-                  <div
-                    className="text-[#FC5050] text-2xl font-medium tracking-wider"
-                    dangerouslySetInnerHTML={{
-                      __html: devis.besoinEntreprise.question,
-                    }}
-                  ></div>
-                  <div
-                    className=""
-                    dangerouslySetInnerHTML={{
-                      __html: devis.besoinEntreprise.legend,
-                    }}
-                  ></div>
-                  <div className="flex flex-wrap mt-4">
-                    <div className="w-1/2 min-w-[300px]">
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(1)}
-                        >
-                          {checked.besoinsUn ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsUn.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(2)}
-                        >
-                          {checked.besoinsDeux ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsDeux.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(3)}
-                        >
-                          {checked.besoinsTrois ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsTrois.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(4)}
-                        >
-                          {checked.besoinsQuatre ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsQuatre.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(5)}
-                        >
-                          {checked.besoinsCinq ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsCinq.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(6)}
-                        >
-                          {checked.besoinsSix ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsSix.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(7)}
-                        >
-                          {checked.besoinsSept ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsSept.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(8)}
-                        >
-                          {checked.besoinsHuit ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsHuit.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(9)}
-                        >
-                          {checked.besoinsNeuf ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsNeuf.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(10)}
-                        >
-                          {checked.besoinsDix ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsDix.text,
-                          }}
-                        />
-                        {devisEnCours.besoinsDix.checked && (
-                          <input
-                            onChange={(event) =>
-                              setDevisEnCours({
-                                ...devisEnCours,
-                                besoinsDix: {
-                                  checked: checked.besoinsDix,
-                                  input: event.target.value,
-                                },
-                              })
-                            }
-                            type="text"
-                            id={devis.besoinsDix.text}
-                            name={devis.besoinsDix.text}
-                            placeholder={devis.besoinsDix.placeholder}
-                            className="shadow appearance-none border-[2px] border-[#505050] rounded py-2 px-3 h-[20px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:text-xs flex-1 mr-4"
-                            value={devisEnCours.besoinsDix.input}
-                            required
-                          />
-                        )}
-                      </div>
-                    </div>
-                    <div className="w-1/2 min-w-[300px]">
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(11)}
-                        >
-                          {checked.besoinsOnze ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsOnze.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(12)}
-                        >
-                          {checked.besoinsDouze ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsDouze.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(13)}
-                        >
-                          {checked.besoinsTreize ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsTreize.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(14)}
-                        >
-                          {checked.besoinsQuatorze
-                            ? checkedIcon
-                            : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsQuatorze.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(15)}
-                        >
-                          {checked.besoinsQuinze ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsQuinze.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(16)}
-                        >
-                          {checked.besoinsSeize ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsSeize.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(17)}
-                        >
-                          {checked.besoinsDixSept ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsDixSept.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(18)}
-                        >
-                          {checked.besoinsDixHuit ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsDixHuit.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(19)}
-                        >
-                          {checked.besoinsDixNeuf ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsDixNeuf.text,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(20)}
-                        >
-                          {checked.besoinsVingt ? checkedIcon : uncheckedIcon}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.besoinsVingt.text,
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  {errorBesoinsEntrepriseInput && (
-                    <div
-                      className="text-[#4087FF] mt-2 animate-pulse"
-                      dangerouslySetInnerHTML={{
-                        __html: devisEnCours.besoinEntreprise.errorMessage,
+                    <input
+                      onChange={(event) => {
+                        setErrorNomEntrepriseInput(false)
+                        setDevisEnCours({
+                          ...devisEnCours,
+                          nomEntreprise: {
+                            input: event.target.value,
+                            errorMessage: devis.nomEntreprise.errorMessage,
+                          },
+                        })
                       }}
-                    ></div>
-                  )}
-                </div>
-                <div className="text-[#505050] text-sm font-medium pb-10">
-                  <div
-                    className="text-[#FC5050] text-2xl font-medium tracking-wider"
-                    dangerouslySetInnerHTML={{
-                      __html: devis.fonctionnalitesEntreprise.question,
-                    }}
-                  ></div>
-                  <div
-                    className=""
-                    dangerouslySetInnerHTML={{
-                      __html: devis.fonctionnalitesEntreprise.legend,
-                    }}
-                  ></div>
-                  <input
-                    onChange={(event) => {
-                      setErrorFonctionnalitesEntrepriseInput(false)
-                      setDevisEnCours({
-                        ...devisEnCours,
-                        fonctionnalitesEntreprise: {
-                          input: event.target.value,
-                          errorMessage:
-                            devis.fonctionnalitesEntreprise.errorMessage,
-                        },
-                      })
-                    }}
-                    type="text"
-                    id={devis.fonctionnalitesEntreprise.titre}
-                    name={devis.fonctionnalitesEntreprise.titre}
-                    placeholder={devis.fonctionnalitesEntreprise.placeholder}
-                    className="mt-4 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:text-sm"
-                    value={devisEnCours.fonctionnalitesEntreprise.input}
-                    required
-                  />
-                  {errorFonctionnalitesEntrepriseInput && (
-                    <div
-                      className="text-[#4087FF] mt-2 animate-pulse"
-                      dangerouslySetInnerHTML={{
-                        __html:
-                          devisEnCours.fonctionnalitesEntreprise.errorMessage,
-                      }}
-                    ></div>
-                  )}
-                </div>
-                <div className="text-[#505050] text-sm font-medium pb-10">
-                  <div
-                    className="text-[#FC5050] text-2xl font-medium tracking-wider"
-                    dangerouslySetInnerHTML={{
-                      __html: devis.pourquoiProjetEntreprise.question,
-                    }}
-                  ></div>
-                  <div
-                    className=""
-                    dangerouslySetInnerHTML={{
-                      __html: devis.pourquoiProjetEntreprise.legend,
-                    }}
-                  ></div>
-                  <input
-                    onChange={(event) => {
-                      setDevisEnCours({
-                        ...devisEnCours,
-                        pourquoiProjetEntreprise: {
-                          input: event.target.value,
-                          errorMessage:
-                            devis.pourquoiProjetEntreprise.errorMessage,
-                        },
-                      })
-                    }}
-                    type="text"
-                    id={devis.pourquoiProjetEntreprise.titre}
-                    name={devis.pourquoiProjetEntreprise.titre}
-                    placeholder={devis.pourquoiProjetEntreprise.placeholder}
-                    className="mt-4 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:text-sm"
-                    value={devisEnCours.pourquoiProjetEntreprise.input}
-                    required
-                  />
-                </div>
-                <div className="mx-auto w-full mt-10 flex flex-row">
-                  <div className="grow">
-                    <Link href="/">
-                      <a>
-                        <button
-                          type="button"
-                          className="group bg-transparent hover:bg-[#41EAD4] w-2/3 h-16 block rounded-lg border-2 border-[#41EAD4]"
-                        >
-                          <span
-                            dangerouslySetInnerHTML={{
-                              __html: devis.button1,
-                            }}
-                            className="font-bold text-[#41EAD4] group-hover:text-white"
-                          />
-                        </button>
-                      </a>
-                    </Link>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={(event) => firstPart(event)}
-                    className="group bg-transparent hover:bg-[#FC5050] w-1/2 h-16 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]"
-                  >
-                    <span
-                      dangerouslySetInnerHTML={{ __html: devis.button2 }}
-                      className="font-bold text-[#FC5050] group-hover:text-white"
+                      type="text"
+                      id={devis.nomEntreprise.titre}
+                      name={devis.nomEntreprise.titre}
+                      placeholder={devis.nomEntreprise.placeholder}
+                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                      value={devisEnCours.nomEntreprise.input}
+                      required
                     />
-                  </button>
+
+                    {errorNomEntrepriseInput && (
+                      <div
+                        className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                        dangerouslySetInnerHTML={{
+                          __html: devisEnCours.nomEntreprise.errorMessage,
+                        }}
+                      ></div>
+                    )}
+                  </div>
+                </div>
+                <div className="">
+                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
+                    <div
+                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.activiteEntreprise.question,
+                      }}
+                    ></div>
+                    <div
+                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.activiteEntreprise.legend,
+                      }}
+                    ></div>
+                    <input
+                      onChange={(event) => {
+                        setErrorActiviteEntrepriseInput(false)
+                        setDevisEnCours({
+                          ...devisEnCours,
+                          activiteEntreprise: {
+                            input: event.target.value,
+                            errorMessage: devis.activiteEntreprise.errorMessage,
+                          },
+                        })
+                      }}
+                      type="text"
+                      id={devis.activiteEntreprise.titre}
+                      name={devis.activiteEntreprise.titre}
+                      placeholder={devis.activiteEntreprise.placeholder}
+                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                      value={devisEnCours.activiteEntreprise.input}
+                      required
+                    />
+                    {errorActiviteEntrepriseInput && (
+                      <div
+                        className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                        dangerouslySetInnerHTML={{
+                          __html: devisEnCours.activiteEntreprise.errorMessage,
+                        }}
+                      ></div>
+                    )}
+                  </div>
+                </div>
+                <div className="bg-[#FAFAFB]">
+                  {" "}
+                  <div className="max-w-5xl text-[#505050] font-medium py-16  w-3/4 mx-auto">
+                    <div
+                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.besoinEntreprise.question,
+                      }}
+                    ></div>
+                    <div
+                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.besoinEntreprise.legend,
+                      }}
+                    ></div>
+                    <div className="flex flex-wrap mt-10">
+                      <div className="w-1/2 min-w-[300px]">
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(1)}
+                          >
+                            {checked.besoinsUn ? checkedIcon : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsUn.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(2)}
+                          >
+                            {checked.besoinsDeux ? checkedIcon : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsDeux.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(3)}
+                          >
+                            {checked.besoinsTrois ? checkedIcon : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsTrois.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(4)}
+                          >
+                            {checked.besoinsQuatre
+                              ? checkedIcon
+                              : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsQuatre.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(5)}
+                          >
+                            {checked.besoinsCinq ? checkedIcon : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsCinq.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(6)}
+                          >
+                            {checked.besoinsSix ? checkedIcon : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsSix.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(7)}
+                          >
+                            {checked.besoinsSept ? checkedIcon : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsSept.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(8)}
+                          >
+                            {checked.besoinsHuit ? checkedIcon : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsHuit.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(9)}
+                          >
+                            {checked.besoinsNeuf ? checkedIcon : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsNeuf.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex flex-wrap">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(10)}
+                          >
+                            {checked.besoinsDix ? checkedIcon : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsDix.text,
+                            }}
+                          />
+                          {devisEnCours.besoinsDix.checked && (
+                            <input
+                              onChange={(event) =>
+                                setDevisEnCours({
+                                  ...devisEnCours,
+                                  besoinsDix: {
+                                    checked: checked.besoinsDix,
+                                    input: event.target.value,
+                                  },
+                                })
+                              }
+                              type="text"
+                              id={devis.besoinsDix.text}
+                              name={devis.besoinsDix.text}
+                              placeholder={devis.besoinsDix.placeholder}
+                              className="shadow appearance-none border-[2px] border-[#505050] rounded py-2 px-3 h-[30px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:text-xs flex-1 mr-4 mb-2 lg:mb-0"
+                              value={devisEnCours.besoinsDix.input}
+                              required
+                            />
+                          )}
+                        </div>
+                      </div>
+                      <div className="w-1/2 min-w-[300px]">
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(11)}
+                          >
+                            {checked.besoinsOnze ? checkedIcon : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsOnze.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(12)}
+                          >
+                            {checked.besoinsDouze ? checkedIcon : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsDouze.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(13)}
+                          >
+                            {checked.besoinsTreize
+                              ? checkedIcon
+                              : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsTreize.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(14)}
+                          >
+                            {checked.besoinsQuatorze
+                              ? checkedIcon
+                              : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsQuatorze.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(15)}
+                          >
+                            {checked.besoinsQuinze
+                              ? checkedIcon
+                              : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsQuinze.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(16)}
+                          >
+                            {checked.besoinsSeize ? checkedIcon : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsSeize.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(17)}
+                          >
+                            {checked.besoinsDixSept
+                              ? checkedIcon
+                              : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsDixSept.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(18)}
+                          >
+                            {checked.besoinsDixHuit
+                              ? checkedIcon
+                              : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsDixHuit.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(19)}
+                          >
+                            {checked.besoinsDixNeuf
+                              ? checkedIcon
+                              : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsDixNeuf.text,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(20)}
+                          >
+                            {checked.besoinsVingt ? checkedIcon : uncheckedIcon}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.besoinsVingt.text,
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    {errorBesoinsEntrepriseInput && (
+                      <div
+                        className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                        dangerouslySetInnerHTML={{
+                          __html: devisEnCours.besoinEntreprise.errorMessage,
+                        }}
+                      ></div>
+                    )}
+                  </div>
+                </div>
+                <div className="">
+                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] text-sm font-medium pb-10">
+                    <div
+                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.fonctionnalitesEntreprise.question,
+                      }}
+                    ></div>
+                    <div
+                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.fonctionnalitesEntreprise.legend,
+                      }}
+                    ></div>
+                    <input
+                      onChange={(event) => {
+                        setErrorFonctionnalitesEntrepriseInput(false)
+                        setDevisEnCours({
+                          ...devisEnCours,
+                          fonctionnalitesEntreprise: {
+                            input: event.target.value,
+                            errorMessage:
+                              devis.fonctionnalitesEntreprise.errorMessage,
+                          },
+                        })
+                      }}
+                      type="text"
+                      id={devis.fonctionnalitesEntreprise.titre}
+                      name={devis.fonctionnalitesEntreprise.titre}
+                      placeholder={devis.fonctionnalitesEntreprise.placeholder}
+                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                      value={devisEnCours.fonctionnalitesEntreprise.input}
+                      required
+                    />
+                    {errorFonctionnalitesEntrepriseInput && (
+                      <div
+                        className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                        dangerouslySetInnerHTML={{
+                          __html:
+                            devisEnCours.fonctionnalitesEntreprise.errorMessage,
+                        }}
+                      ></div>
+                    )}
+                  </div>
+                </div>
+                <div className="bg-[#FAFAFB]">
+                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] text-sm font-medium pb-10">
+                    <div
+                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.pourquoiProjetEntreprise.question,
+                      }}
+                    ></div>
+                    <div
+                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.pourquoiProjetEntreprise.legend,
+                      }}
+                    ></div>
+                    <input
+                      onChange={(event) => {
+                        setDevisEnCours({
+                          ...devisEnCours,
+                          pourquoiProjetEntreprise: {
+                            input: event.target.value,
+                            errorMessage:
+                              devis.pourquoiProjetEntreprise.errorMessage,
+                          },
+                        })
+                      }}
+                      type="text"
+                      id={devis.pourquoiProjetEntreprise.titre}
+                      name={devis.pourquoiProjetEntreprise.titre}
+                      placeholder={devis.pourquoiProjetEntreprise.placeholder}
+                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                      value={devisEnCours.pourquoiProjetEntreprise.input}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="">
+                  {" "}
+                  <div className="py-16  w-3/4 max-w-5xl mx-auto flex flex-row">
+                    <div className="grow">
+                      <Link href="/">
+                        <a>
+                          <button
+                            type="button"
+                            className="group bg-transparent hover:bg-[#41EAD4] w-2/3 h-16 block rounded-lg border-2 border-[#41EAD4]"
+                          >
+                            <span
+                              dangerouslySetInnerHTML={{
+                                __html: devis.button1,
+                              }}
+                              className="font-bold text-[#41EAD4] group-hover:text-white xl:text-[20px] lg:text-[17px]  text-[15px]"
+                            />
+                          </button>
+                        </a>
+                      </Link>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={(event) => firstPart(event)}
+                      className="group bg-transparent hover:bg-[#FC5050] w-1/2 h-16 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]"
+                    >
+                      <span
+                        dangerouslySetInnerHTML={{ __html: devis.button2 }}
+                        className="font-bold text-[#FC5050] group-hover:text-white xl:text-[20px] lg:text-[17px]  text-[15px]"
+                      />
+                    </button>
+                  </div>
                 </div>
               </div>
             ) : (
               //DEBUT PARTIE 2
               <div className="mx-auto grid gap-4 items-center">
-                <div className="text-[#505050] text-sm font-medium pb-10">
-                  <div
-                    className="text-[#FC5050] text-2xl font-medium tracking-wider"
-                    dangerouslySetInnerHTML={{
-                      __html: devis.contraintesEntreprise.question,
-                    }}
-                  ></div>
-                  <div
-                    className=""
-                    dangerouslySetInnerHTML={{
-                      __html: devis.contraintesEntreprise.legend,
-                    }}
-                  ></div>
-                  <input
-                    onChange={(event) => {
-                      setDevisEnCours({
-                        ...devisEnCours,
-                        contraintesEntreprise: {
-                          input: event.target.value,
-                          errorMessage:
-                            devis.contraintesEntreprise.errorMessage,
-                        },
-                      })
-                    }}
-                    type="text"
-                    id={devis.contraintesEntreprise.titre}
-                    name={devis.contraintesEntreprise.titre}
-                    placeholder={devis.contraintesEntreprise.placeholder}
-                    className="mt-4 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:text-sm"
-                    value={devisEnCours.contraintesEntreprise.input}
-                    required
-                  />
-                </div>
-                <div className="text-[#505050] text-sm font-medium pb-10">
-                  <div
-                    className="text-[#FC5050] text-2xl font-medium tracking-wider mb-6"
-                    dangerouslySetInnerHTML={{
-                      __html: devis.budgetEntreprise.question,
-                    }}
-                  ></div>
-                  <div className="flex mb-4">
+                <div className="bg-[#FAFAFB]">
+                  {" "}
+                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
                     <div
-                      className="cursor-pointer"
-                      onClick={() => handleCheck(21)}
-                    >
-                      {checked.besoinTextUn ? checkedIcon : uncheckedIcon}
-                    </div>
-                    <div
-                      className="ml-6"
+                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
                       dangerouslySetInnerHTML={{
-                        __html: devis.besoinTextUn.text,
-                      }}
-                    />
-                  </div>
-                  <div className="flex">
-                    <div
-                      className="cursor-pointer"
-                      onClick={() => handleCheck(22)}
-                    >
-                      {checked.besoinTextDeux ? checkedIcon : uncheckedIcon}
-                    </div>
-                    <div
-                      className="ml-6"
-                      dangerouslySetInnerHTML={{
-                        __html: devis.besoinTextDeux.text,
-                      }}
-                    />
-                  </div>
-                  {checked.besoinTextUn && (
-                    <>
-                      <div
-                        className="text-[#FC5050] text-2xl font-medium tracking-wider pt-10"
-                        dangerouslySetInnerHTML={{
-                          __html: devis.budgetEntreprise.questionDeux,
-                        }}
-                      />
-                      <MultiRangeSlider
-                        minValueRange={minValueRange}
-                        maxValueRange={maxValueRange}
-                        min={devis.budgetEntreprise.minValue}
-                        max={devis.budgetEntreprise.maxValue}
-                        onChange={({ min, max }) => {
-                          handleChangeRangeValue(min, max)
-                        }}
-                      />
-                    </>
-                  )}
-                  {errorBudgetEntreprise && (
-                    <div
-                      className="text-[#4087FF] mt-2 animate-pulse"
-                      dangerouslySetInnerHTML={{
-                        __html: devisEnCours.budgetEntreprise.errorMessage,
+                        __html: devis.contraintesEntreprise.question,
                       }}
                     ></div>
-                  )}
-                </div>
-                <div className="text-[#505050] text-sm font-medium pb-10">
-                  <div
-                    className="text-[#FC5050] text-2xl font-medium tracking-wider"
-                    dangerouslySetInnerHTML={{
-                      __html: devis.commentaireEntreprise.question,
-                    }}
-                  ></div>
-
-                  <input
-                    onChange={(event) => {
-                      setDevisEnCours({
-                        ...devisEnCours,
-                        commentaireEntreprise: {
-                          input: event.target.value,
-                          errorMessage:
-                            devisEnCours.commentaireEntreprise.errorMessage,
-                        },
-                      })
-                    }}
-                    type="text"
-                    id={devis.commentaireEntreprise.titre}
-                    name={devis.commentaireEntreprise.titre}
-                    placeholder={devis.commentaireEntreprise.placeholder}
-                    className="mt-4 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:text-sm"
-                    value={devisEnCours.commentaireEntreprise.input}
-                    required
-                  />
-                </div>
-                <div className="text-[#505050] text-sm font-medium pb-10">
-                  <div
-                    className="text-[#FC5050] text-2xl font-medium tracking-wider"
-                    dangerouslySetInnerHTML={{
-                      __html: devis.uploadFilesEntreprise.question,
-                    }}
-                  ></div>
-                  <div
-                    className=""
-                    dangerouslySetInnerHTML={{
-                      __html: devis.uploadFilesEntreprise.legend,
-                    }}
-                  ></div>
-                  <div className="flex flex-wrap pt-10 justify-center lg:justify-start">
-                    <div className="flex flex-col">
-                      <FileUnUpload
-                        errorMessage={
-                          devis.uploadFilesEntreprise.messageErrorLenghtFile
-                        }
-                        setErrorFileUnLength={setErrorFileUnLength}
-                        uploadFilesEntreprise={devis.uploadFilesEntreprise}
-                        file={fileUn}
-                        value=""
-                        handleUploadFile={handleUploadFileUn}
-                      />
-                      {errorFileUnLength && (
-                        <div
-                          className="text-[#4087FF] mt-2 animate-pulse w-40 px-2 text-center"
-                          dangerouslySetInnerHTML={{
-                            __html:
-                              devis.uploadFilesEntreprise
-                                .messageErrorLenghtFile,
-                          }}
-                        ></div>
-                      )}
-                    </div>
-                    <div className="flex flex-col">
-                      <FileDeuxUpload
-                        errorMessage={
-                          devis.uploadFilesEntreprise.messageErrorLenghtFile
-                        }
-                        setErrorFileDeuxLength={setErrorFileDeuxLength}
-                        uploadFilesEntreprise={devis.uploadFilesEntreprise}
-                        file={fileDeux}
-                        value=""
-                        handleUploadFile={handleUploadFileDeux}
-                      />
-                      {errorFileDeuxLength && (
-                        <div
-                          className="text-[#4087FF] mt-2 animate-pulse w-40 px-2 text-center"
-                          dangerouslySetInnerHTML={{
-                            __html:
-                              devis.uploadFilesEntreprise
-                                .messageErrorLenghtFile,
-                          }}
-                        ></div>
-                      )}
-                    </div>
-                    <div className="flex flex-col">
-                      <FileTroisUpload
-                        errorMessage={
-                          devis.uploadFilesEntreprise.messageErrorLenghtFile
-                        }
-                        setErrorFileTroisLength={setErrorFileTroisLength}
-                        uploadFilesEntreprise={devis.uploadFilesEntreprise}
-                        file={fileTrois}
-                        value=""
-                        handleUploadFile={handleUploadFileTrois}
-                      />
-                      {errorFileTroisLength && (
-                        <div
-                          className="text-[#4087FF] mt-2 animate-pulse w-40 px-2 text-center"
-                          dangerouslySetInnerHTML={{
-                            __html:
-                              devis.uploadFilesEntreprise
-                                .messageErrorLenghtFile,
-                          }}
-                        ></div>
-                      )}
-                    </div>
+                    <div
+                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.contraintesEntreprise.legend,
+                      }}
+                    ></div>
+                    <input
+                      onChange={(event) => {
+                        setDevisEnCours({
+                          ...devisEnCours,
+                          contraintesEntreprise: {
+                            input: event.target.value,
+                            errorMessage:
+                              devis.contraintesEntreprise.errorMessage,
+                          },
+                        })
+                      }}
+                      type="text"
+                      id={devis.contraintesEntreprise.titre}
+                      name={devis.contraintesEntreprise.titre}
+                      placeholder={devis.contraintesEntreprise.placeholder}
+                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                      value={devisEnCours.contraintesEntreprise.input}
+                      required
+                    />
                   </div>
                 </div>
-                <div className="text-[#505050] text-sm font-medium pb-10">
-                  <div
-                    className="text-[#FC5050] text-2xl font-medium tracking-wider mb-6"
-                    dangerouslySetInnerHTML={{
-                      __html: devis.personneEntreprise.titre,
-                    }}
-                  ></div>
-                  <div className="flex flex-wrap">
-                    <div className="w-1/3 pl-10 pt-6 mb-10">
-                      <div className="flex mb-4">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(23)}
-                        >
-                          {checked.textUnChecked
-                            ? checkedIconCircle
-                            : uncheckedIconCircle}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.personneEntreprise.textUn,
-                          }}
-                        />
-                      </div>
-                      <div className="flex">
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => handleCheck(24)}
-                        >
-                          {checked.textDeuxChecked
-                            ? checkedIconCircle
-                            : uncheckedIconCircle}
-                        </div>
-                        <div
-                          className="ml-6"
-                          dangerouslySetInnerHTML={{
-                            __html: devis.personneEntreprise.textDeux,
-                          }}
-                        />
-                      </div>
-                    </div>
-                    {errorPersonneEntreprise && (
+                <div className="">
+                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
+                    <div
+                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider mb-6"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.budgetEntreprise.question,
+                      }}
+                    ></div>
+                    <div className="flex mb-4">
                       <div
-                        className="text-[#4087FF] animate-pulse mt-6"
+                        className="cursor-pointer"
+                        onClick={() => handleCheck(21)}
+                      >
+                        {checked.besoinTextUn ? checkedIcon : uncheckedIcon}
+                      </div>
+                      <div
+                        className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
                         dangerouslySetInnerHTML={{
-                          __html: devisEnCours.personneEntreprise.errorMessage,
+                          __html: devis.besoinTextUn.text,
+                        }}
+                      />
+                    </div>
+                    <div className="flex">
+                      <div
+                        className="cursor-pointer"
+                        onClick={() => handleCheck(22)}
+                      >
+                        {checked.besoinTextDeux ? checkedIcon : uncheckedIcon}
+                      </div>
+                      <div
+                        className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                        dangerouslySetInnerHTML={{
+                          __html: devis.besoinTextDeux.text,
+                        }}
+                      />
+                    </div>
+                    {checked.besoinTextUn && (
+                      <>
+                        <div
+                          className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider pt-10"
+                          dangerouslySetInnerHTML={{
+                            __html: devis.budgetEntreprise.questionDeux,
+                          }}
+                        />
+                        <MultiRangeSlider
+                          minValueRange={minValueRange}
+                          maxValueRange={maxValueRange}
+                          min={devis.budgetEntreprise.minValue}
+                          max={devis.budgetEntreprise.maxValue}
+                          onChange={({ min, max }) => {
+                            handleChangeRangeValue(min, max)
+                          }}
+                        />
+                      </>
+                    )}
+                    {errorBudgetEntreprise && (
+                      <div
+                        className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                        dangerouslySetInnerHTML={{
+                          __html: devisEnCours.budgetEntreprise.errorMessage,
                         }}
                       ></div>
                     )}
-                    {(checked.textUnChecked || checked.textDeuxChecked) && (
-                      <div className="flex flex-col grow min-w-[400px]">
-                        <input
-                          onChange={(event) => {
-                            setErrorPersonneEntrepriseInputNom(false)
-                            setDevisEnCours({
-                              ...devisEnCours,
-                              personneEntreprise: {
-                                inputNom: event.target.value,
-                                textUn: devis.personneEntreprise.textDeUn,
-                                textDeux: devis.personneEntreprise.textDeux,
-                                titre: devis.personneEntreprise.titre,
-                                inputPrenom:
-                                  devisEnCours.personneEntreprise.inputPrenom,
-                                inputMail:
-                                  devisEnCours.personneEntreprise.inputMail,
-                                errorMessage:
-                                  devisEnCours.personneEntreprise.errorMessage,
-                                errorMessageInputNom:
-                                  devisEnCours.personneEntreprise
-                                    .errorMessageInputNom,
-                                errorMessageInputPrenom:
-                                  devisEnCours.personneEntreprise
-                                    .errorMessageInputPrenom,
-                                errorMessageInputMail:
-                                  devisEnCours.personneEntreprise
-                                    .errorMessageInputMail,
-                                errorMessageInputMailRegex:
-                                  devisEnCours.personneEntreprise
-                                    .errorMessageInputMailRegex,
-                              },
-                            })
-                          }}
-                          type="text"
-                          id={devis.personneEntreprise.placeholderNom}
-                          name={devis.personneEntreprise.placeholderNom}
-                          placeholder={devis.personneEntreprise.placeholderNom}
-                          className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:text-sm"
-                          value={devisEnCours.personneEntreprise.inputNom}
-                          required
-                        />
-                        {errorPersonneEntrepriseInputNom && (
-                          <div
-                            className="text-[#4087FF] mt-2 animate-pulse"
-                            dangerouslySetInnerHTML={{
-                              __html:
-                                devisEnCours.personneEntreprise
-                                  .errorMessageInputNom,
-                            }}
-                          ></div>
-                        )}
-                        <input
-                          onChange={(event) => {
-                            setErrorPersonneEntrepriseInputPrenom(false)
-                            setDevisEnCours({
-                              ...devisEnCours,
-                              personneEntreprise: {
-                                inputPrenom: event.target.value,
-                                textUn: devis.personneEntreprise.textDeUn,
-                                textDeux: devis.personneEntreprise.textDeux,
-                                titre: devis.personneEntreprise.titre,
-                                inputNom:
-                                  devisEnCours.personneEntreprise.inputNom,
-                                inputMail:
-                                  devisEnCours.personneEntreprise.inputMail,
-                                errorMessage:
-                                  devisEnCours.personneEntreprise.errorMessage,
-                                errorMessageInputNom:
-                                  devisEnCours.personneEntreprise
-                                    .errorMessageInputNom,
-                                errorMessageInputPrenom:
-                                  devisEnCours.personneEntreprise
-                                    .errorMessageInputPrenom,
-                                errorMessageInputMail:
-                                  devisEnCours.personneEntreprise
-                                    .errorMessageInputMail,
-                                errorMessageInputMailRegex:
-                                  devisEnCours.personneEntreprise
-                                    .errorMessageInputMailRegex,
-                              },
-                            })
-                          }}
-                          type="text"
-                          id={devis.personneEntreprise.placeholderPrenom}
-                          name={devis.personneEntreprise.placeholderPrenom}
-                          placeholder={
-                            devis.personneEntreprise.placeholderPrenom
+                  </div>
+                </div>
+                <div className="bg-[#FAFAFB]">
+                  {" "}
+                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
+                    <div
+                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.commentaireEntreprise.question,
+                      }}
+                    ></div>
+
+                    <input
+                      onChange={(event) => {
+                        setDevisEnCours({
+                          ...devisEnCours,
+                          commentaireEntreprise: {
+                            input: event.target.value,
+                            errorMessage:
+                              devisEnCours.commentaireEntreprise.errorMessage,
+                          },
+                        })
+                      }}
+                      type="text"
+                      id={devis.commentaireEntreprise.titre}
+                      name={devis.commentaireEntreprise.titre}
+                      placeholder={devis.commentaireEntreprise.placeholder}
+                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                      value={devisEnCours.commentaireEntreprise.input}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="">
+                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
+                    <div
+                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.uploadFilesEntreprise.question,
+                      }}
+                    ></div>
+                    <div
+                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.uploadFilesEntreprise.legend,
+                      }}
+                    ></div>
+                    <div className="flex flex-wrap pt-10 justify-center lg:justify-start">
+                      <div className="flex flex-col">
+                        <FileUnUpload
+                          errorMessage={
+                            devis.uploadFilesEntreprise.messageErrorLenghtFile
                           }
-                          className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:text-sm"
-                          value={devisEnCours.personneEntreprise.inputPrenom}
-                          required
+                          setErrorFileUnLength={setErrorFileUnLength}
+                          uploadFilesEntreprise={devis.uploadFilesEntreprise}
+                          file={fileUn}
+                          value=""
+                          handleUploadFile={handleUploadFileUn}
                         />
-                        {errorPersonneEntrepriseInputPrenom && (
+                        {errorFileUnLength && (
                           <div
-                            className="text-[#4087FF] mt-2 animate-pulse"
+                            className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px] w-40 px-2 text-center"
                             dangerouslySetInnerHTML={{
                               __html:
-                                devisEnCours.personneEntreprise
-                                  .errorMessageInputPrenom,
-                            }}
-                          ></div>
-                        )}
-                        <input
-                          onChange={(event) => {
-                            setErrorPersonneEntrepriseInputMail(false)
-                            setErrorPersonneEntrepriseInputMailRegex(false)
-                            setDevisEnCours({
-                              ...devisEnCours,
-                              personneEntreprise: {
-                                inputMail: event.target.value,
-                                textUn: devis.personneEntreprise.textDeUn,
-                                textDeux: devis.personneEntreprise.textDeux,
-                                titre: devis.personneEntreprise.titre,
-                                inputNom:
-                                  devisEnCours.personneEntreprise.inputNom,
-                                inputPrenom:
-                                  devisEnCours.personneEntreprise.inputPrenom,
-                                errorMessage:
-                                  devisEnCours.personneEntreprise.errorMessage,
-                                errorMessageInputNom:
-                                  devisEnCours.personneEntreprise
-                                    .errorMessageInputNom,
-                                errorMessageInputPrenom:
-                                  devisEnCours.personneEntreprise
-                                    .errorMessageInputPrenom,
-                                errorMessageInputMail:
-                                  devisEnCours.personneEntreprise
-                                    .errorMessageInputMail,
-                                errorMessageInputMailRegex:
-                                  devisEnCours.personneEntreprise
-                                    .errorMessageInputMailRegex,
-                              },
-                            })
-                          }}
-                          type="text"
-                          id={devis.personneEntreprise.placeholderMail}
-                          name={devis.personneEntreprise.placeholderMail}
-                          placeholder={devis.personneEntreprise.placeholderMail}
-                          className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:text-sm"
-                          value={devisEnCours.personneEntreprise.inputMail}
-                          required
-                        />
-                        {errorPersonneEntrepriseInputMail && (
-                          <div
-                            className="text-[#4087FF] mt-2 animate-pulse"
-                            dangerouslySetInnerHTML={{
-                              __html:
-                                devisEnCours.personneEntreprise
-                                  .errorMessageInputMail,
-                            }}
-                          ></div>
-                        )}
-                        {errorPersonneEntrepriseInputMailRegex && (
-                          <div
-                            className="text-[#4087FF] mt-2 animate-pulse"
-                            dangerouslySetInnerHTML={{
-                              __html:
-                                devisEnCours.personneEntreprise
-                                  .errorMessageInputMailRegex,
+                                devis.uploadFilesEntreprise
+                                  .messageErrorLenghtFile,
                             }}
                           ></div>
                         )}
                       </div>
+                      <div className="flex flex-col">
+                        <FileDeuxUpload
+                          errorMessage={
+                            devis.uploadFilesEntreprise.messageErrorLenghtFile
+                          }
+                          setErrorFileDeuxLength={setErrorFileDeuxLength}
+                          uploadFilesEntreprise={devis.uploadFilesEntreprise}
+                          file={fileDeux}
+                          value=""
+                          handleUploadFile={handleUploadFileDeux}
+                        />
+                        {errorFileDeuxLength && (
+                          <div
+                            className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px] w-40 px-2 text-center"
+                            dangerouslySetInnerHTML={{
+                              __html:
+                                devis.uploadFilesEntreprise
+                                  .messageErrorLenghtFile,
+                            }}
+                          ></div>
+                        )}
+                      </div>
+                      <div className="flex flex-col">
+                        <FileTroisUpload
+                          errorMessage={
+                            devis.uploadFilesEntreprise.messageErrorLenghtFile
+                          }
+                          setErrorFileTroisLength={setErrorFileTroisLength}
+                          uploadFilesEntreprise={devis.uploadFilesEntreprise}
+                          file={fileTrois}
+                          value=""
+                          handleUploadFile={handleUploadFileTrois}
+                        />
+                        {errorFileTroisLength && (
+                          <div
+                            className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px] w-40 px-2 text-center"
+                            dangerouslySetInnerHTML={{
+                              __html:
+                                devis.uploadFilesEntreprise
+                                  .messageErrorLenghtFile,
+                            }}
+                          ></div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-[#FAFAFB]">
+                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
+                    <div
+                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider mb-6"
+                      dangerouslySetInnerHTML={{
+                        __html: devis.personneEntreprise.titre,
+                      }}
+                    ></div>
+                    <div className="flex flex-wrap">
+                      <div className="w-1/3 pl-10 pt-6 mb-10">
+                        <div className="flex mb-4">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(23)}
+                          >
+                            {checked.textUnChecked
+                              ? checkedIconCircle
+                              : uncheckedIconCircle}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.personneEntreprise.textUn,
+                            }}
+                          />
+                        </div>
+                        <div className="flex">
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => handleCheck(24)}
+                          >
+                            {checked.textDeuxChecked
+                              ? checkedIconCircle
+                              : uncheckedIconCircle}
+                          </div>
+                          <div
+                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            dangerouslySetInnerHTML={{
+                              __html: devis.personneEntreprise.textDeux,
+                            }}
+                          />
+                        </div>
+                      </div>
+                      {errorPersonneEntreprise && (
+                        <div
+                          className="text-[#4087FF]  xl:text-[18px] lg:text-[16px]  text-[14px] mt-6"
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              devisEnCours.personneEntreprise.errorMessage,
+                          }}
+                        ></div>
+                      )}
+                      {(checked.textUnChecked || checked.textDeuxChecked) && (
+                        <div className="flex flex-col grow min-w-[400px]">
+                          <input
+                            onChange={(event) => {
+                              setErrorPersonneEntrepriseInputNom(false)
+                              setDevisEnCours({
+                                ...devisEnCours,
+                                personneEntreprise: {
+                                  inputNom: event.target.value,
+                                  textUn: devis.personneEntreprise.textDeUn,
+                                  textDeux: devis.personneEntreprise.textDeux,
+                                  titre: devis.personneEntreprise.titre,
+                                  inputPrenom:
+                                    devisEnCours.personneEntreprise.inputPrenom,
+                                  inputMail:
+                                    devisEnCours.personneEntreprise.inputMail,
+                                  errorMessage:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessage,
+                                  errorMessageInputNom:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessageInputNom,
+                                  errorMessageInputPrenom:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessageInputPrenom,
+                                  errorMessageInputMail:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessageInputMail,
+                                  errorMessageInputMailRegex:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessageInputMailRegex,
+                                },
+                              })
+                            }}
+                            type="text"
+                            id={devis.personneEntreprise.placeholderNom}
+                            name={devis.personneEntreprise.placeholderNom}
+                            placeholder={
+                              devis.personneEntreprise.placeholderNom
+                            }
+                            className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                            value={devisEnCours.personneEntreprise.inputNom}
+                            required
+                          />
+                          {errorPersonneEntrepriseInputNom && (
+                            <div
+                              className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  devisEnCours.personneEntreprise
+                                    .errorMessageInputNom,
+                              }}
+                            ></div>
+                          )}
+                          <input
+                            onChange={(event) => {
+                              setErrorPersonneEntrepriseInputPrenom(false)
+                              setDevisEnCours({
+                                ...devisEnCours,
+                                personneEntreprise: {
+                                  inputPrenom: event.target.value,
+                                  textUn: devis.personneEntreprise.textDeUn,
+                                  textDeux: devis.personneEntreprise.textDeux,
+                                  titre: devis.personneEntreprise.titre,
+                                  inputNom:
+                                    devisEnCours.personneEntreprise.inputNom,
+                                  inputMail:
+                                    devisEnCours.personneEntreprise.inputMail,
+                                  errorMessage:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessage,
+                                  errorMessageInputNom:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessageInputNom,
+                                  errorMessageInputPrenom:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessageInputPrenom,
+                                  errorMessageInputMail:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessageInputMail,
+                                  errorMessageInputMailRegex:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessageInputMailRegex,
+                                },
+                              })
+                            }}
+                            type="text"
+                            id={devis.personneEntreprise.placeholderPrenom}
+                            name={devis.personneEntreprise.placeholderPrenom}
+                            placeholder={
+                              devis.personneEntreprise.placeholderPrenom
+                            }
+                            className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                            value={devisEnCours.personneEntreprise.inputPrenom}
+                            required
+                          />
+                          {errorPersonneEntrepriseInputPrenom && (
+                            <div
+                              className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  devisEnCours.personneEntreprise
+                                    .errorMessageInputPrenom,
+                              }}
+                            ></div>
+                          )}
+                          <input
+                            onChange={(event) => {
+                              setErrorPersonneEntrepriseInputMail(false)
+                              setErrorPersonneEntrepriseInputMailRegex(false)
+                              setDevisEnCours({
+                                ...devisEnCours,
+                                personneEntreprise: {
+                                  inputMail: event.target.value,
+                                  textUn: devis.personneEntreprise.textDeUn,
+                                  textDeux: devis.personneEntreprise.textDeux,
+                                  titre: devis.personneEntreprise.titre,
+                                  inputNom:
+                                    devisEnCours.personneEntreprise.inputNom,
+                                  inputPrenom:
+                                    devisEnCours.personneEntreprise.inputPrenom,
+                                  errorMessage:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessage,
+                                  errorMessageInputNom:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessageInputNom,
+                                  errorMessageInputPrenom:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessageInputPrenom,
+                                  errorMessageInputMail:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessageInputMail,
+                                  errorMessageInputMailRegex:
+                                    devisEnCours.personneEntreprise
+                                      .errorMessageInputMailRegex,
+                                },
+                              })
+                            }}
+                            type="text"
+                            id={devis.personneEntreprise.placeholderMail}
+                            name={devis.personneEntreprise.placeholderMail}
+                            placeholder={
+                              devis.personneEntreprise.placeholderMail
+                            }
+                            className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                            value={devisEnCours.personneEntreprise.inputMail}
+                            required
+                          />
+                          {errorPersonneEntrepriseInputMail && (
+                            <div
+                              className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  devisEnCours.personneEntreprise
+                                    .errorMessageInputMail,
+                              }}
+                            ></div>
+                          )}
+                          {errorPersonneEntrepriseInputMailRegex && (
+                            <div
+                              className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  devisEnCours.personneEntreprise
+                                    .errorMessageInputMailRegex,
+                              }}
+                            ></div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <div className="">
+                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
+                    <div className="flex">
+                      <div
+                        className="cursor-pointer"
+                        onClick={() => handleCheck(25)}
+                      >
+                        {checked.checkTerms ? checkedIcon : uncheckedIcon}
+                      </div>
+                      <div
+                        className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px] align-center"
+                        dangerouslySetInnerHTML={{
+                          __html: devis.checkTermsEntreprise.text,
+                        }}
+                      />
+                    </div>
+                    {errorCheckTermsEntreprise && (
+                      <div
+                        className="text-[#4087FF] mt-6  xl:text-[18px] lg:text-[16px]  text-[14px] px-2"
+                        dangerouslySetInnerHTML={{
+                          __html: devis.checkTermsEntreprise.errorMessage,
+                        }}
+                      ></div>
                     )}
                   </div>
                 </div>
-                <div className="text-[#505050] text-sm font-medium pb-10">
-                  <div className="flex">
-                    <div
-                      className="cursor-pointer"
-                      onClick={() => handleCheck(25)}
-                    >
-                      {checked.checkTerms ? checkedIcon : uncheckedIcon}
-                    </div>
-                    <div
-                      className="ml-6"
-                      dangerouslySetInnerHTML={{
-                        __html: devis.checkTermsEntreprise.text,
-                      }}
-                    />
-                  </div>
-                  {errorCheckTermsEntreprise && (
-                    <div
-                      className="text-[#4087FF] mt-6 animate-pulse px-2"
-                      dangerouslySetInnerHTML={{
-                        __html: devis.checkTermsEntreprise.errorMessage,
-                      }}
-                    ></div>
-                  )}
-                </div>
-                <div className="mx-auto w-full mt-10 flex flex-row">
+                <div className=""></div>
+                <div className="py-16  w-3/4 max-w-5xl mx-auto flex flex-row">
                   <div className="grow">
                     <Link href="/">
                       <a>
@@ -2171,7 +2216,7 @@ const Questionnaire = ({ devis }) => {
                             dangerouslySetInnerHTML={{
                               __html: devis.button3,
                             }}
-                            className="font-bold text-[#2E437D] group-hover:text-white"
+                            className="font-bold text-[#2E437D] group-hover:text-white  xl:text-[20px] lg:text-[17px]  text-[15px]"
                           />
                         </button>
                       </a>
@@ -2183,7 +2228,7 @@ const Questionnaire = ({ devis }) => {
                   >
                     <span
                       dangerouslySetInnerHTML={{ __html: devis.button4 }}
-                      className="font-bold text-[#FC5050] group-hover:text-white"
+                      className="font-bold text-[#FC5050] group-hover:text-white  xl:text-[20px] lg:text-[17px]  text-[15px]"
                     />
                   </button>
                 </div>
@@ -2193,7 +2238,7 @@ const Questionnaire = ({ devis }) => {
         ) : (
           <div className="flex justify-center items-center">
             <div
-              className="py-6 px-16 rounded-xl border-2  border-[#41EAD4]"
+              className="py-6 px-16 rounded-xl border-2  border-[#41EAD4]  xl:text-[22px] lg:text-[19px]  text-[16px]"
               dangerouslySetInnerHTML={{
                 __html: devis.message.successMessage,
               }}

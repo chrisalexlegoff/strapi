@@ -14,10 +14,12 @@ export default function Prestations({
   header,
   expertise,
   methodologie,
+  scrollTop,
   mission,
 }) {
   return (
     <Layout
+      scrollTop={scrollTop}
       logo={logo}
       hamburger={hamburger}
       footer={footer}
@@ -34,6 +36,21 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query Prestations {
+        scrollTop {
+          data {
+            attributes {
+              bg {
+                data {
+                  attributes {
+                    width
+                    height
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
         prestation {
           data {
             attributes {
@@ -276,6 +293,7 @@ export async function getStaticProps() {
       titrePage: data.prestation.data.attributes.titrePage,
       logo: data.logo.data.attributes.logo,
       hamburger: data.hamburger.data.attributes.hamburger,
+      scrollTop: data.scrollTop.data.attributes,
       footer: data.footer.data.attributes,
     },
   }

@@ -18,9 +18,11 @@ export default function About({
   introPresentation,
   presentation,
   mission,
+  scrollTop,
 }) {
   return (
     <Layout
+      scrollTop={scrollTop}
       logo={logo}
       hamburger={hamburger}
       footer={footer}
@@ -39,11 +41,28 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query About {
+        scrollTop {
+          data {
+            attributes {
+              bg {
+                data {
+                  attributes {
+                    width
+                    height
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
         about {
           data {
             attributes {
               titrePage
               presentation {
+                titre2
+                titre2bis
                 titre3
                 titre3bis
                 paragraphe
@@ -77,6 +96,7 @@ export async function getStaticProps() {
                 titre5
               }
               binome {
+                button
                 titre3
                 paragraphe
                 paragrapheBis
@@ -225,7 +245,9 @@ export async function getStaticProps() {
                 titre2
                 titre3
                 titre3bis
+                titre4
                 paragraphe
+                paragrapheBis
                 images {
                   data {
                     attributes {
@@ -297,6 +319,7 @@ export async function getStaticProps() {
       logo: data.logo.data.attributes.logo,
       hamburger: data.hamburger.data.attributes.hamburger,
       footer: data.footer.data.attributes,
+      scrollTop: data.scrollTop.data.attributes,
     },
   }
 }

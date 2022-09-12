@@ -22,16 +22,16 @@ const EnteteContact = ({ header }) => {
       }}
     >
       <div className="lg:bg-split-right-pink-transparent bg-pink-transparent">
-        <div className="max-w-7xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left pt-28 font-normal">
+        <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left pt-28 font-normal">
           <div className="flex flex-col lg:flex-row lg:row-start-1 mx-auto w-3/4 justify-between">
             <div
-              className="uppercase leading-9 text-2xl lg:w-2/3 text-white"
+              className="uppercase leading-9 xl:text-[38px] lg:text-[34px]  text-[30px] lg:w-2/3 text-white"
               dangerouslySetInnerHTML={{ __html: header.titrePage }}
             ></div>
             <div className="my-12 lg:my-0">{imageDeco}</div>
           </div>
           <div
-            className="lg:row-start-2 mx-auto w-3/4 text-lg text-white"
+            className="lg:row-start-2 mx-auto w-3/4 xl:text-[24px] lg:text-[20px]  text-[16px] text-white"
             dangerouslySetInnerHTML={{ __html: header.paragraphe }}
           ></div>
           <div className="lg:row-start-3 mx-auto w-3/4 ">
@@ -40,7 +40,7 @@ const EnteteContact = ({ header }) => {
                 <button className="group bg-transparent hover:bg-[#FFFFFF] w-full h-16 mx-auto lg:ml-0 block rounded-lg border-2 border-[#FFFFFF] px-4 lg:w-2/3">
                   <span
                     dangerouslySetInnerHTML={{ __html: header.button }}
-                    className="font-bold text-[#FFFFFF] group-hover:text-[#FC5050]"
+                    className="xl:text-[20px] lg:text-[17px]  text-[15px]font-bold text-[#FFFFFF] group-hover:text-[#FC5050]"
                   />
                 </button>
               </a>

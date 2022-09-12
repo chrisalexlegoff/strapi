@@ -4,35 +4,35 @@ import Slider from "./../slider/Slider"
 const RealisationsTab = ({ realisations }) => {
   return (
     <div id="realisations">
-      <div className="max-w-7xl mx-auto pt-24">
+      <div className="max-w-9xl mx-auto pt-24">
         {realisations.map((realisation) => {
           return (
-            <div key={realisation.id} className="mx-auto lg:w-2/3 w-3/4">
-              <div className="grid lg:grid-cols-2 min-h-[450px] mx-auto auto-rows-min">
+            <div key={realisation.id} className="mx-auto w-4/5 lg:w-3/4">
+              <div className="grid xl:grid-cols-2 min-h-[450px] mx-auto auto-rows-min  bg-[#FAFAFB] p-6 lg:p-16 rounded-2xl mb-10">
                 <div className="row-start-1">
                   <div
-                    className="text-[#FC5050] font-semibold text-xl text-center lg:text-left"
+                    className="text-[#FC5050] font-semibold xl:text-[34px] lg:text-[30px]  text-[26px] text-center xl:text-left"
                     dangerouslySetInnerHTML={{ __html: realisation.titre }}
                   ></div>
                   <div
-                    className="text-[#2E437D] lg:text-left text-center uppercase text-xs font-semibold"
+                    className="text-[#2E437D] xl:text-left text-center uppercase xl:text-[17px] lg:text-[14px]  text-[12px] font-semibold"
                     dangerouslySetInnerHTML={{ __html: realisation.annee }}
                   ></div>
                 </div>
                 <div
-                  className="text-[#3F3F3F] text-xs row-start-2 py-14 lg:pt-0 lg:text-start text-center lg:pb-14"
+                  className="text-[#3F3F3F] xl:text-[19px] lg:text-[16px]  text-[13px] row-start-2 py-14 xl:pt-0 xl:text-start text-center xl:pb-14"
                   dangerouslySetInnerHTML={{ __html: realisation.paragraphe }}
                 ></div>
 
                 <a
-                  className="row-start-5 lg:row-start-3 w-3/4 lg:py-0 py-14 lg:mx-0 mx-auto"
+                  className="row-start-5 xl:row-start-3 w-3/4 xl:py-0 py-14 xl:mx-0 mx-auto"
                   href="https://chocolatiermocquin.sabrina-dossantos.fr/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <button
                     type="button"
-                    className="group bg-transparent hover:bg-[#2E437D] lg:w-2/3 w-full h-12 mx-auto lg:m-0 block rounded-lg border-2 border-[#2E437D]"
+                    className="group bg-transparent hover:bg-[#2E437D] xl:w-2/3 w-full h-12 mx-auto xl:m-0 block rounded-xl border-2 border-[#2E437D]"
                   >
                     <span
                       dangerouslySetInnerHTML={{
@@ -42,22 +42,26 @@ const RealisationsTab = ({ realisations }) => {
                     />
                   </button>
                 </a>
-                <div className="flex flex-wrap text-xs text-white lg:justify-end justify-center lg:col-start-2 lg:pb-0 pb-14">
-                  {realisation.outils.map((outil) => {
-                    return (
-                      <div
-                        className="rounded-lg bg-[#41EAD4] py-2 px-4  m-2"
-                        key={outil.id}
-                      >
-                        {outil.competence}
-                      </div>
-                    )
-                  })}
+                <div className="flex xl:justify-end w-full xl:col-start-2 ">
+                  {" "}
+                  <div className="flex flex-wrap text-xs text-white xl:justify-end xl:w-2/3 w-full justify-center xl:pb-0 pb-14">
+                    {realisation.outils.map((outil) => {
+                      return (
+                        <div
+                          className="rounded-xl bg-[#41EAD4] py-2 px-4  m-2"
+                          key={outil.id}
+                        >
+                          {outil.competence}
+                        </div>
+                      )
+                    })}
+                  </div>
                 </div>
-                <div className="lg:col-start-2 lg:row-span-2 lg:mb-0 lg:mt-auto">
+
+                <div className="xl:col-start-2 xl:row-span-2 xl:mb-0 xl:mt-auto">
                   <Slider
                     items={realisation.carousel}
-                    classname={"w-4/5 lg:mx-0 lg:ml-auto mx-auto"}
+                    classname={"w-4/5 xl:mx-0 xl:ml-auto mx-auto"}
                   />
                 </div>
               </div>
