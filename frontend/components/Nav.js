@@ -74,9 +74,9 @@ export const Navbar = ({ logo, hamburger }) => {
   }
 
   const activeClass =
-    "lg:inline-flex lg:w-auto w-full px-3 lg:py-2 py-10 lg:border-none border-b-[0.5px] border-[#505050] text-[#4087FF] font-light items-center justify-center"
+    "lg:inline-flex lg:w-auto w-full px-3 lg:py-2 py-10 lg:border-none border-b-[0.5px] border-[#505050] text-[#4087FF]  items-center justify-center"
   const classNormal =
-    "lg:inline-flex lg:w-auto w-full px-3 lg:py-2 py-10 lg:border-none border-b-[0.5px] text-[#3F3F3F] border-[#505050] font-light items-center justify-center hover:text-[#4087FF]"
+    "lg:inline-flex lg:w-auto w-full px-3 lg:py-2 py-10 lg:border-none border-b-[0.5px] text-[#3F3F3F] border-[#505050]  items-center justify-center hover:text-[#4087FF]"
 
   useEffect(() => {
     const scrollNav = () => {
@@ -99,18 +99,18 @@ export const Navbar = ({ logo, hamburger }) => {
   return (
     <nav
       id="nav"
-      className="opacity-0 transition-opacity bg-[#FAFAFB]/95 p-3 fixed w-full z-10              "
+      className="opacity-0 transition-opacity bg-[#FAFAFB]/95 p-3 fixed w-full z-10"
     >
       <div className="max-w-9xl mx-6 lg:mx-16 flex items-center flex-wrap">
         <Link href="/" className="hidden lg:block">
           <a className="hidden p-2 mr-4 lg:block w-[200px]">{newLogoDesktop}</a>
         </Link>
-        <Link href="/" className="block lg:hidden ">
+        <Link href="/" className="block lg:hidden">
           <a className="block p-2 mr-4 lg:hidden">{newLogoMobile}</a>
         </Link>
 
         <button
-          className=" inline-flex p-3 lg:hidden text-white ml-auto"
+          className="inline-flex p-3 lg:hidden text-white ml-auto"
           onClick={handleClick}
         >
           {!open ? newHamburger : newCloseMenu}
@@ -121,7 +121,7 @@ export const Navbar = ({ logo, hamburger }) => {
             active ? "" : "hidden"
           }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
         >
-          <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto xl:text-[18px] lg:text-[14px]  text-[28px]">
+          <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
             <Link href="/about">
               <a
                 className={
@@ -173,7 +173,7 @@ export const Navbar = ({ logo, hamburger }) => {
                 className={
                   router.pathname == "/demander-un-devis"
                     ? activeClass
-                    : "lg:inline-flex lg:w-auto w-full px-3 lg:py-2 py-10 lg:border-none border-b-[0.5px] text-[#FC5050] font-light items-center border-[#505050] justify-center hover:text-[#4087FF]"
+                    : "lg:inline-flex lg:w-auto w-full px-3 lg:py-2 py-10 lg:border-none border-b-[0.5px] text-[#FC5050]  items-center border-[#505050] justify-center hover:text-[#4087FF]"
                 }
               >
                 {router.pathname == "/demander-un-devis"

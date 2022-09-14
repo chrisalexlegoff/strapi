@@ -34,14 +34,16 @@ export default function Home({
       footer={footer}
       titrePage={titrePage}
     >
-      <AccueilEntete header={header} />
-      <Nous nous={nous} />
-      <Projet projet={projet} />
-      <Pourquoi pourquoi={pourquoi} />
-      <Valeurs valeurs={valeurs} />
-      <Realisations realisations={realisations} />
-      <Services services={services} />
-      <Mission mission={mission} />
+      <div id="accueil">
+        <AccueilEntete header={header} />
+        <Nous nous={nous} />
+        <Projet projet={projet} />
+        <Pourquoi pourquoi={pourquoi} />
+        <Valeurs valeurs={valeurs} />
+        <Realisations realisations={realisations} />
+        <Services services={services} />
+        <Mission mission={mission} />
+      </div>
     </Layout>
   )
 }
@@ -218,6 +220,15 @@ export async function getStaticProps() {
                 titre4
               }
               header {
+                logoAccueil {
+                  data {
+                    attributes {
+                      width
+                      height
+                      url
+                    }
+                  }
+                }
                 titre
                 titre2
                 bg {

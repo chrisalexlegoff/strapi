@@ -26,28 +26,28 @@ const Methodologie = ({ methodologie, mission }) => {
       >
         <div className="grid max-w-9xl mx-auto text-center">
           <div
-            className="text-white mx-auto row-start-1 uppercase xl:text-[34px] lg:text-[30px]  text-[26px]"
+            className="text-white mx-auto row-start-1 uppercase"
             dangerouslySetInnerHTML={{ __html: methodologie.titre2 }}
           ></div>
           <div className="h-[2px] bg-white mx-auto mt-6 w-1/12 row-start-2"></div>
 
           <div className="row-start-3 mx-auto py-16">
             <div
-              className="text-white mx-auto xl:text-[34px] lg:text-[30px]  text-[26px]"
+              className="text-white mx-auto"
               dangerouslySetInnerHTML={{ __html: methodologie.paragraphe }}
             ></div>
             <div
-              className="text-white mx-auto xl:text-[22px] lg:text-[18px]  text-[14px]"
+              className="text-white mx-auto"
               dangerouslySetInnerHTML={{ __html: methodologie.paragrapheBis }}
             ></div>
           </div>
           <div className="row-start-4 w-full lg:w-3/4 mx-auto">
             <Link href="/demander-un-devis">
               <a>
-                <button className="group  hover:bg-[#FC5050] h-16 w-3/4 lg:w-1/2 block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050] mx-auto">
+                <button className="group  hover:bg-[#FC5050] h-20 w-3/4 lg:w-1/2 block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050] mx-auto">
                   <span
                     dangerouslySetInnerHTML={{ __html: methodologie.button }}
-                    className="font-bold text-[#FFFFFF] xl:text-[20px] lg:text-[17px]  text-[15px] group-hover:text-white"
+                    className=" text-[#FFFFFF] group-hover:text-white"
                   />
                 </button>
               </a>
@@ -78,7 +78,7 @@ const Methodologie = ({ methodologie, mission }) => {
                 )}
 
                 <div
-                  className="uppercase font-bold text-[#41EAD4] xl:text-[17px] lg:text-[15px]  text-[13px]"
+                  className="uppercase text-[#41EAD4]"
                   dangerouslySetInnerHTML={{ __html: item.titre }}
                 ></div>
               </div>
@@ -98,7 +98,7 @@ const Methodologie = ({ methodologie, mission }) => {
                   ></div>
                 </div>
                 <div
-                  className="w-1/2 pl-10 pt-10 pr-48 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                  className="w-1/2 pl-10 pt-10 pr-48"
                   dangerouslySetInnerHTML={{ __html: item.paragraphe }}
                 ></div>
               </div>
@@ -107,7 +107,7 @@ const Methodologie = ({ methodologie, mission }) => {
             <div key={item.id} className="mx-auto grid grid-cols-2">
               <div className="flex items-center justify-end">
                 <div
-                  className="uppercase font-bold text-[#41EAD4] xl:text-[17px] lg:text-[15px]  text-[13px]"
+                  className="uppercase text-[#41EAD4]"
                   dangerouslySetInnerHTML={{ __html: item.titre }}
                 ></div>
                 {LazyImage(
@@ -121,7 +121,7 @@ const Methodologie = ({ methodologie, mission }) => {
               </div>
               <div className="flex divide-x-2 divide-[#41EAD4] col-span-2 h-[450px]">
                 <div
-                  className="w-1/2 xl:text-[21px] lg:text-[18px]  text-[15px] pt-10 pr-10 text-right pl-48"
+                  className="w-1/2 pt-10 pr-10 text-right pl-48"
                   dangerouslySetInnerHTML={{ __html: item.paragraphe }}
                 ></div>
                 <div className="w-1/2">
@@ -187,20 +187,20 @@ const Methodologie = ({ methodologie, mission }) => {
       <div className="mx-auto max-w-9xl grid lg:grid-cols-2 lg:divide-x-2 lg:divide-[#41EAD4] justify-items-center lg:justify-items-stretch pt-10 lg:pt-0">
         <div className="flex lg:items-end flex-col lg:h-full items-center lg:justify-center pb-10 w-3/4 lg:w-full">
           <div
-            className="uppercase text-center lg:text-right lg:w-2/3 w-3/4 lg:pr-10 xl:text-[34px] lg:text-[30px]  text-[26px]"
+            className="uppercase text-center lg:text-right lg:w-2/3 w-3/4 lg:pr-10"
             dangerouslySetInnerHTML={{ __html: mission.titre2bis }}
           ></div>
           <div
-            className="xl:text-[21px] lg:text-[18px]  text-[15px] text-center lg:text-right w-3/4 lg:pr-10 my-10"
+            className="text-center lg:text-right w-3/4 lg:pr-10 my-10"
             dangerouslySetInnerHTML={{ __html: mission.paragraphe }}
           ></div>
-          <div className="lg:w-2/3 mt-10 lg:mt-0 w-full">
+          <div className="mt-10 lg:mt-0 w-full">
             <Link href="/demander-un-devis">
               <a>
-                <button className="group bg-[#FC5050] hover:bg-white h-16 w-3/4 block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050] mx-auto lg:mr-10">
+                <button className="group bg-[#FC5050] hover:bg-white h-20 md:w-1/2 w-full block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050] mx-auto lg:mr-10">
                   <span
                     dangerouslySetInnerHTML={{ __html: mission.button }}
-                    className="font-bold text-[#FFFFFF] lg:text-sm group-hover:text-[#FC5050]"
+                    className=" text-[#FFFFFF] group-hover:text-[#FC5050]"
                   />
                 </button>
               </a>

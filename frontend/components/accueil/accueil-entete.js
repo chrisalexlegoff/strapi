@@ -12,45 +12,52 @@ const AccueilEntete = ({ header }) => {
     ""
   )
   const imageLogo = LazyImage(
-    header.bg.data.attributes,
+    header.logoAccueil.data[0].attributes,
     "Image du logo accueil",
+    "lazy",
+    undefined,
+    ""
+  )
+  const imageLogoMobile = LazyImage(
+    header.logoAccueil.data[1].attributes,
+    "Image du logo mobile accueil",
     "lazy",
     undefined,
     ""
   )
 
   return (
-    <div className="lg:bg-split-right-orange-white bg-[#FC5050]">
+    <div
+      id="accueil-entete"
+      className="lg:bg-accueil-entete bg-accueil-entete-mobile"
+    >
       <div
         style={{}}
-        className="max-w-9xl mx-auto h-screen grid lg:grid-rows-4 grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left pt-10 font-normal text-white"
+        className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left pt-10"
       >
         <div className="row-start-1 lg:col-span-2 mx-auto text-center text-xl w-3/4 lg:w-full">
-          <div className="lg:ml-[1.1rem] ml-0">{imageLogo}</div>
-          <div
-            className="hidden lg:block leading-6 lg:tracking-[4.6px] tracking-[1.6px] lg:ml-[1.5rem] ml-0 text-[25px] lg:text-[27px]"
-            dangerouslySetInnerHTML={{ __html: header.titre }}
-          ></div>
-          <div
-            className="block lg:hidden leading-6 lg:tracking-[4.6px] tracking-[1.6px] lg:ml-[1.5rem] ml-0 text-[25px] lg:text-[27px]"
-            dangerouslySetInnerHTML={{ __html: header.titre2 }}
-          ></div>
+          <div className="hidden lg:block lg:ml-[0.8rem] lg:w-full w-1/2 mx-auto">
+            {imageLogo}
+          </div>
+          <div className="lg:hidden block w-full mx-auto">
+            {imageLogoMobile}
+          </div>
         </div>
         <div
-          className="lg:row-start-2 mx-auto w-3/4 uppercase leading-9 xl:text-[38px] lg:text-[34px]  text-[30px]"
+          className="lg:row-start-2 mx-auto w-3/4 uppercase"
           dangerouslySetInnerHTML={{ __html: header.titrePage }}
         ></div>
         <div
-          className="lg:row-start-3 mx-auto w-3/4 xl:text-[25px] lg:text-[22px]  text-[18px]"
+          className="lg:row-start-3 mx-auto w-3/4"
           dangerouslySetInnerHTML={{ __html: header.paragraphe }}
         ></div>
         <div className="row-start-5 lg:row-start-4 mx-auto w-3/4">
           <Link href="/demander-un-devis">
             <a>
-              <button className="group bg-transparent hover:bg-[#FFFFFF] w-1/2 h-16 mx-auto lg:m-0 block rounded-lg border-2 border-[#FFFFFF]">
+              <button className="group bg-transparent hover:bg-blanc w-full md:w-1/2 h-20 mx-auto lg:m-0 block rounded-lg border-2 border-blanc">
                 <span
                   dangerouslySetInnerHTML={{ __html: header.button }}
-                  className="font-bold xl:text-[20px] lg:text-[17px]  text-[15px] text-[#FFFFFF] group-hover:text-[#FC5050]"
+                  className="text-blanc group-hover:text-rouge-orange px-4"
                 />
               </button>
             </a>
@@ -58,7 +65,7 @@ const AccueilEntete = ({ header }) => {
         </div>
         <div
           id="image-deco-accueil"
-          className="row-start-4 lg:row-span-3 lg:w-2/3 lg:h-2/3 justify-items-center mx-auto w-1/3"
+          className="row-start-4 lg:row-span-3 justify-items-center mx-auto w-[250px] lg:w-2/3"
         >
           {imageDeco}
         </div>

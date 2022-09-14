@@ -1176,7 +1176,7 @@ const Questionnaire = ({ devis }) => {
   return (
     <div className="pb-0 lg:pb-24 pt-0 lg:pt-20 mx-auto">
       <div
-        className="uppercase mb-12 xl:text-[34px] lg:text-[30px]  text-[26px] text-center"
+        className="uppercase mb-12 text-center px-10 md:px-0"
         dangerouslySetInnerHTML={{ __html: devis.titre }}
       ></div>
       <div className="mb-12 h-[2px] bg-[#41EAD4] mx-auto mt-6 w-1/12"></div>
@@ -1187,15 +1187,15 @@ const Questionnaire = ({ devis }) => {
               <div className="mx-auto grid gap-4 items-center">
                 {/* NOM ENTREPRISE */}
                 <div className="bg-[#FAFAFB]">
-                  <div className="max-w-5xl text-[#505050] font-medium py-16  w-3/4 mx-auto">
+                  <div className="max-w-5xl text-[#505050] py-16 w-3/4 mx-auto">
                     <div
-                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-"
+                      className="text-[#FC5050]"
                       dangerouslySetInnerHTML={{
                         __html: devis.nomEntreprise.question,
                       }}
                     ></div>
                     <div
-                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
+                      className="mt-2"
                       dangerouslySetInnerHTML={{
                         __html: devis.nomEntreprise.legend,
                       }}
@@ -1215,14 +1215,14 @@ const Questionnaire = ({ devis }) => {
                       id={devis.nomEntreprise.titre}
                       name={devis.nomEntreprise.titre}
                       placeholder={devis.nomEntreprise.placeholder}
-                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
                       value={devisEnCours.nomEntreprise.input}
                       required
                     />
 
                     {errorNomEntrepriseInput && (
                       <div
-                        className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                        className="text-[#4087FF] mt-2 error-msg animate-pulse"
                         dangerouslySetInnerHTML={{
                           __html: devisEnCours.nomEntreprise.errorMessage,
                         }}
@@ -1231,15 +1231,15 @@ const Questionnaire = ({ devis }) => {
                   </div>
                 </div>
                 <div className="">
-                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050]">
                     <div
-                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
+                      className="text-[#FC5050]"
                       dangerouslySetInnerHTML={{
                         __html: devis.activiteEntreprise.question,
                       }}
                     ></div>
                     <div
-                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
+                      className="mt-2"
                       dangerouslySetInnerHTML={{
                         __html: devis.activiteEntreprise.legend,
                       }}
@@ -1259,13 +1259,13 @@ const Questionnaire = ({ devis }) => {
                       id={devis.activiteEntreprise.titre}
                       name={devis.activiteEntreprise.titre}
                       placeholder={devis.activiteEntreprise.placeholder}
-                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
                       value={devisEnCours.activiteEntreprise.input}
                       required
                     />
                     {errorActiviteEntrepriseInput && (
                       <div
-                        className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                        className="text-[#4087FF] mt-2 error-msg animate-pulse"
                         dangerouslySetInnerHTML={{
                           __html: devisEnCours.activiteEntreprise.errorMessage,
                         }}
@@ -1275,66 +1275,66 @@ const Questionnaire = ({ devis }) => {
                 </div>
                 <div className="bg-[#FAFAFB]">
                   {" "}
-                  <div className="max-w-5xl text-[#505050] font-medium py-16  w-3/4 mx-auto">
+                  <div className="max-w-5xl text-[#505050] py-16 w-3/4 mx-auto">
                     <div
-                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
+                      className="text-[#FC5050]"
                       dangerouslySetInnerHTML={{
                         __html: devis.besoinEntreprise.question,
                       }}
                     ></div>
                     <div
-                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
+                      className="mt-2"
                       dangerouslySetInnerHTML={{
                         __html: devis.besoinEntreprise.legend,
                       }}
                     ></div>
                     <div className="flex flex-wrap mt-10">
                       <div className="w-1/2 min-w-[300px]">
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(1)}
                           >
                             {checked.besoinsUn ? checkedIcon : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsUn.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(2)}
                           >
                             {checked.besoinsDeux ? checkedIcon : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsDeux.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(3)}
                           >
                             {checked.besoinsTrois ? checkedIcon : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsTrois.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(4)}
                           >
                             {checked.besoinsQuatre
@@ -1342,91 +1342,91 @@ const Questionnaire = ({ devis }) => {
                               : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsQuatre.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(5)}
                           >
                             {checked.besoinsCinq ? checkedIcon : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsCinq.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(6)}
                           >
                             {checked.besoinsSix ? checkedIcon : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsSix.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(7)}
                           >
                             {checked.besoinsSept ? checkedIcon : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsSept.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(8)}
                           >
                             {checked.besoinsHuit ? checkedIcon : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsHuit.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(9)}
                           >
                             {checked.besoinsNeuf ? checkedIcon : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsNeuf.text,
                             }}
                           />
                         </div>
-                        <div className="flex flex-wrap">
+                        <div className="flex flex-wrap items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(10)}
                           >
                             {checked.besoinsDix ? checkedIcon : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsDix.text,
                             }}
@@ -1454,37 +1454,37 @@ const Questionnaire = ({ devis }) => {
                         </div>
                       </div>
                       <div className="w-1/2 min-w-[300px]">
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(11)}
                           >
                             {checked.besoinsOnze ? checkedIcon : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsOnze.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(12)}
                           >
                             {checked.besoinsDouze ? checkedIcon : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsDouze.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(13)}
                           >
                             {checked.besoinsTreize
@@ -1492,15 +1492,15 @@ const Questionnaire = ({ devis }) => {
                               : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsTreize.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(14)}
                           >
                             {checked.besoinsQuatorze
@@ -1508,15 +1508,15 @@ const Questionnaire = ({ devis }) => {
                               : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsQuatorze.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(15)}
                           >
                             {checked.besoinsQuinze
@@ -1524,29 +1524,29 @@ const Questionnaire = ({ devis }) => {
                               : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsQuinze.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(16)}
                           >
                             {checked.besoinsSeize ? checkedIcon : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsSeize.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(17)}
                           >
                             {checked.besoinsDixSept
@@ -1554,15 +1554,15 @@ const Questionnaire = ({ devis }) => {
                               : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsDixSept.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(18)}
                           >
                             {checked.besoinsDixHuit
@@ -1570,15 +1570,15 @@ const Questionnaire = ({ devis }) => {
                               : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsDixHuit.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(19)}
                           >
                             {checked.besoinsDixNeuf
@@ -1586,21 +1586,21 @@ const Questionnaire = ({ devis }) => {
                               : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsDixNeuf.text,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(20)}
                           >
                             {checked.besoinsVingt ? checkedIcon : uncheckedIcon}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.besoinsVingt.text,
                             }}
@@ -1610,7 +1610,7 @@ const Questionnaire = ({ devis }) => {
                     </div>
                     {errorBesoinsEntrepriseInput && (
                       <div
-                        className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                        className="text-[#4087FF] mt-2 error-msg animate-pulse"
                         dangerouslySetInnerHTML={{
                           __html: devisEnCours.besoinEntreprise.errorMessage,
                         }}
@@ -1619,15 +1619,15 @@ const Questionnaire = ({ devis }) => {
                   </div>
                 </div>
                 <div className="">
-                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] text-sm font-medium pb-10">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] pb-10">
                     <div
-                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
+                      className="text-[#FC5050]"
                       dangerouslySetInnerHTML={{
                         __html: devis.fonctionnalitesEntreprise.question,
                       }}
                     ></div>
                     <div
-                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
+                      className="mt-2"
                       dangerouslySetInnerHTML={{
                         __html: devis.fonctionnalitesEntreprise.legend,
                       }}
@@ -1648,13 +1648,13 @@ const Questionnaire = ({ devis }) => {
                       id={devis.fonctionnalitesEntreprise.titre}
                       name={devis.fonctionnalitesEntreprise.titre}
                       placeholder={devis.fonctionnalitesEntreprise.placeholder}
-                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
                       value={devisEnCours.fonctionnalitesEntreprise.input}
                       required
                     />
                     {errorFonctionnalitesEntrepriseInput && (
                       <div
-                        className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                        className="text-[#4087FF] mt-2 error-msg animate-pulse"
                         dangerouslySetInnerHTML={{
                           __html:
                             devisEnCours.fonctionnalitesEntreprise.errorMessage,
@@ -1664,15 +1664,15 @@ const Questionnaire = ({ devis }) => {
                   </div>
                 </div>
                 <div className="bg-[#FAFAFB]">
-                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] text-sm font-medium pb-10">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] pb-10">
                     <div
-                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
+                      className="text-[#FC5050]"
                       dangerouslySetInnerHTML={{
                         __html: devis.pourquoiProjetEntreprise.question,
                       }}
                     ></div>
                     <div
-                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
+                      className="mt-2"
                       dangerouslySetInnerHTML={{
                         __html: devis.pourquoiProjetEntreprise.legend,
                       }}
@@ -1692,7 +1692,7 @@ const Questionnaire = ({ devis }) => {
                       id={devis.pourquoiProjetEntreprise.titre}
                       name={devis.pourquoiProjetEntreprise.titre}
                       placeholder={devis.pourquoiProjetEntreprise.placeholder}
-                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
                       value={devisEnCours.pourquoiProjetEntreprise.input}
                       required
                     />
@@ -1700,19 +1700,19 @@ const Questionnaire = ({ devis }) => {
                 </div>
                 <div className="">
                   {" "}
-                  <div className="py-16  w-3/4 max-w-5xl mx-auto flex flex-row">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto flex flex-row">
                     <div className="grow">
                       <Link href="/">
                         <a>
                           <button
                             type="button"
-                            className="group bg-transparent hover:bg-[#41EAD4] w-2/3 h-16 block rounded-lg border-2 border-[#41EAD4]"
+                            className="group bg-transparent hover:bg-[#41EAD4] w-2/3 h-20 block rounded-lg border-2 border-[#41EAD4]"
                           >
                             <span
                               dangerouslySetInnerHTML={{
                                 __html: devis.button1,
                               }}
-                              className="font-bold text-[#41EAD4] group-hover:text-white xl:text-[20px] lg:text-[17px]  text-[15px]"
+                              className=" text-[#41EAD4] group-hover:text-white"
                             />
                           </button>
                         </a>
@@ -1721,11 +1721,11 @@ const Questionnaire = ({ devis }) => {
                     <button
                       type="button"
                       onClick={(event) => firstPart(event)}
-                      className="group bg-transparent hover:bg-[#FC5050] w-1/2 h-16 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]"
+                      className="group bg-transparent hover:bg-[#FC5050] w-1/2 h-20 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]"
                     >
                       <span
                         dangerouslySetInnerHTML={{ __html: devis.button2 }}
-                        className="font-bold text-[#FC5050] group-hover:text-white xl:text-[20px] lg:text-[17px]  text-[15px]"
+                        className=" text-[#FC5050] group-hover:text-white"
                       />
                     </button>
                   </div>
@@ -1736,15 +1736,15 @@ const Questionnaire = ({ devis }) => {
               <div className="mx-auto grid gap-4 items-center">
                 <div className="bg-[#FAFAFB]">
                   {" "}
-                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] ">
                     <div
-                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
+                      className="text-[#FC5050]"
                       dangerouslySetInnerHTML={{
                         __html: devis.contraintesEntreprise.question,
                       }}
                     ></div>
                     <div
-                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
+                      className="mt-2"
                       dangerouslySetInnerHTML={{
                         __html: devis.contraintesEntreprise.legend,
                       }}
@@ -1764,43 +1764,43 @@ const Questionnaire = ({ devis }) => {
                       id={devis.contraintesEntreprise.titre}
                       name={devis.contraintesEntreprise.titre}
                       placeholder={devis.contraintesEntreprise.placeholder}
-                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
                       value={devisEnCours.contraintesEntreprise.input}
                       required
                     />
                   </div>
                 </div>
                 <div className="">
-                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] ">
                     <div
-                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider mb-6"
+                      className="text-[#FC5050] mb-6"
                       dangerouslySetInnerHTML={{
                         __html: devis.budgetEntreprise.question,
                       }}
                     ></div>
-                    <div className="flex mb-4">
+                    <div className="flex mb-4 items-center">
                       <div
-                        className="cursor-pointer"
+                        className="cursor-pointer min-w-[30px]"
                         onClick={() => handleCheck(21)}
                       >
                         {checked.besoinTextUn ? checkedIcon : uncheckedIcon}
                       </div>
                       <div
-                        className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                        className="ml-6"
                         dangerouslySetInnerHTML={{
                           __html: devis.besoinTextUn.text,
                         }}
                       />
                     </div>
-                    <div className="flex">
+                    <div className="flex items-center">
                       <div
-                        className="cursor-pointer"
+                        className="cursor-pointer min-w-[30px]"
                         onClick={() => handleCheck(22)}
                       >
                         {checked.besoinTextDeux ? checkedIcon : uncheckedIcon}
                       </div>
                       <div
-                        className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                        className="ml-6"
                         dangerouslySetInnerHTML={{
                           __html: devis.besoinTextDeux.text,
                         }}
@@ -1809,7 +1809,7 @@ const Questionnaire = ({ devis }) => {
                     {checked.besoinTextUn && (
                       <>
                         <div
-                          className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider pt-10"
+                          className="text-[#FC5050] pt-10"
                           dangerouslySetInnerHTML={{
                             __html: devis.budgetEntreprise.questionDeux,
                           }}
@@ -1827,7 +1827,7 @@ const Questionnaire = ({ devis }) => {
                     )}
                     {errorBudgetEntreprise && (
                       <div
-                        className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                        className="text-[#4087FF] mt-2 error-msg animate-pulse"
                         dangerouslySetInnerHTML={{
                           __html: devisEnCours.budgetEntreprise.errorMessage,
                         }}
@@ -1837,9 +1837,9 @@ const Questionnaire = ({ devis }) => {
                 </div>
                 <div className="bg-[#FAFAFB]">
                   {" "}
-                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] ">
                     <div
-                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
+                      className="text-[#FC5050]"
                       dangerouslySetInnerHTML={{
                         __html: devis.commentaireEntreprise.question,
                       }}
@@ -1860,22 +1860,22 @@ const Questionnaire = ({ devis }) => {
                       id={devis.commentaireEntreprise.titre}
                       name={devis.commentaireEntreprise.titre}
                       placeholder={devis.commentaireEntreprise.placeholder}
-                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
                       value={devisEnCours.commentaireEntreprise.input}
                       required
                     />
                   </div>
                 </div>
                 <div className="">
-                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] ">
                     <div
-                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider"
+                      className="text-[#FC5050]"
                       dangerouslySetInnerHTML={{
                         __html: devis.uploadFilesEntreprise.question,
                       }}
                     ></div>
                     <div
-                      className="xl:text-[21px] lg:text-[18px]  text-[15px] mt-2"
+                      className="mt-2"
                       dangerouslySetInnerHTML={{
                         __html: devis.uploadFilesEntreprise.legend,
                       }}
@@ -1894,7 +1894,7 @@ const Questionnaire = ({ devis }) => {
                         />
                         {errorFileUnLength && (
                           <div
-                            className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px] w-40 px-2 text-center"
+                            className="text-[#4087FF] mt-2 error-msg animate-pulse w-40 px-2 text-center"
                             dangerouslySetInnerHTML={{
                               __html:
                                 devis.uploadFilesEntreprise
@@ -1916,7 +1916,7 @@ const Questionnaire = ({ devis }) => {
                         />
                         {errorFileDeuxLength && (
                           <div
-                            className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px] w-40 px-2 text-center"
+                            className="text-[#4087FF] mt-2 error-msg animate-pulse w-40 px-2 text-center"
                             dangerouslySetInnerHTML={{
                               __html:
                                 devis.uploadFilesEntreprise
@@ -1938,7 +1938,7 @@ const Questionnaire = ({ devis }) => {
                         />
                         {errorFileTroisLength && (
                           <div
-                            className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px] w-40 px-2 text-center"
+                            className="text-[#4087FF] mt-2 error-msg animate-pulse w-40 px-2 text-center"
                             dangerouslySetInnerHTML={{
                               __html:
                                 devis.uploadFilesEntreprise
@@ -1951,18 +1951,18 @@ const Questionnaire = ({ devis }) => {
                   </div>
                 </div>
                 <div className="bg-[#FAFAFB]">
-                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] ">
                     <div
-                      className="text-[#FC5050] xl:text-[34px] lg:text-[30px]  text-[26px] font-medium tracking-wider mb-6"
+                      className="text-[#FC5050] mb-6"
                       dangerouslySetInnerHTML={{
                         __html: devis.personneEntreprise.titre,
                       }}
                     ></div>
                     <div className="flex flex-wrap">
-                      <div className="w-1/3 pl-10 pt-6 mb-10">
+                      <div className="w-full md:w-1/3 pl-10 pt-6 mb-10">
                         <div className="flex mb-4">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(23)}
                           >
                             {checked.textUnChecked
@@ -1970,15 +1970,15 @@ const Questionnaire = ({ devis }) => {
                               : uncheckedIconCircle}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.personneEntreprise.textUn,
                             }}
                           />
                         </div>
-                        <div className="flex">
+                        <div className="flex items-center">
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer min-w-[30px]"
                             onClick={() => handleCheck(24)}
                           >
                             {checked.textDeuxChecked
@@ -1986,7 +1986,7 @@ const Questionnaire = ({ devis }) => {
                               : uncheckedIconCircle}
                           </div>
                           <div
-                            className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                            className="ml-6"
                             dangerouslySetInnerHTML={{
                               __html: devis.personneEntreprise.textDeux,
                             }}
@@ -1995,7 +1995,7 @@ const Questionnaire = ({ devis }) => {
                       </div>
                       {errorPersonneEntreprise && (
                         <div
-                          className="text-[#4087FF]  xl:text-[18px] lg:text-[16px]  text-[14px] mt-6"
+                          className="text-[#4087FF] mt-6 error-msg animate-pulse"
                           dangerouslySetInnerHTML={{
                             __html:
                               devisEnCours.personneEntreprise.errorMessage,
@@ -2003,7 +2003,7 @@ const Questionnaire = ({ devis }) => {
                         ></div>
                       )}
                       {(checked.textUnChecked || checked.textDeuxChecked) && (
-                        <div className="flex flex-col grow min-w-[400px]">
+                        <div className="flex flex-col grow w-auto lg:min-w-[400px]">
                           <input
                             onChange={(event) => {
                               setErrorPersonneEntrepriseInputNom(false)
@@ -2042,13 +2042,13 @@ const Questionnaire = ({ devis }) => {
                             placeholder={
                               devis.personneEntreprise.placeholderNom
                             }
-                            className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                            className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
                             value={devisEnCours.personneEntreprise.inputNom}
                             required
                           />
                           {errorPersonneEntrepriseInputNom && (
                             <div
-                              className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                              className="text-[#4087FF] mt-2 error-msg animate-pulse"
                               dangerouslySetInnerHTML={{
                                 __html:
                                   devisEnCours.personneEntreprise
@@ -2094,13 +2094,13 @@ const Questionnaire = ({ devis }) => {
                             placeholder={
                               devis.personneEntreprise.placeholderPrenom
                             }
-                            className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                            className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
                             value={devisEnCours.personneEntreprise.inputPrenom}
                             required
                           />
                           {errorPersonneEntrepriseInputPrenom && (
                             <div
-                              className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                              className="text-[#4087FF] mt-2 error-msg animate-pulse"
                               dangerouslySetInnerHTML={{
                                 __html:
                                   devisEnCours.personneEntreprise
@@ -2147,13 +2147,13 @@ const Questionnaire = ({ devis }) => {
                             placeholder={
                               devis.personneEntreprise.placeholderMail
                             }
-                            className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:xl:text-[21px] placeholder:lg:text-[18px]  placeholder:text-[15px]"
+                            className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
                             value={devisEnCours.personneEntreprise.inputMail}
                             required
                           />
                           {errorPersonneEntrepriseInputMail && (
                             <div
-                              className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                              className="text-[#4087FF] mt-2 error-msg animate-pulse"
                               dangerouslySetInnerHTML={{
                                 __html:
                                   devisEnCours.personneEntreprise
@@ -2163,7 +2163,7 @@ const Questionnaire = ({ devis }) => {
                           )}
                           {errorPersonneEntrepriseInputMailRegex && (
                             <div
-                              className="text-[#4087FF] mt-2  xl:text-[18px] lg:text-[16px]  text-[14px]"
+                              className="text-[#4087FF] mt-2 error-msg animate-pulse"
                               dangerouslySetInnerHTML={{
                                 __html:
                                   devisEnCours.personneEntreprise
@@ -2177,16 +2177,16 @@ const Questionnaire = ({ devis }) => {
                   </div>
                 </div>
                 <div className="">
-                  <div className="py-16  w-3/4 max-w-5xl mx-auto text-[#505050] font-medium">
-                    <div className="flex">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] ">
+                    <div className="flex items-center">
                       <div
-                        className="cursor-pointer"
+                        className="cursor-pointer min-w-[30px]"
                         onClick={() => handleCheck(25)}
                       >
                         {checked.checkTerms ? checkedIcon : uncheckedIcon}
                       </div>
                       <div
-                        className="ml-6 xl:text-[21px] lg:text-[18px]  text-[15px] align-center"
+                        className="ml-6 align-center"
                         dangerouslySetInnerHTML={{
                           __html: devis.checkTermsEntreprise.text,
                         }}
@@ -2194,7 +2194,7 @@ const Questionnaire = ({ devis }) => {
                     </div>
                     {errorCheckTermsEntreprise && (
                       <div
-                        className="text-[#4087FF] mt-6  xl:text-[18px] lg:text-[16px]  text-[14px] px-2"
+                        className="text-[#4087FF] mt-6 error-msg animate-pulse px-2"
                         dangerouslySetInnerHTML={{
                           __html: devis.checkTermsEntreprise.errorMessage,
                         }}
@@ -2203,20 +2203,20 @@ const Questionnaire = ({ devis }) => {
                   </div>
                 </div>
                 <div className=""></div>
-                <div className="py-16  w-3/4 max-w-5xl mx-auto flex flex-row">
+                <div className="py-16 w-3/4 max-w-5xl mx-auto flex flex-row">
                   <div className="grow">
                     <Link href="/">
                       <a>
                         <button
                           type="button"
                           onClick={(event) => firstPart(event)}
-                          className="group bg-transparent hover:bg-[#2E437D] w-2/3 h-16 block rounded-lg border-2 border-[#2E437D]"
+                          className="group bg-transparent hover:bg-[#2E437D] w-2/3 h-20 block rounded-lg border-2 border-[#2E437D]"
                         >
                           <span
                             dangerouslySetInnerHTML={{
                               __html: devis.button3,
                             }}
-                            className="font-bold text-[#2E437D] group-hover:text-white  xl:text-[20px] lg:text-[17px]  text-[15px]"
+                            className=" text-[#2E437D] group-hover:text-white"
                           />
                         </button>
                       </a>
@@ -2224,11 +2224,11 @@ const Questionnaire = ({ devis }) => {
                   </div>
                   <button
                     type="submit"
-                    className="group bg-transparent hover:bg-[#FC5050] w-1/2 h-16 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]"
+                    className="group bg-transparent hover:bg-[#FC5050] w-1/2 h-20 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]"
                   >
                     <span
                       dangerouslySetInnerHTML={{ __html: devis.button4 }}
-                      className="font-bold text-[#FC5050] group-hover:text-white  xl:text-[20px] lg:text-[17px]  text-[15px]"
+                      className=" text-[#FC5050] group-hover:text-white"
                     />
                   </button>
                 </div>
@@ -2238,7 +2238,7 @@ const Questionnaire = ({ devis }) => {
         ) : (
           <div className="flex justify-center items-center">
             <div
-              className="py-6 px-16 rounded-xl border-2  border-[#41EAD4]  xl:text-[22px] lg:text-[19px]  text-[16px]"
+              className="md:w-full w-3/4 mb-16 py-6 px-16 rounded-xl border-2  border-[#41EAD4]"
               dangerouslySetInnerHTML={{
                 __html: devis.message.successMessage,
               }}

@@ -36,15 +36,15 @@ const Binome = ({ binome }) => {
         <div className="">
           <div className="flex flex-col h-full justify-between rounded-2xl bg-blue-binome px-32 py-16 -translate-x-32 -translate-y-10">
             <div
-              className="uppercase text-[#2E437D] font-bold xl:text-[34px] lg:text-[30px]  text-[26px]"
+              className="uppercase text-[#2E437D]     "
               dangerouslySetInnerHTML={{ __html: binome.titre3 }}
             ></div>
             <div
-              className="text-[#3F3F3F] xl:text-[34px] lg:text-[30px]  text-[26px]  font-semibold lg:my-12"
+              className="text-[#3F3F3F] lg:my-12"
               dangerouslySetInnerHTML={{ __html: binome.titre4 }}
             ></div>
             <div
-              className="text-[#3F3F3F] xl:text-[24px] lg:text-[22px]  text-[18px]"
+              className="text-[#3F3F3F]"
               dangerouslySetInnerHTML={{ __html: binome.paragraphe }}
             ></div>{" "}
           </div>
@@ -65,15 +65,15 @@ const Binome = ({ binome }) => {
         {" "}
         <div className="flex flex-col h-full justify-evenly rounded-t-lg bg-bg-blue-binome px-12 py-8 mx-auto">
           <div
-            className="text-[#2E437D] font-bold xl:text-[34px] lg:text-[30px]  text-[26px]"
+            className="text-[#2E437D]     "
             dangerouslySetInnerHTML={{ __html: binome.titre3 }}
           ></div>
           <div
-            className="text-[#3F3F3F] uppercase xl:text-[34px] lg:text-[30px]  text-[26px] font-semibold lg:my-12"
+            className="text-[#3F3F3F] uppercase lg:my-12"
             dangerouslySetInnerHTML={{ __html: binome.titre4 }}
           ></div>
           <div
-            className="text-[#3F3F3F] xl:text-[24px] lg:text-[22px]  text-[18px]"
+            className="text-[#3F3F3F]"
             dangerouslySetInnerHTML={{ __html: binome.paragraphe }}
           ></div>{" "}
         </div>
@@ -81,17 +81,17 @@ const Binome = ({ binome }) => {
       <div className="block lg:hidden my-12">{imageCarre}</div>
       <div className="flex flex-wrap items-center lg:w-full w-3/4 mx-auto mt-20">
         <div
-          className="text-center xl:text-[34px] lg:text-[30px] text-[26px] mx-auto lg:mr-6 lg:w-1/3 lg:mb-0 mb-10"
+          className="text-center mx-auto lg:mr-6 lg:w-1/3 lg:mb-0 mb-10"
           dangerouslySetInnerHTML={{ __html: binome.paragrapheBis }}
         ></div>
         {imageFleche}
         <div className="mx-auto lg:w-1/4 md:w-1/3 w-full mt-6 md:mt-0">
           <Link href="/demander-un-devis">
             <a>
-              <button className="group bg-transparent hover:bg-[#FC5050] w-full h-16 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]">
+              <button className="group bg-transparent hover:bg-[#FC5050] w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]">
                 <span
                   dangerouslySetInnerHTML={{ __html: binome.button }}
-                  className="font-bold xl:text-[20px] lg:text-[17px]  text-[15px] text-[#FC5050] group-hover:text-white"
+                  className="text-[#FC5050] group-hover:text-white"
                 />
               </button>
             </a>

@@ -17,14 +17,14 @@ const Expertise = ({ expertise }) => {
         <div className="max-w-9xl mx-auto grid items-center text-center py-20">
           <div className="row-start-1 mx-auto lg:w-3/4 w-full">
             <div
-              className="uppercase leading-9 xl:text-[34px] lg:text-[30px]  text-[26px] tracking-wider"
+              className="uppercase      "
               dangerouslySetInnerHTML={{ __html: expertise.titre2 }}
             ></div>
             <div className="h-[2px] bg-[#4087FF] mx-auto mt-6 w-1/6"></div>
           </div>
           <div className="row-start-2 lg:col-span-2 mx-auto w-3/4 mb-8">
             <div
-              className="leading-9 xl:text-[22px] lg:text-[18px]  text-[14px] mt-8"
+              className="mt-8"
               dangerouslySetInnerHTML={{ __html: expertise.paragraphe }}
             ></div>
           </div>
@@ -46,7 +46,7 @@ const Expertise = ({ expertise }) => {
                   <div className="transition-all duration-500 flex flex-col min-h-[300px] h-auto justify-center items-center bg-white-transparent-board rounded-xl p-10">
                     <div className="flex w-full items-center justify-between text-left">
                       <div
-                        className="my-4 text-[#FC5050] min-h-[40px] w-3/5 xl:text-[34px] lg:text-[30px] text-[26px] font-bold"
+                        className="my-4 text-[#FC5050] min-h-[40px] w-3/5"
                         dangerouslySetInnerHTML={{ __html: item.titreVerso }}
                       ></div>
                       <div className="" onClick={() => setBoardState(null)}>
@@ -61,14 +61,14 @@ const Expertise = ({ expertise }) => {
                       </div>
                     </div>
                     <div
-                      className="text-left xl:text-[21px] lg:text-[18px]  text-[15px] "
+                      className="text-left"
                       dangerouslySetInnerHTML={{ __html: item.paragraphe }}
                     ></div>
                   </div>
                 ) : (
                   <div className="transition-all duration-500 flex flex-col min-h-[300px] h-full justify-center items-center bg-white-transparent rounded-xl pt-10">
                     <div
-                      className="w-full my-6 text-[#2E437D] min-h-[40px] xl:text-[34px] lg:text-[30px]  text-[26px]  text-[26px]  font-bold px-4   "
+                      className="w-full my-6 text-[#2E437D] min-h-[40px] px-4"
                       dangerouslySetInnerHTML={{ __html: item.titre }}
                     ></div>
                     <div className="" onClick={() => setBoardState(index)}>
@@ -90,11 +90,11 @@ const Expertise = ({ expertise }) => {
             <div className="my-6 lg:mb-0">{imageDeco}</div>
             <div className="flex flex-col justify-around lg:pl-10">
               <div
-                className="lg:text-left xl:text-[34px] lg:text-[30px]  text-[26px]  mb-6 lg:mb-0"
+                className="lg:text-left mb-6 lg:mb-0"
                 dangerouslySetInnerHTML={{ __html: expertise.titre2bis }}
               ></div>
               <div
-                className="uppercase lg:text-left font-semibold xl:text-[17px] lg:text-[14px]  text-[12px] lg:w-2/3"
+                className="uppercase lg:text-left lg:w-2/3"
                 dangerouslySetInnerHTML={{ __html: expertise.titre3 }}
               ></div>
             </div>
@@ -104,16 +104,16 @@ const Expertise = ({ expertise }) => {
       <div className="bg-[#FC5050] ">
         <div className="max-w-9xl grid items-center mx-auto py-10 w-3/4 lg:w-full">
           <div
-            className="row-start-1 mx-auto lg:ml-auto text-center lg:text-right text-white tracking-wider xl:text-[34px] lg:text-[30px] text-[26px] font-semibold"
+            className="row-start-1 mx-auto lg:ml-auto text-center lg:text-right text-white"
             dangerouslySetInnerHTML={{ __html: expertise.titre3bis }}
           ></div>
-          <div className="row-start-2 lg:row-start-1 w-full lg:w-1/2 mt-10 lg:mt-0 lg:col-start-2">
+          <div className="row-start-2 lg:row-start-1 w-full mt-10 lg:mt-0 lg:col-start-2">
             <Link href="/demander-un-devis">
               <a>
-                <button className="group bg-[#FC5050] hover:bg-white h-16 w-3/4 lg:w-full block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050] mx-auto lg:mx-0">
+                <button className="group bg-[#FC5050] hover:bg-white h-20  md:w-1/2 w-full block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050] mx-auto lg:mx-0">
                   <span
                     dangerouslySetInnerHTML={{ __html: expertise.button }}
-                    className="font-bold text-[#FFFFFF] xl:text-[20px] lg:text-[17px]  text-[15px] group-hover:text-[#FC5050]"
+                    className=" text-[#FFFFFF] group-hover:text-[#FC5050]"
                   />
                 </button>
               </a>

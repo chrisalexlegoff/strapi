@@ -6,17 +6,37 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        "bleu-clair": "var(--bleu-clair)",
+        "rouge-orange": "var(--rouge-orange)",
+        blanc: "var(--blanc)",
+        "bleu-fonce": "var(--bleu-fonce)",
+        vert: "var(--vert)",
+        "fond-orange": "var(--fond-orange)",
+        "noir-style": "var(--noir-style)",
+        "vert-fond": "var(--vert-fond)",
+        "fond-gris": "var(--fond-gris)",
+        gris: "var(--gris)",
+        "bleu-fond": "var(--bleu-fond)",
+        "noir-paragraphe": "var(--noir-paragraphe)",
+      },
+      backgroundColor: {
+        "accueil-entete-mobile": "var(--rouge-orange);",
+        "accueil-nous": "var(--blanc);",
+        "accueil-projet": "var(--vert);",
+        "accueil-pourquoi": "var(--blanc);",
+      },
       backgroundImage: {
-        "split-right-orange-white":
-          "linear-gradient(to right, #FC5050 50%, #FFFFFF 50%);",
+        "accueil-entete":
+          "linear-gradient(to right, var(--rouge-orange) 50%, var(--blanc) 50%);",
         "split-bottom-orange-white":
           "linear-gradient(to bottom, #FC5050 50%, #FFFFFF 50%);",
         "split-bottom-blue-white":
           "linear-gradient(to bottom, #2E437D 50%, #FFFFFF 50%);",
-        "split-right-green-white":
-          "linear-gradient(to right, #41EAD4 50%, #FFFFFF 50%);",
-        "split-bottom-green-white":
-          "linear-gradient(to bottom, #41EAD4 70%, #FFFFFF 30%);",
+        "accueil-realisations":
+          "linear-gradient(to right, var(--vert) 50%, var(--blanc) 50%);",
+        "accueil-realisations-mobile":
+          "linear-gradient(to bottom, var(--vert) 70%, var(--blanc) 30%);",
         "split-right-blue-transparent":
           "linear-gradient(to right, rgba(46, 67, 125, 0.8) 50%, rgba(255,255,255,0) 50%);",
         "split-right-pink-transparent":
@@ -47,7 +67,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      Humanst521BT: "Humanst521BT",
+      Humanist521BT: "Humanist521BT",
     },
   },
   plugins: [],

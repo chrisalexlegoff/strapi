@@ -19,20 +19,20 @@ const EnteteRealisations = ({ header }) => {
           process.env.NEXT_PUBLIC_API_URL + header.bg.data.attributes.url
         })`,
         backgroundPosition: "center",
-        backgroundSize: "cover ",
+        backgroundSize: "cover",
       }}
     >
       <div className="lg:bg-split-right-green-transparent bg-green-transparent">
-        <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left lg:pt-28 font-normal text-white">
+        <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left lg:pt-28 text-white">
           <div className="flex flex-col lg:flex-row lg:row-start-1 mx-auto w-3/4 mt-32 justify-between">
             <div
-              className="uppercase leading-9 xl:text-[38px] lg:text-[34px]  text-[30px] lg:w-2/3"
+              className="uppercase lg:w-2/3"
               dangerouslySetInnerHTML={{ __html: header.titrePage }}
             ></div>
             <div className="my-12 lg:my-0">{imageDeco}</div>
           </div>
           <div
-            className="lg:row-start-2 mx-auto w-3/4 xl:text-[24px] lg:text-[20px]  text-[16px] mb-32"
+            className="lg:row-start-2 mx-auto w-3/4 mb-32"
             dangerouslySetInnerHTML={{ __html: header.paragraphe }}
           ></div>
           <div className="row-start-3 lg:col-span-2 animate-pulse">

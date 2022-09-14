@@ -23,7 +23,7 @@ const Informations = ({ informations }) => {
   return (
     <div className="max-w-9xl mx-auto grid items-center text-center pt-20 pb-28 bg-[#F8FAFF]">
       <div
-        className="uppercase xl:text-[34px] lg:text-[30px]  text-[26px] text-center text-[#3F3F3F]"
+        className="uppercase text-center text-[#3F3F3F]"
         dangerouslySetInnerHTML={{ __html: informations.titre }}
       ></div>
       <div className="h-[2px] bg-[#41EAD4] mx-auto mt-6 w-[12%]"></div>
@@ -31,21 +31,21 @@ const Informations = ({ informations }) => {
         <div className="flex items-center lg:mr-10 mt-16">
           {adressIcon}
           <div
-            className="pl-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+            className="pl-6"
             dangerouslySetInnerHTML={{ __html: informations.adresse }}
           ></div>
         </div>
         <div className="flex items-center lg:mr-10 mt-16">
           {telIcon}
           <div
-            className="pl-6 xl:text-[21px] lg:text-[18px]  text-[15px]"
+            className="pl-6"
             dangerouslySetInnerHTML={{ __html: informations.telephone }}
           ></div>
         </div>
         <div className="flex items-center mt-16">
           {mailIcon}
           <div
-            className="pl-6 xl:text-[21px] lg:text-[18px]  text-[15px] hover:text-[#FC5050]"
+            className="pl-6 hover:text-[#FC5050]"
             dangerouslySetInnerHTML={{ __html: informations.mail }}
           ></div>
         </div>
