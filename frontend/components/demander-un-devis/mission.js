@@ -9,7 +9,7 @@ const Mission = ({ mission }) => {
         <div className="max-w-9xl mx-auto grid lg:grid-cols-2 items-center text-center py-20">
           <div className="row-start-1 lg:col-span-2 mx-auto lg:w-3/4 w-full">
             <div
-              className="uppercase leading-9 xl:text-[34px] lg:text-[30px]  text-[26px] text-white"
+              className="uppercase      text-white"
               dangerouslySetInnerHTML={{ __html: mission.titre4 }}
             ></div>
             <div className="h-[2px] bg-[#41EAD4] w-1/6 mx-auto mt-6"></div>
@@ -28,11 +28,11 @@ const Mission = ({ mission }) => {
                   "80px"
                 )}
                 <div
-                  className="m-6 xl:text-[30px] lg:text-[26px]  text-[22px] text-[#505050] min-h-[40px] w-3/5 font-bold"
+                  className="m-6 xl:text-[30px] text-[#505050] min-h-[40px] w-3/5"
                   dangerouslySetInnerHTML={{ __html: miss.legend }}
                 ></div>
                 <div
-                  className=" text-[#505050] min-h-[200px] w-3/5 xl:text-[21px] lg:text-[18px]  text-[15px]"
+                  className=" text-[#505050] min-h-[200px] w-3/5"
                   dangerouslySetInnerHTML={{ __html: miss.paragraphe }}
                 ></div>
               </div>

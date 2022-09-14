@@ -23,20 +23,20 @@ const Preambule = ({ preambule }) => {
         <div className="">
           <div className="flex flex-col h-full justify-center items-center rounded-2xl bg-blue-binome pl-20 py-16 -translate-x-32 -translate-y-10">
             <div
-              className="uppercase text-[#2E437D] font-bold xl:text-[34px] lg:text-[30px]  text-[26px] mb-6 px-6 text-center"
+              className="uppercase text-[#2E437D] mb-6 px-6 text-center"
               dangerouslySetInnerHTML={{ __html: preambule.titre2 }}
             ></div>
             <div
-              className="text-[#3F3F3F] font-semibold xl:text-[21px] lg:text-[18px]  text-[15px]"
+              className="text-[#3F3F3F]"
               dangerouslySetInnerHTML={{ __html: preambule.paragraphe }}
             ></div>{" "}
             <div className="mx-auto w-3/4 lg:w-1/2 mt-10">
               <Link href="/demander-un-devis">
                 <a>
-                  <button className="group bg-transparent hover:bg-[#FC5050] w-full h-16 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]">
+                  <button className="group bg-transparent hover:bg-[#FC5050] w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]">
                     <span
                       dangerouslySetInnerHTML={{ __html: preambule.button }}
-                      className="font-bold text-[#FC5050] group-hover:text-white xl:text-[20px] lg:text-[17px]  text-[15px]"
+                      className=" text-[#FC5050] group-hover:text-white"
                     />
                   </button>
                 </a>
@@ -52,27 +52,27 @@ const Preambule = ({ preambule }) => {
             preambule.images.data[0].attributes.url
           })`,
           backgroundPosition: "bottom",
-          backgroundSize: "cover ",
+          backgroundSize: "cover",
         }}
         className="h-[500px] rounded-2xl mx-auto block lg:hidden text-center w-5/6 mb-16"
       >
         {" "}
         <div className="flex flex-col justify-evenly items-center h-full rounded-2xl bg-blue-binome px-12 py-8 mx-auto">
           <div
-            className="uppercase text-[#2E437D] font-bold xl:text-[34px] lg:text-[30px]  text-[26px]"
+            className="uppercase text-[#2E437D]"
             dangerouslySetInnerHTML={{ __html: preambule.titre2 }}
           ></div>
           <div
-            className="text-[#3F3F3F] text-left font-semibold xl:text-[21px] lg:text-[18px]  text-[15px]"
+            className="text-[#3F3F3F] text-left"
             dangerouslySetInnerHTML={{ __html: preambule.paragraphe }}
           ></div>
           <div className="mx-auto w-3/4 lg:w-1/2 mt-6">
             <Link href="/demander-un-devis">
               <a>
-                <button className="group bg-transparent hover:bg-[#FC5050] w-full h-16 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]">
+                <button className="group bg-transparent hover:bg-[#FC5050] w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]">
                   <span
                     dangerouslySetInnerHTML={{ __html: preambule.button }}
-                    className="font-bold text-[#FC5050] group-hover:text-white xl:text-[20px] lg:text-[17px]  text-[15px]"
+                    className="text-[#FC5050] group-hover:text-white"
                   />
                 </button>
               </a>

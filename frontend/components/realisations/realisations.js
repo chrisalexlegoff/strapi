@@ -8,19 +8,19 @@ const RealisationsTab = ({ realisations }) => {
         {realisations.map((realisation) => {
           return (
             <div key={realisation.id} className="mx-auto w-4/5 lg:w-3/4">
-              <div className="grid xl:grid-cols-2 min-h-[450px] mx-auto auto-rows-min  bg-[#FAFAFB] p-6 lg:p-16 rounded-2xl mb-10">
+              <div className="grid xl:grid-cols-2 min-h-[450px] mx-auto auto-rows-min bg-[#FAFAFB] p-6 lg:p-16 rounded-2xl mb-10">
                 <div className="row-start-1">
                   <div
-                    className="text-[#FC5050] font-semibold xl:text-[34px] lg:text-[30px]  text-[26px] text-center xl:text-left"
+                    className="text-[#FC5050] text-center xl:text-left"
                     dangerouslySetInnerHTML={{ __html: realisation.titre }}
                   ></div>
                   <div
-                    className="text-[#2E437D] xl:text-left text-center uppercase xl:text-[17px] lg:text-[14px]  text-[12px] font-semibold"
+                    className="text-[#2E437D] xl:text-left text-center uppercase"
                     dangerouslySetInnerHTML={{ __html: realisation.annee }}
                   ></div>
                 </div>
                 <div
-                  className="text-[#3F3F3F] xl:text-[19px] lg:text-[16px]  text-[13px] row-start-2 py-14 xl:pt-0 xl:text-start text-center xl:pb-14"
+                  className="text-[#3F3F3F] row-start-2 py-14 xl:pt-0 xl:text-start text-center xl:pb-14"
                   dangerouslySetInnerHTML={{ __html: realisation.paragraphe }}
                 ></div>
 
@@ -32,13 +32,13 @@ const RealisationsTab = ({ realisations }) => {
                 >
                   <button
                     type="button"
-                    className="group bg-transparent hover:bg-[#2E437D] xl:w-2/3 w-full h-12 mx-auto xl:m-0 block rounded-xl border-2 border-[#2E437D]"
+                    className="group bg-transparent hover:bg-[#2E437D] xl:w-2/3 w-full h-20 mx-auto xl:m-0 block rounded-xl border-2 border-[#2E437D]"
                   >
                     <span
                       dangerouslySetInnerHTML={{
                         __html: realisation.button,
                       }}
-                      className="font-bold text-[#2E437D] group-hover:text-white"
+                      className=" text-[#2E437D] group-hover:text-white"
                     />
                   </button>
                 </a>
@@ -48,7 +48,7 @@ const RealisationsTab = ({ realisations }) => {
                     {realisation.outils.map((outil) => {
                       return (
                         <div
-                          className="rounded-xl bg-[#41EAD4] py-2 px-4  m-2"
+                          className="rounded-xl bg-[#41EAD4] py-2 px-4 m-2"
                           key={outil.id}
                         >
                           {outil.competence}

@@ -10,7 +10,7 @@ const ErrorPage = ({ errorPage }) => {
           errorPage.errorPage.bg.data.attributes.url
         })`,
         backgroundPosition: "center",
-        backgroundSize: "cover ",
+        backgroundSize: "cover",
       }}
     >
       <div className="max-w-9xl mx-auto h-screen grid gap-4 items-center text-center pt-20">
@@ -30,12 +30,12 @@ const ErrorPage = ({ errorPage }) => {
         <div className="row-start-4">
           <Link href="/">
             <a>
-              <button className="group bg-transparent hover:bg-[#41EAD4] lg:w-1/4 w-3/4 h-16 mx-auto block rounded-lg border-2 border-[#41EAD4]">
+              <button className="group bg-transparent hover:bg-[#41EAD4] lg:w-1/4 w-3/4 h-20 mx-auto block rounded-lg border-2 border-[#41EAD4]">
                 <span
                   dangerouslySetInnerHTML={{
                     __html: errorPage.errorPage.button,
                   }}
-                  className="font-bold text-[#41EAD4] group-hover:text-white"
+                  className="text-[#41EAD4] group-hover:text-white"
                 />
               </button>
             </a>

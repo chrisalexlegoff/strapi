@@ -49,6 +49,13 @@
     },
     "titre2": {
       "type": "richtext"
+    },
+    "logoAccueil": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

@@ -167,7 +167,7 @@ const ContactForm = ({ contact }) => {
   return (
     <div id="contactForm" className="max-w-9xl pb-24 pt-24 mx-auto">
       <div
-        className="uppercase mb-12 xl:text-[34px] lg:text-[30px]  text-[26px] text-center"
+        className="uppercase mb-12     text-center"
         dangerouslySetInnerHTML={{ __html: contact.titre }}
       ></div>
       <div className="mb-12 h-[2px] bg-[#41EAD4] mx-auto mt-6 w-1/12"></div>
@@ -180,7 +180,7 @@ const ContactForm = ({ contact }) => {
               className="mx-auto w-4/5 lg:w-3/4 max-w-[600px]"
             >
               <div className="mx-auto grid gap-4 items-center">
-                <div className="text-[#2E437D] xl:text-[20px] lg:text-[18px]  text-[16px] font-medium pb-10">
+                <div className="text-[#2E437D] pb-10">
                   <div className="flex flex-col grow min-w-full lg:min-w-[400px]">
                     <input
                       onChange={(event) => {
@@ -194,7 +194,7 @@ const ContactForm = ({ contact }) => {
                       id={contact.personne.placeholderNom}
                       name={contact.personne.placeholderNom}
                       placeholder={contact.personne.placeholderNom}
-                      className="mt-4 shadow appearance-none border-2 border-[#2E437D] rounded-lg w-full py-2 px-3 h-[60px] text-[#2E437D] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#2E437D] placeholder:xl:text-[20px] lg:text-[18px]  text-[16px]"
+                      className="mt-4 shadow appearance-none border-2 border-[#2E437D] rounded-lg w-full py-2 px-3 h-[60px] text-[#2E437D] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#2E437D]"
                       value={contactEnCours.inputNom}
                       required
                     />
@@ -219,7 +219,7 @@ const ContactForm = ({ contact }) => {
                       id={contact.personne.placeholderMail}
                       name={contact.personne.placeholderMail}
                       placeholder={contact.personne.placeholderMail}
-                      className="mt-4 shadow appearance-none border-2 border-[#2E437D] rounded-lg w-full py-2 px-3 h-[60px] text-[#2E437D] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#2E437D] placeholder:xl:text-[20px] lg:text-[18px]  text-[16px]"
+                      className="mt-4 shadow appearance-none border-2 border-[#2E437D] rounded-lg w-full py-2 px-3 h-[60px] text-[#2E437D] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#2E437D]"
                       value={contactEnCours.inputMail}
                       required
                     />
@@ -253,7 +253,7 @@ const ContactForm = ({ contact }) => {
                       id={contact.personne.placeholderMessage}
                       name={contact.personne.placeholderMessage}
                       placeholder={contact.personne.placeholderMessage}
-                      className="mt-4 shadow appearance-none border-2 border-[#2E437D] rounded-lg w-full py-2 px-3 h-[140px] text-[#2E437D] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#2E437D] placeholder:xl:text-[20px] lg:text-[18px]  text-[16px]"
+                      className="mt-4 shadow appearance-none border-2 border-[#2E437D] rounded-lg w-full py-2 px-3 h-[140px] text-[#2E437D] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#2E437D]"
                       value={contactEnCours.inputMessage}
                       required
                     />
@@ -267,7 +267,7 @@ const ContactForm = ({ contact }) => {
                     )}
                   </div>
                 </div>
-                <div className="text-[#2E437D] xl:text-[20px] lg:text-[18px]  text-[16px] font-medium pb-10">
+                <div className="text-[#2E437D] pb-10">
                   <div className="flex">
                     <div
                       className="cursor-pointer w-2/12 lg:w-1/12 lg:pt-1 pt-2"
@@ -276,7 +276,7 @@ const ContactForm = ({ contact }) => {
                       {checked.checkTerms ? checkedIcon : uncheckedIcon}
                     </div>
                     <div
-                      className="text-[#3F3F3F] ml-4 xl:text-[14px] lg:text-[12px]  text-[10px]"
+                      className="text-[#3F3F3F] ml-4"
                       dangerouslySetInnerHTML={{
                         __html: contact.checkTerms.text,
                       }}
@@ -294,11 +294,11 @@ const ContactForm = ({ contact }) => {
 
                 <button
                   type="submit"
-                  className="group bg-transparent hover:bg-[#2E437D] lg:w-1/2 w-full h-16 mx-auto lg:m-0 block rounded-lg border-2 border-[#2E437D]"
+                  className="group bg-transparent hover:bg-[#2E437D] lg:w-1/2 w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-[#2E437D]"
                 >
                   <span
                     dangerouslySetInnerHTML={{ __html: contact.button }}
-                    className="font-bold text-[#2E437D] group-hover:text-white xl:text-[20px] lg:text-[17px]  text-[15px]"
+                    className=" text-[#2E437D] group-hover:text-white"
                   />
                 </button>
               </div>

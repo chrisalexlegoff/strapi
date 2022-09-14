@@ -11,56 +11,56 @@ const Pourquoi = ({ pourquoi }) => {
     ""
   )
   return (
-    <div className="text-center">
+    <div id="pourquoi" className="text-center">
       <div
         style={{}}
-        className="max-w-9xl mx-auto grid grid-col-1 lg:grid-cols-2 items-center text-center lg:text-left font-normal lg:-mt-6"
+        className="max-w-9xl mx-auto grid grid-col-1 lg:grid-cols-2 items-center text-center lg:text-left bg-accueil-pourquoi"
       >
-        <div className="flex flex-col lg:w-[450px] bg-[#FC5050] rounded-lg mx-auto p-12 text-white my-4 lg:my-0 lg:mx-0 lg:ml-auto lg:mr-10">
+        <div className="creer flex flex-col lg:-translate-y-20 lg:min-h-[562px] lg:w-[450px] bg-rouge-orange rounded-3xl mx-auto p-12 my-10 lg:my-0 lg:mx-0 lg:ml-auto lg:mr-10">
           <div
-            className="mx-auto  xl:text-[34px] lg:text-[30px]  text-[26px]  text-[28px] text-center"
+            className="mx-auto text-center"
             dangerouslySetInnerHTML={{ __html: pourquoi.titre2 }}
           ></div>
           <div
-            className="text-base mx-auto text-center my-12 xl:text-[22px] lg:text-[18px]  text-[14px]"
+            className="lg:min-h-[208px] mx-auto text-center my-12"
             dangerouslySetInnerHTML={{ __html: pourquoi.paragraphe }}
           ></div>
           <div className="mx-auto w-full">
             <Link href="/demander-un-devis">
               <a>
-                <button className="group bg-[#FC5050] lg:bg-transparent lg:hover:bg-[#FFFFFF] w-full h-16 mx-auto lg:m-0 block rounded-lg border-2 border-[#FFFFFF]">
+                <button className="group bg-rouge-orange lg:bg-transparent lg:hover:bg-blanc w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-blanc">
                   <span
                     dangerouslySetInnerHTML={{ __html: pourquoi.button }}
-                    className="font-bold text-[#FFFFFF] lg:group-hover:text-[#FC5050]  xl:text-[20px] lg:text-[17px]  text-[15px]"
+                    className="text-blanc lg:group-hover:text-rouge-orange"
                   />
                 </button>
               </a>
             </Link>
           </div>
         </div>
-        <div className="flex flex-col  lg:w-[450px] bg-[#EBFFFC] rounded-lg mx-auto p-12 my-4 lg:my-0  lg:mx-0 lg:mr-auto lg:ml-10">
+        <div className="refondre flex flex-col lg:-translate-y-20 lg:min-h-[562px] lg:w-[450px] bg-vert-fond rounded-3xl mx-auto p-12 my-10 lg:my-0 lg:mx-0 lg:mr-auto lg:ml-10">
           <div
-            className="mx-auto  xl:text-[34px] lg:text-[30px]  text-[26px]  text-[28px] text-center"
+            className="mx-auto text-center"
             dangerouslySetInnerHTML={{ __html: pourquoi.titre2bis }}
           ></div>
           <div
-            className="text-base mx-auto text-center my-12  xl:text-[22px] lg:text-[18px]  text-[14px]"
+            className="lg:min-h-[208px] mx-auto text-center my-12"
             dangerouslySetInnerHTML={{ __html: pourquoi.paragrapheBis }}
           ></div>
           <div className="mx-auto w-full">
             <Link href="/demander-un-devis">
               <a>
-                <button className="group bg-transparent border-[#FC5050] lg:bg-transparent lg:hover:bg-[#FC5050] w-full h-16 mx-auto lg:m-0 block rounded-lg border-2 lg:border-[#FC5050]">
+                <button className="group bg-transparent border-rouge-orange lg:bg-transparent lg:hover:bg-rouge-orange w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 lg:border-rouge-orange">
                   <span
-                    dangerouslySetInnerHTML={{ __html: pourquoi.button }}
-                    className="font-bold text-[#FC5050] lg:group-hover:text-[#FFFFFF]  xl:text-[20px] lg:text-[17px]  text-[15px]"
+                    dangerouslySetInnerHTML={{ __html: pourquoi.button2 }}
+                    className="text-rouge-orange lg:group-hover:text-blanc"
                   />
                 </button>
               </a>
             </Link>
           </div>
         </div>
-        <div className="hidden lg:block lg:col-span-2 mx-auto w-1/4 my-4 lg:-mb-2 lg:mt-32">
+        <div className="hidden lg:block lg:col-span-2 mx-auto w-1/4 my-4 lg:-mb-[0.435rem]">
           {imageDeco}
         </div>
       </div>
