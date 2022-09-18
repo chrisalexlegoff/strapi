@@ -14,6 +14,7 @@ const EnteteRealisations = ({ header }) => {
 
   return (
     <div
+      id="entete-realisation"
       style={{
         backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(${
           process.env.NEXT_PUBLIC_API_URL + header.bg.data.attributes.url
@@ -22,8 +23,8 @@ const EnteteRealisations = ({ header }) => {
         backgroundSize: "cover",
       }}
     >
-      <div className="lg:bg-split-right-green-transparent bg-green-transparent">
-        <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left lg:pt-28 text-white">
+      <div className="lg:bg-entete-realisations bg-entete-realisations-mobile">
+        <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center text-center lg:text-left">
           <div className="flex flex-col lg:flex-row lg:row-start-1 mx-auto w-3/4 mt-32 justify-between">
             <div
               className="uppercase lg:w-2/3"
@@ -32,21 +33,19 @@ const EnteteRealisations = ({ header }) => {
             <div className="my-12 lg:my-0">{imageDeco}</div>
           </div>
           <div
-            className="lg:row-start-2 mx-auto w-3/4 mb-32"
+            className="h5 lg:row-start-2 mx-auto w-3/4 lg:mb-0 mb-32"
             dangerouslySetInnerHTML={{ __html: header.paragraphe }}
           ></div>
           <div className="row-start-3 lg:col-span-2 animate-pulse">
-            <Link href="/nos-realisations/#realisations">
+            <Link href="/nos-realisations/#nos-realisations">
               <a className="flex flex-col items-center">
-                <span className="mb-2 text-[#41EAD4]">
-                  {/* {header.enSavoirPlus.text} */}
-                </span>
+                <span className="mb-2">{/* {header.enSavoirPlus.text} */}</span>
                 <Image
                   src={
                     process.env.NEXT_PUBLIC_API_URL +
                     header.enSavoirPlus.image.data.attributes.url
                   }
-                  alt="logo dualdclic"
+                  alt={header.enSavoirPlus.text}
                   width={175}
                   height={75}
                 />

@@ -1,13 +1,29 @@
-@import "../components/css/components.css";
+/* Imports internes */
+@import "./Nav/nav.css";
+@import "./footer/footer.css";
+@import "./range/multi-range.css";
+@import "./cards/card.css";
+@import "./animations/animations.css";
+@import "./pages/accueil.css";
+@import "./pages/about.css";
+@import "./pages/prestation.css";
+@import "./pages/realisations.css";
+@import "./pages/contact.css";
+@import "./pages/devis.css";
+/* imports Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   /* colors */
+  --transparent: rgba(255, 255, 255, 0);
   --bleu-clair: #4087ff;
   --blanc: #ffffff;
   --bleu-fonce: #2e437d;
+  --bleu-fonce-transparent: rgba(46, 67, 125, 0.8);
+  --bleu-fonce-transparent-2: rgba(46, 67, 125, 0.95);
+  --bleu-fond: rgba(248, 250, 255, 1);
   --bg-bleu-fonce: linear-gradient(
     0deg,
     rgba(46, 67, 125, 0.85),
@@ -19,11 +35,14 @@
     rgba(50, 50, 50, 0.85)
   );
   --vert: #41ead4;
+  --vert-transparent: rgba(65, 234, 212, 0.95);
   --rouge-orange: #fc5050;
   --fond-orange: #fff5f5;
   --noir-style: #3f3f3f;
   --vert-fond: #ebfffc;
-  --fond-gris: #fafafb;
+  --fond-gris: rgba(250, 250, 251, 0.95);
+  --blanc-transparent: rgba(255, 255, 255, 0.65);
+  --blanc-transparent-2: rgba(255, 255, 255, 0.9);
   --gris: #6b7f82;
   --bleu-fond: #f8faff;
   --noir-paragraphe: #505050;
@@ -57,12 +76,26 @@
   --size-md-h4: 1.313rem;
   --size-sm-h4: 1.188rem;
 
+  /*  .h5 > p */
+  --size-2xl-h5: 2.125rem;
+  --size-xl-h5: 1.875rem;
+  --size-lg-h5: 1.5rem;
+  --size-md-h5: 1.375rem;
+  --size-sm-h5: 1.25rem;
+
   /* p */
   --size-2xl-p: 1.313rem;
   --size-xl-p: 1.188rem;
   --size-lg-p: 1.125rem;
   --size-md-p: 1rem;
   --size-sm-p: 0.875rem;
+
+  /* .competences */
+  --size-2xl-competences: 1rem;
+  --size-xl-competences: 0.875rem;
+  --size-lg-competences: 0.75rem;
+  --size-md-competences: 0.625rem;
+  --size-sm-competences: 0.5rem;
 
   /* text-button */
   --size-2xl-text-button: 1.25rem;
@@ -90,6 +123,9 @@
   /* h4 */
   --weight-h4: 700;
   --weight-h4-phone: 400;
+  /*  .h5 > p */
+  --weight-h5: 700;
+  --weight-h5-phone: 400;
   /* p */
   --weight-p: 400;
   /* text-button */
@@ -100,7 +136,7 @@
   /* Line-height */
   /* h1 */
   --height-h1: 2.813rem;
-  --height-h1-phone: 1.563rem;
+  --height-h1-phone: 1.725rem;
   /* h2 */
   --height-h2: 2.625rem;
   --height-h2-phone: 1.688rem;
@@ -110,6 +146,9 @@
   /* h4 */
   --height-h4: 1.5rem;
   --height-h4-phone: 1.438rem;
+  /*  .h5 > p */
+  --height-h5: 2.125rem;
+  --height-h5-phone: 1.738rem;
   /* p */
   --height-p: 1.625rem;
   --height-p-phone: 1.563rem;
@@ -131,6 +170,9 @@
   /* h4 */
   --spacing-h4: 0.04em;
   --spacing-h4-phone: 0.03em;
+  /*  .h5 > p */
+  --spacing-h5: "inherit";
+  --spacing-h5-phone: "inherit";
   /* p */
   --spacing-p: 0.015em;
   --spacing-p-phone: 0.01em;
@@ -190,7 +232,7 @@
     list-style-type: disc;
   }
 
-  /* global */
+  /* Fonts */
   h1 {
     font-family: "Humanist521BT";
     font-weight: var(--weight-h1);
@@ -219,8 +261,17 @@
     letter-spacing: var(--spacing-h4);
   }
 
+  .h5 > p {
+    font-family: "Humanist521BT";
+    font-weight: var(--weight-h5);
+    line-height: var(--height-h5);
+    letter-spacing: var(--spacing-h5);
+  }
+
   p,
   a,
+  .competences,
+  .message-erreur,
   ::placeholder,
   .error-msg {
     font-family: "Humanist521BT";
@@ -257,6 +308,12 @@
     h4 {
       font-size: var(--size-2xl-h4);
     }
+    .h5 > p {
+      font-size: var(--size-2xl-h5);
+    }
+    .competences {
+      font-size: var(--size-2xl-competences);
+    }
     p,
     a,
     ::placeholder,
@@ -284,6 +341,12 @@
     }
     h4 {
       font-size: var(--size-xl-h4);
+    }
+    .h5 > p {
+      font-size: var(--size-xl-h5);
+    }
+    .competences {
+      font-size: var(--size-xl-competences);
     }
     p,
     a,
@@ -323,6 +386,14 @@
       font-weight: var(--weight-h4-phone);
       line-height: var(--height-h4-phone);
       letter-spacing: var(--spacing-h4-phone);
+    }
+    .h5 > p {
+      font-size: var(--size-lg-h5);
+      font-weight: var(--weight-h5-phone);
+      line-height: var(--height-h5-phone);
+    }
+    .competences {
+      font-size: var(--size-lg-competences);
     }
     p,
     a,
@@ -366,6 +437,14 @@
       line-height: var(--height-h4-phone);
       letter-spacing: var(--spacing-h4-phone);
     }
+    .h5 > p {
+      font-size: var(--size-md-h5);
+      font-weight: var(--weight-h5-phone);
+      line-height: var(--height-h5-phone);
+    }
+    .competences {
+      font-size: var(--size-md-competences);
+    }
     p,
     a,
     ::placeholder,
@@ -408,6 +487,14 @@
       line-height: var(--height-h4-phone);
       letter-spacing: var(--spacing-h4-phone);
     }
+    .h5 > p {
+      font-size: var(--size-sm-h5);
+      font-weight: var(--weight-h5-phone);
+      line-height: var(--height-h5-phone);
+    }
+    .competences {
+      font-size: var(--size-sm-competences);
+    }
     p,
     a,
     ::placeholder,
@@ -423,108 +510,5 @@
       font-size: var(--size-sm-nav-a);
       line-height: var(--height-nav-a-phone);
     }
-  }
-
-  /* Style pages */
-  /* ACCUEIL */
-  /* Accueil-entete */
-  #accueil #accueil-entete h1,
-  #accueil #accueil-entete p {
-    color: var(--blanc) !important;
-  }
-  /* nous */
-  #accueil #nous h2,
-  #accueil #nous h3 {
-    color: var(--bleu-fonce) !important;
-  }
-  #accueil #nous h2 > span,
-  #accueil #nous h3 > span,
-  #accueil #nous .span > h3 {
-    color: var(--bleu-clair) !important;
-  }
-
-  /* Projet */
-  #accueil #projet h2,
-  #accueil #projet p {
-    color: var(--noir-style);
-  }
-  #accueil #projet h2 > span,
-  #accueil #projet p > span {
-    color: var(--rouge-orange) !important;
-  }
-  /* Pourquoi */
-  #accueil #pourquoi .creer h3 {
-    color: var(--blanc);
-  }
-  #accueil #pourquoi .creer h3 > span {
-    color: var(--vert) !important;
-  }
-  #accueil #pourquoi .creer p {
-    color: var(--blanc) !important;
-  }
-  #accueil #pourquoi .refondre h3 {
-    color: var(--noir-style);
-  }
-  #accueil #pourquoi .refondre h3 > span {
-    color: var(--rouge-orange) !important;
-  }
-  #accueil #pourquoi .refondre p {
-    color: var(--noir-style) !important;
-  }
-  /* Valeurs */
-  #accueil #valeurs h2,
-  #accueil #valeurs h3,
-  #accueil #valeurs p {
-    color: var(--blanc);
-  }
-  #accueil #valeurs h2 > span,
-  #accueil #valeurs p > span {
-    color: var(--vert) !important;
-  }
-  #accueil #valeurs .front h4 {
-    color: var(--rouge-orange);
-  }
-  #accueil #valeurs .back p {
-    color: var(--bleu-fonce);
-  }
-  /* Realisations */
-  #accueil #realisations h2,
-  #accueil #realisations h3,
-  #accueil #realisations p {
-    color: var(--noir-style);
-  }
-  #accueil #realisations h2 > span,
-  #accueil #realisations p > span {
-    color: var(--rouge-orange) !important;
-  }
-  /* Services */
-  #accueil #services h2,
-  #accueil #services h3,
-  #accueil #services p {
-    color: var(--blanc);
-  }
-  #accueil #services h4 {
-    color: var(--noir-paragraphe);
-  }
-  #accueil #services h2 > span {
-    color: var(--bleu-clair) !important;
-  }
-  /* Missions */
-  #accueil #missions h2,
-  #accueil #missions h3,
-  #accueil #missions p {
-    color: var(--noir-style);
-  }
-  #accueil #missions h2 > span {
-    color: var(--vert) !important;
-  }
-  #accueil #missions .projet h2 > span {
-    color: var(--bleu-clair) !important;
-  }
-  #accueil #missions .projet p > span {
-    color: var(--rouge-orange) !important;
-  }
-  #accueil #missions .services p {
-    color: var(--noir-paragraphe);
   }
 }

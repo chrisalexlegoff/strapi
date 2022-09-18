@@ -72,15 +72,13 @@ const AccueilEntete = ({ header }) => {
         <div className="lg:col-span-2 animate-pulse">
           <Link href="/#nous">
             <a className="flex flex-col items-center">
-              <span className="mb-2 text-[#41EAD4]">
-                {/* {header.enSavoirPlus.text} */}
-              </span>
+              <span className="mb-2">{/* {header.enSavoirPlus.text} */}</span>
               <Image
                 src={
                   process.env.NEXT_PUBLIC_API_URL +
                   header.enSavoirPlus.image.data.attributes.url
                 }
-                alt="logo dualdclic"
+                alt={header.enSavoirPlus.text}
                 width={175}
                 height={75}
               />

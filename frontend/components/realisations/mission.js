@@ -13,7 +13,10 @@ const Mission = ({ mission }) => {
   )
   return (
     <div>
-      <div className="max-w-9xl mx-auto grid lg:grid-cols-2 items-center text-center py-20">
+      <div
+        id="realisation-mission"
+        className="max-w-9xl mx-auto grid lg:grid-cols-2 items-center text-center py-20"
+      >
         <div className="row-start-1 mx-auto uppercase w-3/4 lg:text-end mb-8 lg:mb-0">
           <div
             className="w-1/2 lg:w-2/3 lg:ml-auto lg:mr-0 mx-auto"
@@ -22,7 +25,7 @@ const Mission = ({ mission }) => {
         </div>
         <div className="row-start-2 mx-auto w-3/4 lg:text-end">
           <div
-            className=" text-lg"
+            className=""
             dangerouslySetInnerHTML={{ __html: mission.paragraphe }}
           ></div>
         </div>
@@ -30,10 +33,10 @@ const Mission = ({ mission }) => {
         <div className="mx-auto w-3/4 row-start-5 lg:row-start-3">
           <Link href="/a-propos">
             <a>
-              <button className="group bg-[#FC5050] w-full hover:bg-white h-20 mx-auto lg:w-1/2 lg:ml-auto lg:mr-0 block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050]">
+              <button className="group bg-rouge-orange w-full hover:bg-white h-20 mx-auto lg:w-1/2 lg:ml-auto lg:mr-0 block rounded-lg border-2 border-blanc hover:border-rouge-orange">
                 <span
                   dangerouslySetInnerHTML={{ __html: mission.button }}
-                  className=" text-[#FFFFFF] group-hover:text-[#FC5050]"
+                  className="text-blanc group-hover:text-rouge-orange"
                 />
               </button>
             </a>

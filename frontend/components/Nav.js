@@ -73,10 +73,8 @@ export const Navbar = ({ logo, hamburger }) => {
     setOpen(!open)
   }
 
-  const activeClass =
-    "lg:inline-flex lg:w-auto w-full px-3 lg:py-2 py-10 lg:border-none border-b-[0.5px] border-[#505050] text-[#4087FF]  items-center justify-center"
   const classNormal =
-    "lg:inline-flex lg:w-auto w-full px-3 lg:py-2 py-10 lg:border-none border-b-[0.5px] text-[#3F3F3F] border-[#505050]  items-center justify-center hover:text-[#4087FF]"
+    "lg:inline-flex lg:w-auto w-full px-3 lg:py-2 py-10 lg:border-none border-b-[0.5px] border-noir-paragraphe  items-center justify-center"
 
   useEffect(() => {
     const scrollNav = () => {
@@ -99,7 +97,7 @@ export const Navbar = ({ logo, hamburger }) => {
   return (
     <nav
       id="nav"
-      className="opacity-0 transition-opacity bg-[#FAFAFB]/95 p-3 fixed w-full z-10"
+      className="opacity-0 shadow-[0px_2px_20px_rgba(0,0,0,0.14)] transition-opacity bg-nav p-3 fixed w-full z-10"
     >
       <div className="max-w-9xl mx-6 lg:mx-16 flex items-center flex-wrap">
         <Link href="/" className="hidden lg:block">
@@ -110,7 +108,7 @@ export const Navbar = ({ logo, hamburger }) => {
         </Link>
 
         <button
-          className="inline-flex p-3 lg:hidden text-white ml-auto"
+          className="inline-flex p-3 lg:hidden ml-auto"
           onClick={handleClick}
         >
           {!open ? newHamburger : newCloseMenu}
@@ -121,11 +119,13 @@ export const Navbar = ({ logo, hamburger }) => {
             active ? "" : "hidden"
           }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
         >
-          <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+          <div className="li lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
             <Link href="/about">
               <a
                 className={
-                  router.pathname == "/about" ? activeClass : classNormal
+                  router.pathname == "/about"
+                    ? classNormal + " active"
+                    : classNormal
                 }
               >
                 {router.pathname == "/about" ? "{ A propos }" : "A propos"}
@@ -135,7 +135,7 @@ export const Navbar = ({ logo, hamburger }) => {
               <a
                 className={
                   router.pathname == "/nos-prestations"
-                    ? activeClass
+                    ? classNormal + " active"
                     : classNormal
                 }
               >
@@ -148,7 +148,7 @@ export const Navbar = ({ logo, hamburger }) => {
               <a
                 className={
                   router.pathname == "/nos-realisations"
-                    ? activeClass
+                    ? classNormal + " active"
                     : classNormal
                 }
               >
@@ -160,7 +160,9 @@ export const Navbar = ({ logo, hamburger }) => {
             <Link href="/contact">
               <a
                 className={
-                  router.pathname == "/contact" ? activeClass : classNormal
+                  router.pathname == "/contact"
+                    ? classNormal + " active"
+                    : classNormal
                 }
               >
                 {router.pathname == "/contact"
@@ -172,8 +174,8 @@ export const Navbar = ({ logo, hamburger }) => {
               <a
                 className={
                   router.pathname == "/demander-un-devis"
-                    ? activeClass
-                    : "lg:inline-flex lg:w-auto w-full px-3 lg:py-2 py-10 lg:border-none border-b-[0.5px] text-[#FC5050]  items-center border-[#505050] justify-center hover:text-[#4087FF]"
+                    ? classNormal + " active"
+                    : classNormal
                 }
               >
                 {router.pathname == "/demander-un-devis"

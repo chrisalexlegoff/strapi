@@ -11,8 +11,11 @@ const Footer = ({ footer }) => {
     ""
   )
   return (
-    <div className="bg-[#2E437D] shadow-[inset_0px_7px_12px_rgba(0,0,0,0.25)]">
-      <div className="max-w-9xl mx-auto grid xl:grid-col-3 lg:grid-col-2 auto-cols-fr auto-rows-fr justify-items-center text-white lg:py-24 py-12">
+    <div
+      id="footer"
+      className="bg-footer shadow-[inset_0px_7px_12px_rgba(0,0,0,0.25)]"
+    >
+      <div className="max-w-9xl mx-auto grid xl:grid-col-3 lg:grid-col-2 auto-cols-fr auto-rows-fr justify-items-center lg:py-24 py-12">
         <div className="xl:col-start-1 xl:row-start-1 xl:col-span-1 lg:row-start-2 lg:col-span-2 w-3/4 flex h-[350px] flex-col text-center justify-between lg:m-10 xl:m-4 m-12">
           <div className="mx-auto w-1/2">{logo}</div>
           <div
@@ -26,10 +29,10 @@ const Footer = ({ footer }) => {
           <div className="mx-auto w-full">
             <Link href="/demander-un-devis">
               <a>
-                <button className="group bg-transparent border-white  hover:border-[#41EAD4] w-2/3 lg:w-full h-20 mx-auto block rounded-lg border-2">
+                <button className="group bg-transparent border-white  hover:border-vert w-2/3 lg:w-full h-20 mx-auto block rounded-lg border-2">
                   <span
                     dangerouslySetInnerHTML={{ __html: footer.button }}
-                    className=" text-white group-hover:text-[#41EAD4]"
+                    className=" text-white group-hover:text-vert"
                   />
                 </button>
               </a>
@@ -40,16 +43,16 @@ const Footer = ({ footer }) => {
             dangerouslySetInnerHTML={{ __html: footer.copyright }}
           ></div>
         </div>
-        <div className="xl:col-start-2 flex flex-col h-[350px] lg:m-4 m-12">
+        <div className="nav xl:col-start-2 flex flex-col h-[350px] lg:m-4 m-12">
           {" "}
           <div
             className=" text-center lg:text-left mb-4"
             dangerouslySetInnerHTML={{ __html: footer.titre4bis }}
           ></div>
-          <div className="group flex flex-col ml-2 lg:h-full h-[250px] justify-between text-center lg:text-left">
+          <div className="li group flex flex-col ml-2 lg:h-full h-[250px] justify-between text-center lg:text-left">
             {footer.nav.map((item) => (
               <Link key={item.id} href={item.lien}>
-                <a className="hover:text-[#41EAD4]">{item.slug}</a>
+                <a className="">{item.slug}</a>
               </Link>
             ))}
           </div>
@@ -96,17 +99,12 @@ const Footer = ({ footer }) => {
               dangerouslySetInnerHTML={{ __html: footer.titre4quarto }}
             ></div>
             <p className="text-center lg:text-left">
-              <a
-                className="hover:text-[#41EAD4]"
-                href={`mailto:${footer.contact.mail}`}
-              >
+              <a className="mail" href={`mailto:${footer.contact.mail}`}>
                 {footer.contact.mail}
               </a>{" "}
               ou{" "}
               <Link href={footer.contact.lien}>
-                <a className="underline hover:text-[#41EAD4]">
-                  {footer.contact.lien}
-                </a>
+                <a className="underline contact">{footer.contact.lien}</a>
               </Link>
             </p>
             <p className="text-center lg:text-left">

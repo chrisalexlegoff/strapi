@@ -24,30 +24,30 @@ const Methodologie = ({ methodologie, mission }) => {
         }}
         className="pt-20"
       >
-        <div className="grid max-w-9xl mx-auto text-center">
+        <div id="methodologie" className="grid max-w-9xl mx-auto text-center">
           <div
-            className="text-white mx-auto row-start-1 uppercase"
+            className="mx-auto row-start-1 uppercase"
             dangerouslySetInnerHTML={{ __html: methodologie.titre2 }}
           ></div>
           <div className="h-[2px] bg-white mx-auto mt-6 w-1/12 row-start-2"></div>
 
           <div className="row-start-3 mx-auto py-16">
             <div
-              className="text-white mx-auto"
+              className="mb-6 mx-auto"
               dangerouslySetInnerHTML={{ __html: methodologie.paragraphe }}
             ></div>
             <div
-              className="text-white mx-auto"
+              className="mx-auto"
               dangerouslySetInnerHTML={{ __html: methodologie.paragrapheBis }}
             ></div>
           </div>
           <div className="row-start-4 w-full lg:w-3/4 mx-auto">
             <Link href="/demander-un-devis">
               <a>
-                <button className="group  hover:bg-[#FC5050] h-20 w-3/4 lg:w-1/2 block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050] mx-auto">
+                <button className="group hover:bg-rouge-orange h-20 w-3/4 lg:w-1/2 block rounded-lg border-2 border-blanc hover:border-rouge-orange mx-auto">
                   <span
                     dangerouslySetInnerHTML={{ __html: methodologie.button }}
-                    className=" text-[#FFFFFF] group-hover:text-white"
+                    className=" text-blanc group-hover:text-white"
                   />
                 </button>
               </a>
@@ -59,8 +59,8 @@ const Methodologie = ({ methodologie, mission }) => {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-9xl hidden lg:block">
-        <div className="h-20 grid grid-cols-2 divide-x-2 divide-[#41EAD4]">
+      <div className="methodologie-board mx-auto max-w-9xl hidden lg:block">
+        <div className="h-20 grid grid-cols-2 divide-x-2 divide-vert">
           <div></div>
           <div></div>
         </div>
@@ -78,11 +78,11 @@ const Methodologie = ({ methodologie, mission }) => {
                 )}
 
                 <div
-                  className="uppercase text-[#41EAD4]"
+                  className="uppercase"
                   dangerouslySetInnerHTML={{ __html: item.titre }}
                 ></div>
               </div>
-              <div className="flex divide-x-2 divide-[#41EAD4] col-span-2 h-[450px]">
+              <div className="flex divide-x-2 divide-vert col-span-2 h-[450px]">
                 <div className="w-1/2">
                   <div
                     className="h-[300px] w-[300px] rounded-xl ml-auto mr-10 mt-6"
@@ -97,17 +97,19 @@ const Methodologie = ({ methodologie, mission }) => {
                     }}
                   ></div>
                 </div>
-                <div
-                  className="w-1/2 pl-10 pt-10 pr-48"
-                  dangerouslySetInnerHTML={{ __html: item.paragraphe }}
-                ></div>
+                <div className="w-1/2 pl-6 pt-6 pr-40">
+                  <div
+                    className="p-6 bg-fond-gris rounded-xl"
+                    dangerouslySetInnerHTML={{ __html: item.paragraphe }}
+                  ></div>
+                </div>
               </div>
             </div>
           ) : (
             <div key={item.id} className="mx-auto grid grid-cols-2">
               <div className="flex items-center justify-end">
                 <div
-                  className="uppercase text-[#41EAD4]"
+                  className="uppercase"
                   dangerouslySetInnerHTML={{ __html: item.titre }}
                 ></div>
                 {LazyImage(
@@ -119,11 +121,14 @@ const Methodologie = ({ methodologie, mission }) => {
                   "translate-x-1/2 h-[30px]"
                 )}
               </div>
-              <div className="flex divide-x-2 divide-[#41EAD4] col-span-2 h-[450px]">
-                <div
-                  className="w-1/2 pt-10 pr-10 text-right pl-48"
-                  dangerouslySetInnerHTML={{ __html: item.paragraphe }}
-                ></div>
+              <div className="flex divide-x-2 divide-vert col-span-2 h-[450px]">
+                <div className="w-1/2 pr-6 pt-6 pl-40">
+                  <div
+                    className="p-6 bg-fond-gris rounded-xl"
+                    dangerouslySetInnerHTML={{ __html: item.paragraphe }}
+                  ></div>
+                </div>
+
                 <div className="w-1/2">
                   <div
                     className="h-[300px] w-[300px] rounded-xl mr-auto ml-10 mt-6"
@@ -143,7 +148,7 @@ const Methodologie = ({ methodologie, mission }) => {
           )
         )}
       </div>
-      <div className="mx-auto max-w-9xl block lg:hidden pt-20">
+      <div className="methodologie-board mx-auto max-w-9xl block lg:hidden pt-20">
         {methodologie.board.map((item, index) => (
           <div key={item.id} className="mx-auto">
             <div className="flex items-center justify-center mx-auto w-2/3">
@@ -158,7 +163,7 @@ const Methodologie = ({ methodologie, mission }) => {
                 )}
               </div>
               <div
-                className="uppercase text-[#41EAD4] pl-4"
+                className="uppercase pl-4"
                 dangerouslySetInnerHTML={{ __html: item.titre }}
               ></div>
             </div>
@@ -173,7 +178,7 @@ const Methodologie = ({ methodologie, mission }) => {
                 backgroundSize: "cover",
               }}
             >
-              <div className="flex items-center bg-white-transparent-methodologie h-full min-h-[300px] my-16">
+              <div className="flex items-center bg-prestation-methodologie-card-mobile h-full min-h-[300px] my-16">
                 {" "}
                 <div
                   className="p-10 text-center mx-auto"
@@ -184,7 +189,7 @@ const Methodologie = ({ methodologie, mission }) => {
           </div>
         ))}
       </div>
-      <div className="mx-auto max-w-9xl grid lg:grid-cols-2 lg:divide-x-2 lg:divide-[#41EAD4] justify-items-center lg:justify-items-stretch pt-10 lg:pt-0">
+      <div className="projet mx-auto max-w-9xl grid lg:grid-cols-2 lg:divide-x-2 lg:divide-vert justify-items-center lg:justify-items-stretch pt-10 lg:pt-0">
         <div className="flex lg:items-end flex-col lg:h-full items-center lg:justify-center pb-10 w-3/4 lg:w-full">
           <div
             className="uppercase text-center lg:text-right lg:w-2/3 w-3/4 lg:pr-10"
@@ -197,10 +202,10 @@ const Methodologie = ({ methodologie, mission }) => {
           <div className="mt-10 lg:mt-0 w-full">
             <Link href="/demander-un-devis">
               <a>
-                <button className="group bg-[#FC5050] hover:bg-white h-20 md:w-1/2 w-full block rounded-lg border-2 border-[#FFFFFF] hover:border-[#FC5050] mx-auto lg:mr-10">
+                <button className="group bg-rouge-orange hover:bg-blanc h-20 md:w-1/2 w-full block rounded-lg border-2 border-blanc hover:border-rouge-orange mx-auto lg:mr-10">
                   <span
                     dangerouslySetInnerHTML={{ __html: mission.button }}
-                    className=" text-[#FFFFFF] group-hover:text-[#FC5050]"
+                    className=" text-blanc group-hover:text-rouge-orange"
                   />
                 </button>
               </a>

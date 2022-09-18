@@ -25,9 +25,11 @@ export default function Prestations({
       footer={footer}
       titrePage={titrePage}
     >
-      <EntetePrestations header={header} />
-      <Expertise expertise={expertise} />
-      <Methodologie methodologie={methodologie} mission={mission} />
+      <div id="prestation">
+        <EntetePrestations header={header} />
+        <Expertise expertise={expertise} />
+        <Methodologie methodologie={methodologie} mission={mission} />
+      </div>
     </Layout>
   )
 }

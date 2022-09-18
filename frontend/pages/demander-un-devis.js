@@ -26,10 +26,12 @@ const demanderUnDevis = ({
       footer={footer}
       titrePage={titrePage}
     >
-      <EnteteDevis header={header} />
-      <Preambule preambule={preambule} />
-      <Questionnaire devis={devis} />
-      <Mission mission={mission} />
+      <div id="devis">
+        <EnteteDevis header={header} />
+        <Preambule preambule={preambule} />
+        <Questionnaire devis={devis} />
+        <Mission mission={mission} />
+      </div>
     </Layout>
   )
 }
