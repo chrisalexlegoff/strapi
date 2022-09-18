@@ -1174,22 +1174,22 @@ const Questionnaire = ({ devis }) => {
     })
   }
   return (
-    <div className="pb-0 lg:pb-24 pt-0 lg:pt-20 mx-auto">
+    <div id="formulaire-devis" className="pb-0 lg:pb-24 pt-0 lg:pt-20 mx-auto">
       <div
         className="uppercase mb-12 text-center px-10 md:px-0"
         dangerouslySetInnerHTML={{ __html: devis.titre }}
       ></div>
-      <div className="mb-12 h-[2px] bg-[#41EAD4] mx-auto mt-6 w-1/12"></div>
+      <div className="mb-12 h-[2px] bg-vert mx-auto mt-6 w-1/12"></div>
       <div>
         {!message ? (
           <form onSubmit={handleSubmit} noValidate className="mx-auto">
             {!part ? (
               <div className="mx-auto grid gap-4 items-center">
                 {/* NOM ENTREPRISE */}
-                <div className="bg-[#FAFAFB]">
-                  <div className="max-w-5xl text-[#505050] py-16 w-3/4 mx-auto">
+                <div className="bg-fond-gris">
+                  <div className="max-w-5xl py-16 w-3/4 mx-auto">
                     <div
-                      className="text-[#FC5050]"
+                      className=""
                       dangerouslySetInnerHTML={{
                         __html: devis.nomEntreprise.question,
                       }}
@@ -1215,14 +1215,14 @@ const Questionnaire = ({ devis }) => {
                       id={devis.nomEntreprise.titre}
                       name={devis.nomEntreprise.titre}
                       placeholder={devis.nomEntreprise.placeholder}
-                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
+                      className="mt-10 shadow appearance-none border-2 border-noir-paragraphe rounded w-full py-2 px-3 h-[100px] text-noir-paragraphe leading-tight focus:outline-none focus:shadow-outline placeholder:text-noir-paragraphe"
                       value={devisEnCours.nomEntreprise.input}
                       required
                     />
 
                     {errorNomEntrepriseInput && (
                       <div
-                        className="text-[#4087FF] mt-2 error-msg animate-pulse"
+                        className="message-erreur mt-2 error-msg animate-pulse"
                         dangerouslySetInnerHTML={{
                           __html: devisEnCours.nomEntreprise.errorMessage,
                         }}
@@ -1231,9 +1231,9 @@ const Questionnaire = ({ devis }) => {
                   </div>
                 </div>
                 <div className="">
-                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050]">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div
-                      className="text-[#FC5050]"
+                      className=""
                       dangerouslySetInnerHTML={{
                         __html: devis.activiteEntreprise.question,
                       }}
@@ -1259,13 +1259,13 @@ const Questionnaire = ({ devis }) => {
                       id={devis.activiteEntreprise.titre}
                       name={devis.activiteEntreprise.titre}
                       placeholder={devis.activiteEntreprise.placeholder}
-                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
+                      className="mt-10 shadow appearance-none border-2 border-noir-paragraphe rounded w-full py-2 px-3 h-[100px] text-noir-paragraphe leading-tight focus:outline-none focus:shadow-outline placeholder:text-noir-paragraphe"
                       value={devisEnCours.activiteEntreprise.input}
                       required
                     />
                     {errorActiviteEntrepriseInput && (
                       <div
-                        className="text-[#4087FF] mt-2 error-msg animate-pulse"
+                        className="message-erreur mt-2 error-msg animate-pulse"
                         dangerouslySetInnerHTML={{
                           __html: devisEnCours.activiteEntreprise.errorMessage,
                         }}
@@ -1273,11 +1273,11 @@ const Questionnaire = ({ devis }) => {
                     )}
                   </div>
                 </div>
-                <div className="bg-[#FAFAFB]">
+                <div className="bg-fond-gris">
                   {" "}
-                  <div className="max-w-5xl text-[#505050] py-16 w-3/4 mx-auto">
+                  <div className="max-w-5xl text-noir-paragraphe py-16 w-3/4 mx-auto">
                     <div
-                      className="text-[#FC5050]"
+                      className=""
                       dangerouslySetInnerHTML={{
                         __html: devis.besoinEntreprise.question,
                       }}
@@ -1446,7 +1446,7 @@ const Questionnaire = ({ devis }) => {
                               id={devis.besoinsDix.text}
                               name={devis.besoinsDix.text}
                               placeholder={devis.besoinsDix.placeholder}
-                              className="shadow appearance-none border-[2px] border-[#505050] rounded py-2 px-3 h-[30px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050] placeholder:text-xs flex-1 mr-4 mb-2 lg:mb-0"
+                              className="shadow appearance-none border-[2px] border-noir-paragraphe rounded py-2 px-3 h-[30px] text-noir-paragraphe leading-tight focus:outline-none focus:shadow-outline placeholder:text-noir-paragraphe placeholder:text-xs flex-1 mr-4 mb-2 lg:mb-0"
                               value={devisEnCours.besoinsDix.input}
                               required
                             />
@@ -1610,7 +1610,7 @@ const Questionnaire = ({ devis }) => {
                     </div>
                     {errorBesoinsEntrepriseInput && (
                       <div
-                        className="text-[#4087FF] mt-2 error-msg animate-pulse"
+                        className="message-erreur mt-2 error-msg animate-pulse"
                         dangerouslySetInnerHTML={{
                           __html: devisEnCours.besoinEntreprise.errorMessage,
                         }}
@@ -1619,9 +1619,9 @@ const Questionnaire = ({ devis }) => {
                   </div>
                 </div>
                 <div className="">
-                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] pb-10">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto pb-10">
                     <div
-                      className="text-[#FC5050]"
+                      className=""
                       dangerouslySetInnerHTML={{
                         __html: devis.fonctionnalitesEntreprise.question,
                       }}
@@ -1648,13 +1648,13 @@ const Questionnaire = ({ devis }) => {
                       id={devis.fonctionnalitesEntreprise.titre}
                       name={devis.fonctionnalitesEntreprise.titre}
                       placeholder={devis.fonctionnalitesEntreprise.placeholder}
-                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
+                      className="mt-10 shadow appearance-none border-2 border-noir-paragraphe rounded w-full py-2 px-3 h-[100px] text-noir-paragraphe leading-tight focus:outline-none focus:shadow-outline placeholder:text-noir-paragraphe"
                       value={devisEnCours.fonctionnalitesEntreprise.input}
                       required
                     />
                     {errorFonctionnalitesEntrepriseInput && (
                       <div
-                        className="text-[#4087FF] mt-2 error-msg animate-pulse"
+                        className="message-erreur mt-2 error-msg animate-pulse"
                         dangerouslySetInnerHTML={{
                           __html:
                             devisEnCours.fonctionnalitesEntreprise.errorMessage,
@@ -1663,10 +1663,10 @@ const Questionnaire = ({ devis }) => {
                     )}
                   </div>
                 </div>
-                <div className="bg-[#FAFAFB]">
-                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] pb-10">
+                <div className="bg-fond-gris">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto pb-10">
                     <div
-                      className="text-[#FC5050]"
+                      className=""
                       dangerouslySetInnerHTML={{
                         __html: devis.pourquoiProjetEntreprise.question,
                       }}
@@ -1692,7 +1692,7 @@ const Questionnaire = ({ devis }) => {
                       id={devis.pourquoiProjetEntreprise.titre}
                       name={devis.pourquoiProjetEntreprise.titre}
                       placeholder={devis.pourquoiProjetEntreprise.placeholder}
-                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
+                      className="mt-10 shadow appearance-none border-2 border-noir-paragraphe rounded w-full py-2 px-3 h-[100px] text-noir-paragraphe leading-tight focus:outline-none focus:shadow-outline placeholder:text-noir-paragraphe"
                       value={devisEnCours.pourquoiProjetEntreprise.input}
                       required
                     />
@@ -1706,13 +1706,13 @@ const Questionnaire = ({ devis }) => {
                         <a>
                           <button
                             type="button"
-                            className="group bg-transparent hover:bg-[#41EAD4] w-2/3 h-20 block rounded-lg border-2 border-[#41EAD4]"
+                            className="group bg-transparent hover:bg-vert w-2/3 h-20 block rounded-lg border-2 border-vert"
                           >
                             <span
                               dangerouslySetInnerHTML={{
                                 __html: devis.button1,
                               }}
-                              className=" text-[#41EAD4] group-hover:text-white"
+                              className="text-vert group-hover:text-white"
                             />
                           </button>
                         </a>
@@ -1721,11 +1721,11 @@ const Questionnaire = ({ devis }) => {
                     <button
                       type="button"
                       onClick={(event) => firstPart(event)}
-                      className="group bg-transparent hover:bg-[#FC5050] w-1/2 h-20 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]"
+                      className="group bg-transparent hover:bg-rouge-orange w-1/2 h-20 mx-auto lg:m-0 block rounded-lg border-2 border-rouge-orange"
                     >
                       <span
                         dangerouslySetInnerHTML={{ __html: devis.button2 }}
-                        className=" text-[#FC5050] group-hover:text-white"
+                        className=" text-rouge-orange group-hover:text-white"
                       />
                     </button>
                   </div>
@@ -1734,11 +1734,11 @@ const Questionnaire = ({ devis }) => {
             ) : (
               //DEBUT PARTIE 2
               <div className="mx-auto grid gap-4 items-center">
-                <div className="bg-[#FAFAFB]">
+                <div className="bg-fond-gris">
                   {" "}
-                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] ">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div
-                      className="text-[#FC5050]"
+                      className=""
                       dangerouslySetInnerHTML={{
                         __html: devis.contraintesEntreprise.question,
                       }}
@@ -1764,16 +1764,16 @@ const Questionnaire = ({ devis }) => {
                       id={devis.contraintesEntreprise.titre}
                       name={devis.contraintesEntreprise.titre}
                       placeholder={devis.contraintesEntreprise.placeholder}
-                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
+                      className="mt-10 shadow appearance-none border-2 border-noir-paragraphe rounded w-full py-2 px-3 h-[100px] text-noir-paragraphe leading-tight focus:outline-none focus:shadow-outline placeholder:text-noir-paragraphe"
                       value={devisEnCours.contraintesEntreprise.input}
                       required
                     />
                   </div>
                 </div>
                 <div className="">
-                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] ">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div
-                      className="text-[#FC5050] mb-6"
+                      className="mb-6"
                       dangerouslySetInnerHTML={{
                         __html: devis.budgetEntreprise.question,
                       }}
@@ -1809,7 +1809,7 @@ const Questionnaire = ({ devis }) => {
                     {checked.besoinTextUn && (
                       <>
                         <div
-                          className="text-[#FC5050] pt-10"
+                          className="pt-10"
                           dangerouslySetInnerHTML={{
                             __html: devis.budgetEntreprise.questionDeux,
                           }}
@@ -1827,7 +1827,7 @@ const Questionnaire = ({ devis }) => {
                     )}
                     {errorBudgetEntreprise && (
                       <div
-                        className="text-[#4087FF] mt-2 error-msg animate-pulse"
+                        className="message-erreur mt-2 error-msg animate-pulse"
                         dangerouslySetInnerHTML={{
                           __html: devisEnCours.budgetEntreprise.errorMessage,
                         }}
@@ -1835,11 +1835,11 @@ const Questionnaire = ({ devis }) => {
                     )}
                   </div>
                 </div>
-                <div className="bg-[#FAFAFB]">
+                <div className="bg-fond-gris">
                   {" "}
-                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] ">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div
-                      className="text-[#FC5050]"
+                      className=""
                       dangerouslySetInnerHTML={{
                         __html: devis.commentaireEntreprise.question,
                       }}
@@ -1860,16 +1860,16 @@ const Questionnaire = ({ devis }) => {
                       id={devis.commentaireEntreprise.titre}
                       name={devis.commentaireEntreprise.titre}
                       placeholder={devis.commentaireEntreprise.placeholder}
-                      className="mt-10 shadow appearance-none border-2 border-[#505050] rounded w-full py-2 px-3 h-[100px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
+                      className="mt-10 shadow appearance-none border-2 border-noir-paragraphe rounded w-full py-2 px-3 h-[100px] text-noir-paragraphe leading-tight focus:outline-none focus:shadow-outline placeholder:text-noir-paragraphe"
                       value={devisEnCours.commentaireEntreprise.input}
                       required
                     />
                   </div>
                 </div>
                 <div className="">
-                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] ">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div
-                      className="text-[#FC5050]"
+                      className=""
                       dangerouslySetInnerHTML={{
                         __html: devis.uploadFilesEntreprise.question,
                       }}
@@ -1894,7 +1894,7 @@ const Questionnaire = ({ devis }) => {
                         />
                         {errorFileUnLength && (
                           <div
-                            className="text-[#4087FF] mt-2 error-msg animate-pulse w-40 px-2 text-center"
+                            className="message-erreur mt-2 error-msg animate-pulse w-40 px-2 text-center"
                             dangerouslySetInnerHTML={{
                               __html:
                                 devis.uploadFilesEntreprise
@@ -1916,7 +1916,7 @@ const Questionnaire = ({ devis }) => {
                         />
                         {errorFileDeuxLength && (
                           <div
-                            className="text-[#4087FF] mt-2 error-msg animate-pulse w-40 px-2 text-center"
+                            className="message-erreur mt-2 error-msg animate-pulse w-40 px-2 text-center"
                             dangerouslySetInnerHTML={{
                               __html:
                                 devis.uploadFilesEntreprise
@@ -1938,7 +1938,7 @@ const Questionnaire = ({ devis }) => {
                         />
                         {errorFileTroisLength && (
                           <div
-                            className="text-[#4087FF] mt-2 error-msg animate-pulse w-40 px-2 text-center"
+                            className="message-erreur mt-2 error-msg animate-pulse w-40 px-2 text-center"
                             dangerouslySetInnerHTML={{
                               __html:
                                 devis.uploadFilesEntreprise
@@ -1950,10 +1950,10 @@ const Questionnaire = ({ devis }) => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-[#FAFAFB]">
-                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] ">
+                <div className="bg-fond-gris">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div
-                      className="text-[#FC5050] mb-6"
+                      className="mb-6"
                       dangerouslySetInnerHTML={{
                         __html: devis.personneEntreprise.titre,
                       }}
@@ -1995,7 +1995,7 @@ const Questionnaire = ({ devis }) => {
                       </div>
                       {errorPersonneEntreprise && (
                         <div
-                          className="text-[#4087FF] mt-6 error-msg animate-pulse"
+                          className="message-erreur mt-6 error-msg animate-pulse"
                           dangerouslySetInnerHTML={{
                             __html:
                               devisEnCours.personneEntreprise.errorMessage,
@@ -2042,13 +2042,13 @@ const Questionnaire = ({ devis }) => {
                             placeholder={
                               devis.personneEntreprise.placeholderNom
                             }
-                            className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
+                            className="mt-4 shadow appearance-none border-2 border-noir-paragraphe rounded-lg w-full py-2 px-3 h-[60px] text-noir-paragraphe leading-tight focus:outline-none focus:shadow-outline placeholder:text-noir-paragraphe"
                             value={devisEnCours.personneEntreprise.inputNom}
                             required
                           />
                           {errorPersonneEntrepriseInputNom && (
                             <div
-                              className="text-[#4087FF] mt-2 error-msg animate-pulse"
+                              className="message-erreur mt-2 error-msg animate-pulse"
                               dangerouslySetInnerHTML={{
                                 __html:
                                   devisEnCours.personneEntreprise
@@ -2094,13 +2094,13 @@ const Questionnaire = ({ devis }) => {
                             placeholder={
                               devis.personneEntreprise.placeholderPrenom
                             }
-                            className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
+                            className="mt-4 shadow appearance-none border-2 border-noir-paragraphe rounded-lg w-full py-2 px-3 h-[60px] text-noir-paragraphe leading-tight focus:outline-none focus:shadow-outline placeholder:text-noir-paragraphe"
                             value={devisEnCours.personneEntreprise.inputPrenom}
                             required
                           />
                           {errorPersonneEntrepriseInputPrenom && (
                             <div
-                              className="text-[#4087FF] mt-2 error-msg animate-pulse"
+                              className="message-erreur mt-2 error-msg animate-pulse"
                               dangerouslySetInnerHTML={{
                                 __html:
                                   devisEnCours.personneEntreprise
@@ -2147,13 +2147,13 @@ const Questionnaire = ({ devis }) => {
                             placeholder={
                               devis.personneEntreprise.placeholderMail
                             }
-                            className="mt-4 shadow appearance-none border-2 border-[#505050] rounded-lg w-full py-2 px-3 h-[60px] text-[#505050] leading-tight focus:outline-none focus:shadow-outline placeholder:text-[#505050]"
+                            className="mt-4 shadow appearance-none border-2 border-noir-paragraphe rounded-lg w-full py-2 px-3 h-[60px] text-noir-paragraphe leading-tight focus:outline-none focus:shadow-outline placeholder:text-noir-paragraphe"
                             value={devisEnCours.personneEntreprise.inputMail}
                             required
                           />
                           {errorPersonneEntrepriseInputMail && (
                             <div
-                              className="text-[#4087FF] mt-2 error-msg animate-pulse"
+                              className="message-erreur mt-2 error-msg animate-pulse"
                               dangerouslySetInnerHTML={{
                                 __html:
                                   devisEnCours.personneEntreprise
@@ -2163,7 +2163,7 @@ const Questionnaire = ({ devis }) => {
                           )}
                           {errorPersonneEntrepriseInputMailRegex && (
                             <div
-                              className="text-[#4087FF] mt-2 error-msg animate-pulse"
+                              className="message-erreur mt-2 error-msg animate-pulse"
                               dangerouslySetInnerHTML={{
                                 __html:
                                   devisEnCours.personneEntreprise
@@ -2177,7 +2177,7 @@ const Questionnaire = ({ devis }) => {
                   </div>
                 </div>
                 <div className="">
-                  <div className="py-16 w-3/4 max-w-5xl mx-auto text-[#505050] ">
+                  <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div className="flex items-center">
                       <div
                         className="cursor-pointer min-w-[30px]"
@@ -2194,7 +2194,7 @@ const Questionnaire = ({ devis }) => {
                     </div>
                     {errorCheckTermsEntreprise && (
                       <div
-                        className="text-[#4087FF] mt-6 error-msg animate-pulse px-2"
+                        className="message-erreur mt-6 error-msg animate-pulse px-2"
                         dangerouslySetInnerHTML={{
                           __html: devis.checkTermsEntreprise.errorMessage,
                         }}
@@ -2224,11 +2224,11 @@ const Questionnaire = ({ devis }) => {
                   </div>
                   <button
                     type="submit"
-                    className="group bg-transparent hover:bg-[#FC5050] w-1/2 h-20 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]"
+                    className="group bg-transparent hover:bg-rouge-orange w-1/2 h-20 mx-auto lg:m-0 block rounded-lg border-2 border-rouge-orange"
                   >
                     <span
                       dangerouslySetInnerHTML={{ __html: devis.button4 }}
-                      className=" text-[#FC5050] group-hover:text-white"
+                      className=" text-rouge-orange group-hover:text-white"
                     />
                   </button>
                 </div>
@@ -2238,7 +2238,7 @@ const Questionnaire = ({ devis }) => {
         ) : (
           <div className="flex justify-center items-center">
             <div
-              className="md:w-full w-3/4 mb-16 py-6 px-16 rounded-xl border-2  border-[#41EAD4]"
+              className="md:w-full w-3/4 mb-16 py-6 px-16 rounded-xl border-2  border-vert"
               dangerouslySetInnerHTML={{
                 __html: devis.message.successMessage,
               }}

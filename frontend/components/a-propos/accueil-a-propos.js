@@ -14,6 +14,7 @@ const AccueilAbout = ({ header }) => {
 
   return (
     <div
+      id="entete-a-propos"
       style={{
         backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(${
           process.env.NEXT_PUBLIC_API_URL + header.bg.data.attributes.url
@@ -22,8 +23,8 @@ const AccueilAbout = ({ header }) => {
         backgroundSize: "cover ",
       }}
     >
-      <div className="lg:bg-split-right-blue-transparent bg-blue-transparent">
-        <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left lg:pt-28 text-white">
+      <div className="lg:bg-entete-a-propos bg-entete-a-propos-mobile">
+        <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left ">
           <div className="flex flex-col lg:flex-row lg:row-start-1 mx-auto w-3/4 mt-32 justify-between items-center">
             <div
               className="uppercase"
@@ -32,7 +33,7 @@ const AccueilAbout = ({ header }) => {
             <div className="my-12 lg:my-0">{imageDeco}</div>
           </div>
           <div
-            className="lg:row-start-2 mx-auto w-3/4 mb-32"
+            className="h5 lg:row-start-2 mx-auto w-3/4 lg:mb-0 mb-32"
             dangerouslySetInnerHTML={{ __html: header.titre }}
           ></div>
           <div className="row-start-3 lg:col-span-2 animate-pulse">
@@ -46,7 +47,7 @@ const AccueilAbout = ({ header }) => {
                     process.env.NEXT_PUBLIC_API_URL +
                     header.enSavoirPlus.image.data.attributes.url
                   }
-                  alt="logo dualdclic"
+                  alt={header.enSavoirPlus.text}
                   width={175}
                   height={75}
                 />

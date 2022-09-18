@@ -29,24 +29,24 @@ const Binome = ({ binome }) => {
               binome.images.data[2].attributes.url
             })`,
             backgroundPosition: "bottom",
-            backgroundSize: "cover ",
+            backgroundSize: "cover",
           }}
           className="h-full rounded-t-lg w-4/5 ml-auto mr-10"
         ></div>
         <div className="">
           <div className="flex flex-col h-full justify-between rounded-2xl bg-blue-binome px-32 py-16 -translate-x-32 -translate-y-10">
             <div
-              className="uppercase text-[#2E437D]     "
+              className="uppercase"
               dangerouslySetInnerHTML={{ __html: binome.titre3 }}
             ></div>
             <div
-              className="text-[#3F3F3F] lg:my-12"
+              className="lg:my-12"
               dangerouslySetInnerHTML={{ __html: binome.titre4 }}
             ></div>
             <div
-              className="text-[#3F3F3F]"
+              className=""
               dangerouslySetInnerHTML={{ __html: binome.paragraphe }}
-            ></div>{" "}
+            ></div>
           </div>
           <div className="mr-6">{imageCarre}</div>
         </div>
@@ -58,22 +58,21 @@ const Binome = ({ binome }) => {
             binome.images.data[2].attributes.url
           })`,
           backgroundPosition: "bottom",
-          backgroundSize: "cover ",
+          backgroundSize: "cover",
         }}
-        className="h-auto lg:h-[500px] rounded-t-lg mx-auto block lg:hidden text-center w-5/6 mb-16"
+        className="h-[500px] rounded-t-lg mx-auto block lg:hidden text-center w-5/6 mb-16"
       >
-        {" "}
-        <div className="flex flex-col h-full justify-evenly rounded-t-lg bg-bg-blue-binome px-12 py-8 mx-auto">
+        <div className="flex flex-col h-full justify-evenly rounded-t-lg bg-blue-binome px-12 py-8 mx-auto">
           <div
-            className="text-[#2E437D]     "
+            className=""
             dangerouslySetInnerHTML={{ __html: binome.titre3 }}
           ></div>
           <div
-            className="text-[#3F3F3F] uppercase lg:my-12"
+            className="uppercase lg:my-12"
             dangerouslySetInnerHTML={{ __html: binome.titre4 }}
           ></div>
           <div
-            className="text-[#3F3F3F]"
+            className=""
             dangerouslySetInnerHTML={{ __html: binome.paragraphe }}
           ></div>{" "}
         </div>
@@ -85,13 +84,13 @@ const Binome = ({ binome }) => {
           dangerouslySetInnerHTML={{ __html: binome.paragrapheBis }}
         ></div>
         {imageFleche}
-        <div className="mx-auto lg:w-1/4 md:w-1/3 w-full mt-6 md:mt-0">
+        <div className="mx-auto lg:w-1/4 md:w-1/3 w-full mt-6 md:mt-0 px-4">
           <Link href="/demander-un-devis">
             <a>
-              <button className="group bg-transparent hover:bg-[#FC5050] w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]">
+              <button className="group bg-transparent hover:bg-rouge-orange w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-rouge-orange">
                 <span
                   dangerouslySetInnerHTML={{ __html: binome.button }}
-                  className="text-[#FC5050] group-hover:text-white"
+                  className="text-rouge-orange group-hover:text-blanc"
                 />
               </button>
             </a>

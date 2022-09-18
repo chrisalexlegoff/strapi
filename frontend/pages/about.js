@@ -28,11 +28,13 @@ export default function About({
       footer={footer}
       titrePage={titrePage}
     >
-      <AccueilAbout header={header} />
-      <Binome binome={binome} />
-      <IntroPresentation introPresentation={introPresentation} />
-      <Presentation presentation={presentation} />
-      <Mission mission={mission} />
+      <div id="a-propos">
+        <AccueilAbout header={header} />
+        <Binome binome={binome} />
+        <IntroPresentation introPresentation={introPresentation} />
+        <Presentation presentation={presentation} />
+        <Mission mission={mission} />
+      </div>
     </Layout>
   )
 }

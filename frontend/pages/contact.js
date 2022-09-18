@@ -24,9 +24,11 @@ export default function Contact({
       footer={footer}
       titrePage={titrePage}
     >
-      <EnteteContact header={header} />
-      <ContactForm contact={contact} />
-      <Informations informations={informations} />
+      <div id="contact">
+        <EnteteContact header={header} />
+        <ContactForm contact={contact} />
+        <Informations informations={informations} />
+      </div>
     </Layout>
   )
 }

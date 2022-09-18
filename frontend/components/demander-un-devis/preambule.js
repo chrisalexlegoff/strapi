@@ -23,20 +23,20 @@ const Preambule = ({ preambule }) => {
         <div className="">
           <div className="flex flex-col h-full justify-center items-center rounded-2xl bg-blue-binome pl-20 py-16 -translate-x-32 -translate-y-10">
             <div
-              className="uppercase text-[#2E437D] mb-6 px-6 text-center"
+              className="uppercase mb-6 px-6 text-center"
               dangerouslySetInnerHTML={{ __html: preambule.titre2 }}
             ></div>
             <div
-              className="text-[#3F3F3F]"
+              className=""
               dangerouslySetInnerHTML={{ __html: preambule.paragraphe }}
             ></div>{" "}
             <div className="mx-auto w-3/4 lg:w-1/2 mt-10">
               <Link href="/demander-un-devis">
                 <a>
-                  <button className="group bg-transparent hover:bg-[#FC5050] w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]">
+                  <button className="group bg-transparent hover:bg-rouge-orange w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-rouge-orange">
                     <span
                       dangerouslySetInnerHTML={{ __html: preambule.button }}
-                      className=" text-[#FC5050] group-hover:text-white"
+                      className=" text-rouge-orange group-hover:text-blanc"
                     />
                   </button>
                 </a>
@@ -59,20 +59,20 @@ const Preambule = ({ preambule }) => {
         {" "}
         <div className="flex flex-col justify-evenly items-center h-full rounded-2xl bg-blue-binome px-12 py-8 mx-auto">
           <div
-            className="uppercase text-[#2E437D]"
+            className="uppercase"
             dangerouslySetInnerHTML={{ __html: preambule.titre2 }}
           ></div>
           <div
-            className="text-[#3F3F3F] text-left"
+            className="text-left"
             dangerouslySetInnerHTML={{ __html: preambule.paragraphe }}
           ></div>
           <div className="mx-auto w-3/4 lg:w-1/2 mt-6">
             <Link href="/demander-un-devis">
               <a>
-                <button className="group bg-transparent hover:bg-[#FC5050] w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-[#FC5050]">
+                <button className="group bg-transparent hover:bg-rouge-orange w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-rouge-orange">
                   <span
                     dangerouslySetInnerHTML={{ __html: preambule.button }}
-                    className="text-[#FC5050] group-hover:text-white"
+                    className="text-rouge-orange group-hover:text-blanc"
                   />
                 </button>
               </a>

@@ -2,17 +2,20 @@ import React from "react"
 
 const IntroPresentation = ({ introPresentation }) => {
   return (
-    <div className="bg-[#41EAD4] text-white text-center pb-16 xl:pb-40 pt-20">
+    <div
+      id="intro-presentation"
+      className="bg-intro-presentation text-center pb-16 xl:pb-44 pt-32"
+    >
       <div className="max-w-9xl mx-auto grid items-center text-center  grid-auto-row">
         <div className="mx-auto">
           <div
             className="text-center uppercase w-3/4 lg:w-2/3 mx-auto mb-12"
             dangerouslySetInnerHTML={{ __html: introPresentation.titre3 }}
           ></div>
-          <div className="h-[2px] bg-[#FC5050] w-1/3 mx-auto mt-6"></div>
+          <div className="h-[2px] bg-rouge-orange w-1/3 mx-auto mt-6"></div>
         </div>
         <div
-          className="mx-auto text-[#FC5050] lg:my-12 my-6"
+          className="mx-auto lg:my-12 my-6"
           dangerouslySetInnerHTML={{ __html: introPresentation.titre4 }}
         ></div>
         <div
